@@ -13,9 +13,9 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Plus Jakarta Sans', ...defaultTheme.fontFamily.sans],
-                display: ['"Playfair Display"', 'serif'],
-                heading: ['"Anton"', 'sans-serif'],
+                sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+                display: ['"Inter"', ...defaultTheme.fontFamily.sans],
+                heading: ['"Inter"', ...defaultTheme.fontFamily.sans],
             },
             colors: {
                 sugih: {
@@ -43,7 +43,6 @@ export default {
                 'hero-tobacco': "url('/images/hero-tobacco.jpg')",
                 'farmer-bg':   "url('/images/farmer.jpg')",
                 'product-bg':  "url('/images/product-bg.jpg')",
-                'article-bg':  "url('/images/article-bg.jpg')",
             },
             boxShadow: {
                 'card-soft': '0 12px 40px -8px rgba(0,0,0,0.35)',

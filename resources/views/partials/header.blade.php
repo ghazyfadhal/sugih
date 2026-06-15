@@ -57,6 +57,6 @@
 
 <style>
     .nav-link {
-        @apply text-base font-medium relative transition-colors duration-200 hover:text-sugih-gold;
+        @apply text-base font-semibold relative transition-colors duration-200 hover:text-sugih-gold;
     }
 </style>

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modules: [Navigation, Pagination, Autoplay],
             slidesPerView: 1,
             spaceBetween: 24,
-            loop: true,
+            loop: false,
             autoplay: { delay: 6000, disableOnInteraction: false },
             navigation: {
                 nextEl: '.product-swiper-next',

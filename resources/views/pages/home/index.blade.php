@@ -19,20 +19,20 @@
         </div>
 
         <div class="container-page py-24 animate-fade-up">
-            {{-- Brand mark --}}
+            {{-- Brand mark — uses the same logo as navbar (smaller size) --}}
             <div class="flex justify-center mb-8">
-                <img src="{{ asset('images/wordmark-sugih.svg') }}"
-                     alt="SUGIH" class="h-16 sm:h-20 w-auto">
+                <img src="{{ asset('images/logo-sugih.png') }}"
+                     alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
             </div>
 
             <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl">
                 Semua Ingin Sugih
             </h1>
 
-            <p class="mt-8 max-w-2xl mx-auto text-white/85 text-base sm:text-lg leading-relaxed font-light">
+            <p class="mt-8 max-w-2xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal">
                 Waktumu terbatas jangan habiskan waktu untuk mencari rasa yang lain.<br>
                 Sebab yang mantap sedang kamu buka sekarang dan pencarianmu sudah tuntas.<br>
-                <span class="italic">Harum Berkelas dan Berkualitas.</span>
+                Harum Berkelas dan Berkualitas.
             </p>
 
             <div class="mt-12">
@@ -56,8 +56,8 @@
 
         <div class="container-page">
             <div class="max-w-xl bg-sugih-green-700/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft">
-                <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6">
-                    Cerita <br class="hidden sm:block">Kami
+                <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap">
+                    Cerita Kami
                 </h2>
 
                 <p class="text-white/90 leading-relaxed text-base">
@@ -81,73 +81,133 @@
 
     {{-- ============================================================ --}}
     {{--  PRODUK KAMI                                                  --}}
+    {{--  Background: bagian ATAS dari product-bg.jpg (foto vertikal)  --}}
     {{-- ============================================================ --}}
+    @php
+        $originalProducts = collect($products)->where('collection', 'Original Collection')->values();
+        $flavourProducts  = collect($products)->where('collection', 'Flavour Collection')->values();
+    @endphp
+
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
-        <div class="absolute inset-0 -z-10">
-            <img src="{{ asset('images/product-bg.jpg') }}"
-                 alt="Tembakau kering" class="w-full h-full object-cover">
+        {{-- Background: top portion of the vertical image --}}
+        <div class="absolute inset-0 -z-10 bg-product-section">
             <div class="absolute inset-0 bg-sugih-green-900/85"></div>
         </div>
 
         <div class="container-page">
-            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14">
+            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-6">
                 Produk Kami
             </h2>
+            <p class="text-center text-white/60 text-sm sm:text-base mb-16 max-w-2xl mx-auto">
+                Dua koleksi berbeda, satu standar kualitas — diracik dari tembakau pilihan tanah Cianjur.
+            </p>
 
-            <div class="relative">
-                <div class="swiper product-swiper">
-                    <div class="swiper-wrapper">
-                        @foreach($products as $product)
-                            <div class="swiper-slide">
-                                <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
-                                                grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                                shadow-card-soft">
-                                    <div class="flex justify-center">
-                                        <img
-                                            src="{{ asset($product['image']) }}"
-                                            alt="{{ $product['name'] }}"
-                                            class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl"
-                                        >
-                                    </div>
+            {{-- ── Original Collection ─────────────────────────── --}}
+            <div class="mb-20" data-testid="original-collection">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-px flex-1 bg-sugih-gold/30"></div>
+                    <h3 class="heading-display text-sugih-gold text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
+                        Original Collection
+                    </h3>
+                    <div class="h-px flex-1 bg-sugih-gold/30"></div>
+                </div>
 
-                                    <div class="text-white">
-                                        <div class="flex flex-wrap items-center gap-3 mb-3">
-                                            <h3 class="heading-display text-3xl sm:text-4xl">{{ $product['name'] }}</h3>
-                                            @if(!empty($product['tagline']))
+                <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+                    @foreach($originalProducts as $product)
+                        <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                                        grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
+                                        shadow-card-soft border border-sugih-gold/10
+                                        transition-transform duration-300 hover:-translate-y-1">
+                            <div class="flex justify-center">
+                                <img
+                                    src="{{ asset($product['image']) }}"
+                                    alt="{{ $product['name'] }}"
+                                    class="h-52 sm:h-64 w-auto object-contain drop-shadow-2xl"
+                                >
+                            </div>
+
+                            <div class="text-white">
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <h4 class="heading-display text-3xl sm:text-4xl">{{ $product['name'] }}</h4>
+                                    <span class="inline-flex items-center px-4 py-1.5 rounded-full
+                                                 bg-sugih-gold/20 text-sugih-gold text-xs font-bold border border-sugih-gold/30">
+                                        Original
+                                    </span>
+                                </div>
+
+                                <p class="text-white/85 leading-relaxed">
+                                    {{ $product['description'] }}
+                                </p>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+
+            {{-- ── Flavour Collection ──────────────────────────── --}}
+            <div data-testid="flavour-collection">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="h-px flex-1 bg-sky-300/30"></div>
+                    <h3 class="heading-display text-sky-300 text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
+                        Flavour Collection
+                    </h3>
+                    <div class="h-px flex-1 bg-sky-300/30"></div>
+                </div>
+
+                <div class="relative">
+                    <div class="swiper product-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($flavourProducts as $product)
+                                <div class="swiper-slide">
+                                    <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                                                    grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
+                                                    shadow-card-soft border border-sky-300/10
+                                                    transition-transform duration-300 hover:-translate-y-1">
+                                        <div class="flex justify-center">
+                                            <img
+                                                src="{{ asset($product['image']) }}"
+                                                alt="{{ $product['name'] }}"
+                                                class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl"
+                                            >
+                                        </div>
+
+                                        <div class="text-white">
+                                            <div class="flex flex-wrap items-center gap-3 mb-3">
+                                                <h4 class="heading-display text-3xl sm:text-4xl">{{ $product['name'] }}</h4>
                                                 <span class="inline-flex items-center px-4 py-1.5 rounded-full
                                                              bg-sky-300/90 text-sugih-green-900 text-xs font-bold">
                                                     {{ $product['tagline'] }}
                                                 </span>
-                                            @endif
+                                            </div>
+
+                                            <p class="text-white/85 leading-relaxed">
+                                                {{ $product['description'] }}
+                                            </p>
                                         </div>
+                                    </article>
+                                </div>
+                            @endforeach
+                        </div>
 
-                                        <p class="text-white/85 leading-relaxed">
-                                            {{ $product['description'] }}
-                                        </p>
-                                    </div>
-                                </article>
-                            </div>
-                        @endforeach
+                        {{-- Arrows — inside the swiper container, anchored to slide edges --}}
+                        <button type="button"
+                                class="product-swiper-prev carousel-arrow absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10"
+                                aria-label="Sebelumnya" data-testid="product-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>
+                            </svg>
+                        </button>
+                        <button type="button"
+                                class="product-swiper-next carousel-arrow absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10"
+                                aria-label="Berikutnya" data-testid="product-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+                            </svg>
+                        </button>
                     </div>
+
+                    <div class="product-swiper-pagination flex justify-center mt-6 !static"></div>
                 </div>
-
-                {{-- Arrows --}}
-                <button type="button"
-                        class="product-swiper-prev carousel-arrow absolute -left-2 sm:-left-6 top-1/2 -translate-y-1/2 z-10"
-                        aria-label="Sebelumnya" data-testid="product-prev">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>
-                    </svg>
-                </button>
-                <button type="button"
-                        class="product-swiper-next carousel-arrow absolute -right-2 sm:-right-6 top-1/2 -translate-y-1/2 z-10"
-                        aria-label="Berikutnya" data-testid="product-next">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
-                    </svg>
-                </button>
-
-                <div class="product-swiper-pagination flex justify-center mt-8 !static"></div>
             </div>
         </div>
     </section>
@@ -155,11 +215,11 @@
 
     {{-- ============================================================ --}}
     {{--  BERITA                                                       --}}
+    {{--  Background: bagian BAWAH dari product-bg.jpg (foto vertikal) --}}
     {{-- ============================================================ --}}
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
-        <div class="absolute inset-0 -z-10">
-            <img src="{{ asset('images/article-bg.jpg') }}"
-                 alt="" class="w-full h-full object-cover">
+        {{-- Background: bottom portion of the vertical image --}}
+        <div class="absolute inset-0 -z-10 bg-berita-section">
             <div class="absolute inset-0 bg-sugih-green-900/85"></div>
         </div>
 
