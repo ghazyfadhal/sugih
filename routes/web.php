@@ -1,0 +1,32 @@
+<?php
+
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes - SUGIH (CV. Prioritas Group)
+|--------------------------------------------------------------------------
+*/
+
+// Landing page (Beranda)
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// Sejarah / About
+Route::get('/sejarah', [AboutController::class, 'index'])->name('about');
+
+// Produk
+Route::get('/produk',          [ProductController::class, 'index'])->name('products.index');
+Route::get('/produk/{slug}',   [ProductController::class, 'show'])->name('products.show');
+
+// Berita / Artikel
+Route::get('/berita',          [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/berita/{slug}',   [ArticleController::class, 'show'])->name('articles.show');
+
+// Kontak
+Route::get('/kontak',          [ContactController::class, 'index'])->name('contact');
+Route::post('/kontak',         [ContactController::class, 'store'])->name('contact.store');

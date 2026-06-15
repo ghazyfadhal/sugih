@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------- *
+ * Global base
+ * ---------------------------------------------------------------- */
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    body {
+        @apply bg-sugih-green-900 text-white font-sans antialiased;
+        -webkit-font-smoothing: antialiased;
+    }
+    ::selection {
+        background: theme('colors.sugih.gold');
+        color: theme('colors.sugih.green.900');
+    }
+}
+
+/* ---------------------------------------------------------------- *
+ * Components
+ * ---------------------------------------------------------------- */
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center justify-center px-8 py-3 rounded-full
+               bg-sugih-red hover:bg-sugih-redDark transition-colors duration-300
+               text-white font-semibold tracking-wide shadow-lg shadow-black/30
+               focus:outline-none focus:ring-2 focus:ring-sugih-red/60;
+    }
+
+    .heading-display {
+        @apply font-display font-bold tracking-tight leading-[1.05];
+    }
+
+    .heading-mark {
+        @apply font-heading uppercase tracking-wide;
+    }
+
+    .container-page {
+        @apply max-w-7xl mx-auto px-5 sm:px-8 lg:px-12;
+    }
+
+    /* Carousel arrow buttons */
+    .carousel-arrow {
+        @apply h-12 w-12 flex items-center justify-center
+               text-sugih-gold/90 hover:text-sugih-gold
+               transition-colors duration-200 cursor-pointer select-none;
+    }
+}
+
+/* ---------------------------------------------------------------- *
+ * Swiper overrides
+ * ---------------------------------------------------------------- */
+.swiper { width: 100%; }
+.swiper-pagination-bullet {
+    background: rgba(255,255,255,0.4);
+    opacity: 1;
+}
+.swiper-pagination-bullet-active {
+    background: theme('colors.sugih.gold');
+}
+
+/* Subtle grain overlay used on hero */
+.grain::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+        radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
