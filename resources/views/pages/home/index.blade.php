@@ -90,7 +90,7 @@
 
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
         {{-- Background: top portion of the vertical image --}}
-        <div class="absolute inset-0 -z-10 bg-product-section">
+        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: top center;">
             <div class="absolute inset-0 bg-sugih-green-900/85"></div>
         </div>
 
@@ -219,7 +219,7 @@
     {{-- ============================================================ --}}
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
         {{-- Background: bottom portion of the vertical image --}}
-        <div class="absolute inset-0 -z-10 bg-berita-section">
+        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: bottom center;">
             <div class="absolute inset-0 bg-sugih-green-900/85"></div>
         </div>
 

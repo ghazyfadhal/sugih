@@ -3,8 +3,8 @@
 
         {{-- Alamat --}}
         <div>
-            <h4 class="heading-mark text-lg text-sugih-gold mb-3">Alamat</h4>
-            <p class="text-sm leading-relaxed">
+            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Alamat</h4>
+            <p class="text-sm font-semibold leading-relaxed">
                 Munjul, Kec. Cilaku, Kab. Cianjur,<br>
                 Jawa Barat 43285
             </p>
@@ -18,8 +18,8 @@
 
         {{-- Kontak --}}
         <div>
-            <h4 class="heading-mark text-lg text-sugih-gold mb-3">Kontak Kami</h4>
-            <p class="text-sm leading-relaxed">
+            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Kontak Kami</h4>
+            <p class="text-sm font-semibold leading-relaxed">
                 Whatsapp:<br>+62 123 456 789<br><br>
                 Email:<br>cvprioritasgroup@gmail.com
             </p>
@@ -27,7 +27,7 @@
 
         {{-- Peta lokasi --}}
         <div>
-            <h4 class="heading-mark text-lg text-sugih-gold mb-3">Peta Lokasi</h4>
+            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Peta Lokasi</h4>
             <div class="inline-block bg-white p-2 rounded-lg">
                 <img src="{{ asset('images/qr-location.png') }}"
                      alt="QR Lokasi" class="h-28 w-28 object-contain">
@@ -36,9 +36,8 @@
     </div>
 
     <div class="border-t border-white/10">
-        <div class="container-page py-4 text-xs text-white/60 flex flex-col sm:flex-row gap-2 justify-between">
+        <div class="container-page py-5 text-sm font-bold text-white/60 flex justify-center text-center">
             <p>© {{ date('Y') }} CV. Prioritas Group. All rights reserved.</p>
-            <p>SUGIH — Semua Ingin Sugih.</p>
         </div>
     </div>
 </footer>

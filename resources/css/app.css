@@ -76,19 +76,4 @@
     mix-blend-mode: overlay;
 }
 
-/* ---------------------------------------------------------------- *
- * Seamless vertical background for Produk & Berita sections
- * Same image (product-bg.jpg), split top/bottom with overlap
- * ---------------------------------------------------------------- */
-.bg-product-section {
-    background-image: url('/images/product-bg.jpg');
-    background-size: cover;
-    background-position: top center;
-}
-
-.bg-berita-section {
-    background-image: url('/images/product-bg.jpg');
-    background-size: cover;
-    background-position: bottom center;
-}
 

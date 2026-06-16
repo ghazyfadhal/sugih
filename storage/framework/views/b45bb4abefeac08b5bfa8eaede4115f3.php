@@ -57,7 +57,7 @@
 
 <style>
     .nav-link {
-        @apply text-base font-semibold relative transition-colors duration-200 hover:text-sugih-gold;
+        @apply text-base font-bold relative transition-colors duration-200 hover:text-sugih-gold;
     }
 </style>
 <?php /**PATH D:\SUGIH\sugih\resources\views/partials/header.blade.php ENDPATH**/ ?>
