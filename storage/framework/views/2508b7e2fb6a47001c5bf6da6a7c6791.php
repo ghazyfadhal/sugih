@@ -226,7 +226,7 @@
 
         <div class="container-page">
             <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14">
-                Berita
+                Berita Terkini
             </h2>
 
             <div class="relative max-w-4xl mx-auto">
@@ -269,6 +269,12 @@
                 </button>
 
                 <div class="article-swiper-pagination flex justify-center mt-8 !static"></div>
+            </div>
+
+            <div class="mt-14 text-center">
+                <a href="<?php echo e(route('articles.index')); ?>" class="btn-primary" data-testid="all-articles-btn">
+                    Lihat Semua Berita
+                </a>
             </div>
         </div>
     </section>

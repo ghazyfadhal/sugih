@@ -40,19 +40,60 @@
     <div
         x-show="open"
         x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 -translate-y-4"
-        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="open = false"
         x-cloak
-        class="absolute top-20 left-0 w-full bg-sugih-green-800 border-t border-sugih-green-600 shadow-xl"
+        class="fixed inset-0 bg-black/50 z-40"
+    ></div>
+
+    
+    <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        x-cloak
+        class="fixed top-0 right-0 h-full w-72 sm:w-80 bg-sugih-green-800 shadow-2xl z-50 flex flex-col"
     >
-        <nav class="container-page py-6 flex flex-col gap-4 text-white font-bold">
-            <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Beranda</a>
-            <a href="<?php echo e(request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami'); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Cerita Kami</a>
-            <a href="<?php echo e(route('about')); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Tentang Kami</a>
-            <a href="<?php echo e(route('products.index')); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Produk</a>
-            <a href="<?php echo e(route('articles.index')); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Berita</a>
-            <a href="<?php echo e(url('/karir')); ?>" class="py-2 hover:text-sugih-gold" @click="open = false">Karir</a>
-            <a href="#footer" class="py-2 hover:text-sugih-gold" @click="open = false">Kontak</a>
+        
+        <div class="flex justify-end p-5">
+            <button @click="open = false" class="text-sugih-gold hover:text-white transition-colors" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        
+        <nav class="flex-1 px-8 flex flex-col gap-1">
+            <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Beranda</a>
+            <a href="<?php echo e(request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami'); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Cerita Kami</a>
+            <a href="<?php echo e(route('about')); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Tentang Kami</a>
+            <a href="<?php echo e(route('products.index')); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Produk</a>
+            <a href="<?php echo e(route('articles.index')); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Berita</a>
+            <a href="<?php echo e(url('/karir')); ?>"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               @click="open = false">Karir</a>
+            <a href="#footer"
+               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors"
+               @click="open = false">Kontak</a>
         </nav>
     </div>
 </header>
