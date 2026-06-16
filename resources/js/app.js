@@ -2,10 +2,11 @@ import './bootstrap';
 
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -41,4 +42,46 @@ document.addEventListener('DOMContentLoaded', () => {
             pagination: { el: '.article-swiper-pagination', clickable: true },
         });
     }
+
+    /* ---- Product Page Carousel (Aroma-style coverflow) ---- */
+    if (document.querySelector('.product-page-swiper')) {
+        const productPageSwiper = new Swiper('.product-page-swiper', {
+            modules: [Navigation, Pagination, EffectCoverflow],
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            initialSlide: 0,
+            loop: false,
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 80,
+                depth: 150,
+                modifier: 1.5,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: '.product-page-next',
+                prevEl: '.product-page-prev',
+            },
+            pagination: { el: '.product-page-pagination', clickable: true },
+            on: {
+                slideChange: function () {
+                    const panels = document.querySelectorAll('.product-info-panel');
+                    const activeIndex = this.activeIndex;
+                    panels.forEach((panel) => {
+                        const panelIndex = parseInt(panel.getAttribute('data-panel'));
+                        if (panelIndex === activeIndex) {
+                            panel.style.display = '';
+                            panel.style.opacity = '1';
+                        } else {
+                            panel.style.display = 'none';
+                            panel.style.opacity = '0';
+                        }
+                    });
+                },
+            },
+        });
+    }
 });
+

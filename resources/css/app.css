@@ -76,4 +76,24 @@
     mix-blend-mode: overlay;
 }
 
+/* ---------------------------------------------------------------- *
+ * Product Page Carousel (Aroma-style coverflow)
+ * ---------------------------------------------------------------- */
+.product-page-swiper .swiper-slide {
+    width: 280px;
+    transition: all 0.5s ease;
+}
 
+.product-page-swiper .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.5;
+    transform: scale(0.8);
+}
+
+.product-page-swiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.product-info-panel {
+    transition: opacity 0.4s ease;
+}
