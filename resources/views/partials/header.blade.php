@@ -11,15 +11,15 @@
         </a>
 
         {{-- Desktop nav --}}
-        <nav class="hidden lg:flex items-center gap-12 text-white/90" data-testid="nav-desktop">
+        <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
             <a href="{{ route('home') }}"
-               class="nav-link {{ request()->routeIs('home') ? 'text-sugih-gold' : '' }}">Beranda</a>
+               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('home') ? 'text-sugih-gold' : 'text-white/90' }}">Beranda</a>
             <a href="{{ route('about') }}"
-               class="nav-link {{ request()->routeIs('about') ? 'text-sugih-gold' : '' }}">Sejarah</a>
+               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('about') ? 'text-sugih-gold' : 'text-white/90' }}">Sejarah</a>
             <a href="{{ route('products.index') }}"
-               class="nav-link {{ request()->routeIs('products.*') ? 'text-sugih-gold' : '' }}">Produk</a>
+               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('products.*') ? 'text-sugih-gold' : 'text-white/90' }}">Produk</a>
             <a href="{{ route('articles.index') }}"
-               class="nav-link {{ request()->routeIs('articles.*') ? 'text-sugih-gold' : '' }}">Berita</a>
+               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('articles.*') ? 'text-sugih-gold' : 'text-white/90' }}">Berita</a>
         </nav>
 
         {{-- Hamburger --}}
@@ -45,7 +45,7 @@
         x-cloak
         class="lg:hidden bg-sugih-green-800 border-t border-sugih-green-600"
     >
-        <nav class="container-page py-6 flex flex-col gap-4 text-white">
+        <nav class="container-page py-6 flex flex-col gap-4 text-white font-bold">
             <a href="{{ route('home') }}" class="py-2 hover:text-sugih-gold">Beranda</a>
             <a href="{{ route('about') }}" class="py-2 hover:text-sugih-gold">Sejarah</a>
             <a href="{{ route('products.index') }}" class="py-2 hover:text-sugih-gold">Produk</a>
@@ -55,8 +55,3 @@
     </div>
 </header>
 
-<style>
-    .nav-link {
-        @apply text-base font-bold relative transition-colors duration-200 hover:text-sugih-gold;
-    }
-</style>
