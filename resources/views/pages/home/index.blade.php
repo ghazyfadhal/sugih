@@ -15,7 +15,7 @@
             <img src="{{ asset('images/hero-tobacco.jpg') }}"
                  alt="Daun tembakau SUGIH"
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-b from-sugih-green-900/40 via-black/40 to-sugih-green-900/70"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div class="container-page py-24 animate-fade-up">
@@ -51,7 +51,7 @@
         <div class="absolute inset-0 -z-10">
             <img src="{{ asset('images/farmer.jpg') }}"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div class="container-page">
@@ -91,7 +91,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
         {{-- Background: top portion of the vertical image --}}
         <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-sugih-green-900/85"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div class="container-page">
@@ -220,7 +220,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
         {{-- Background: bottom portion of the vertical image --}}
         <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: bottom center;">
-            <div class="absolute inset-0 bg-sugih-green-900/85"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div class="container-page">

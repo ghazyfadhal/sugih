@@ -9,7 +9,7 @@
     <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden" data-testid="about-hero">
         
         <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/sejarah.png')); ?>'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-sugih-green-900/85"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div class="container-page">

@@ -8,7 +8,7 @@
                  class="h-16 w-auto rounded">
         </div>
 
-        <p class="flex-1 text-xs sm:text-sm font-bold uppercase tracking-wide leading-snug">
+        <p class="flex-1 text-center text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide leading-snug px-4">
             PERINGATAN: KARENA MEROKOK, SAYA TERKENA KANKER TENGGOROKAN.<br class="hidden sm:block">
             LAYANAN BERHENTI MEROKOK (0800-177-6565)
         </p>
@@ -16,7 +16,7 @@
         <div class="shrink-0">
             <span class="inline-flex items-center justify-center
                          h-10 w-10 rounded-full border-2 border-sugih-green-900
-                         font-black text-sm text-sugih-green-900">
+                         font-bold text-sm text-sugih-green-900">
                 21+
             </span>
         </div>
