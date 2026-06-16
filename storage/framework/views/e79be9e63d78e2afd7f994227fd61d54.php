@@ -16,7 +16,7 @@
 
     <?php echo $__env->yieldPushContent('head'); ?>
 </head>
-<body class="min-h-screen flex flex-col bg-sugih-green-900">
+<body id="top" class="min-h-screen flex flex-col bg-sugih-green-900">
 
     <?php echo $__env->make('partials.header', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 

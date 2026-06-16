@@ -1,4 +1,4 @@
-<footer class="bg-sugih-green-700 text-white" data-testid="footer">
+<footer id="footer" class="bg-sugih-green-700 text-white" data-testid="footer">
     <div class="container-page py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {{-- Alamat --}}
@@ -19,10 +19,20 @@
         {{-- Kontak --}}
         <div>
             <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Kontak Kami</h4>
-            <p class="text-sm font-semibold leading-relaxed">
-                Whatsapp:<br>+62 123 456 789<br><br>
-                Email:<br>cvprioritasgroup@gmail.com
-            </p>
+            <div class="text-sm font-semibold leading-relaxed space-y-4">
+                <div>
+                    <span class="block text-white/70">Whatsapp:</span>
+                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="hover:text-sugih-gold transition-colors block">
+                        +62 123 456 789
+                    </a>
+                </div>
+                <div>
+                    <span class="block text-white/70">Email:</span>
+                    <a href="mailto:cvprioritasgroup@gmail.com" class="hover:text-sugih-gold transition-colors block">
+                        cvprioritasgroup@gmail.com
+                    </a>
+                </div>
+            </div>
         </div>
 
         {{-- Peta lokasi --}}

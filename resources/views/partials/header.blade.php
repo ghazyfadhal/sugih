@@ -12,10 +12,10 @@
 
         {{-- Desktop nav --}}
         <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
-            <a href="{{ route('home') }}"
+            <a href="{{ request()->routeIs('home') ? '#top' : route('home') }}"
                class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('home') ? 'text-sugih-gold' : 'text-white/90' }}">Beranda</a>
-            <a href="{{ route('about') }}"
-               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('about') ? 'text-sugih-gold' : 'text-white/90' }}">Sejarah</a>
+            <a href="{{ request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami' }}"
+               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold text-white/90">Cerita Kami</a>
             <a href="{{ route('products.index') }}"
                class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold {{ request()->routeIs('products.*') ? 'text-sugih-gold' : 'text-white/90' }}">Produk</a>
             <a href="{{ route('articles.index') }}"
@@ -43,14 +43,16 @@
         x-transition:enter-start="opacity-0 -translate-y-4"
         x-transition:enter-end="opacity-100 translate-y-0"
         x-cloak
-        class="lg:hidden bg-sugih-green-800 border-t border-sugih-green-600"
+        class="absolute top-20 left-0 w-full bg-sugih-green-800 border-t border-sugih-green-600 shadow-xl"
     >
         <nav class="container-page py-6 flex flex-col gap-4 text-white font-bold">
-            <a href="{{ route('home') }}" class="py-2 hover:text-sugih-gold">Beranda</a>
-            <a href="{{ route('about') }}" class="py-2 hover:text-sugih-gold">Sejarah</a>
-            <a href="{{ route('products.index') }}" class="py-2 hover:text-sugih-gold">Produk</a>
-            <a href="{{ route('articles.index') }}" class="py-2 hover:text-sugih-gold">Berita</a>
-            <a href="{{ route('contact') }}" class="py-2 hover:text-sugih-gold">Kontak</a>
+            <a href="{{ request()->routeIs('home') ? '#top' : route('home') }}" class="py-2 hover:text-sugih-gold" @click="open = false">Beranda</a>
+            <a href="{{ request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami' }}" class="py-2 hover:text-sugih-gold" @click="open = false">Cerita Kami</a>
+            <a href="{{ route('about') }}" class="py-2 hover:text-sugih-gold" @click="open = false">Tentang Kami</a>
+            <a href="{{ route('products.index') }}" class="py-2 hover:text-sugih-gold" @click="open = false">Produk</a>
+            <a href="{{ route('articles.index') }}" class="py-2 hover:text-sugih-gold" @click="open = false">Berita</a>
+            <a href="{{ url('/karir') }}" class="py-2 hover:text-sugih-gold" @click="open = false">Karir</a>
+            <a href="#footer" class="py-2 hover:text-sugih-gold" @click="open = false">Kontak</a>
         </nav>
     </div>
 </header>

@@ -47,7 +47,7 @@
     {{-- ============================================================ --}}
     {{--  CERITA KAMI                                                  --}}
     {{-- ============================================================ --}}
-    <section class="relative py-24 lg:py-32 overflow-hidden" data-testid="cerita-section">
+    <section id="cerita-kami" class="relative py-24 lg:py-32 overflow-hidden" data-testid="cerita-section">
         <div class="absolute inset-0 -z-10">
             <img src="{{ asset('images/farmer.jpg') }}"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
