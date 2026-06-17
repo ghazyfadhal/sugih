@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KarirController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,11 @@ Route::get('/produk/{slug}',   [ProductController::class, 'show'])->name('produc
 Route::get('/berita',          [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/berita/{slug}',   [ArticleController::class, 'show'])->name('articles.show');
 
+// Karir
+Route::get('/karir',           [KarirController::class, 'index'])->name('karir.index');
+Route::get('/karir/{slug}',    [KarirController::class, 'show'])->name('karir.show');
+
 // Kontak
 Route::get('/kontak',          [ContactController::class, 'index'])->name('contact');
 Route::post('/kontak',         [ContactController::class, 'store'])->name('contact.store');
+

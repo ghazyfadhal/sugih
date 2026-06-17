@@ -88,7 +88,7 @@
             <a href="{{ route('articles.index') }}"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Berita</a>
-            <a href="{{ url('/karir') }}"
+            <a href="{{ route('karir.index') }}"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Karir</a>
             <a href="#footer"

@@ -88,7 +88,7 @@
             <a href="<?php echo e(route('articles.index')); ?>"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Berita</a>
-            <a href="<?php echo e(url('/karir')); ?>"
+            <a href="<?php echo e(route('karir.index')); ?>"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Karir</a>
             <a href="#footer"
