@@ -52,7 +52,7 @@
     
     
     
-    <section id="cerita-kami" class="relative py-24 lg:py-32 overflow-hidden" data-testid="cerita-section">
+    <section id="cerita-kami" class="relative min-h-[90vh] pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden scroll-mt-20" data-testid="cerita-section">
         <div class="absolute inset-0 -z-10">
             <img src="<?php echo e(asset('images/farmer.jpg')); ?>"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
@@ -131,10 +131,6 @@
                             <div class="text-white">
                                 <div class="flex flex-wrap items-center gap-3 mb-3">
                                     <h4 class="heading-display text-3xl sm:text-4xl"><?php echo e($product['name']); ?></h4>
-                                    <span class="inline-flex items-center px-4 py-1.5 rounded-full
-                                                 bg-sugih-gold/20 text-sugih-gold text-xs font-bold border border-sugih-gold/30">
-                                        Original
-                                    </span>
                                 </div>
 
                                 <p class="text-white/85 leading-relaxed">
@@ -177,11 +173,6 @@
                                         <div class="text-white">
                                             <div class="flex flex-wrap items-center gap-3 mb-3">
                                                 <h4 class="heading-display text-3xl sm:text-4xl"><?php echo e($product['name']); ?></h4>
-                                                <span class="inline-flex items-center px-4 py-1.5 rounded-full
-                                                             bg-sky-300/90 text-sugih-green-900 text-xs font-bold">
-                                                    <?php echo e($product['tagline']); ?>
-
-                                                </span>
                                             </div>
 
                                             <p class="text-white/85 leading-relaxed">

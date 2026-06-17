@@ -32,7 +32,7 @@ class HomeController extends Controller
         return [
             // ── Original Collection ──
             [
-                'name'        => 'Sugih Original',
+                'name'        => 'Sugih Coklat',
                 'collection'  => 'Original Collection',
                 'tagline'     => null,
                 'description' => 'Rasakan keaslian cita rasa Nusantara dalam setiap isapan. Varian SUGIH Original menghadirkan perpaduan tembakau pilihan dan cengkeh berkualitas, memberikan sensasi hangat, kuat, dan autentik khas kretek tradisional Indonesia. Hadir dengan harga Rp 10.000',

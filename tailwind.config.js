@@ -14,12 +14,20 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
-                display: ['"Inter"', ...defaultTheme.fontFamily.sans],
-                heading: ['"Inter"', ...defaultTheme.fontFamily.sans],
+                display: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
+                heading: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
             },
             colors: {
                 sugih: {
-                    // Deep tobacco green palette from UI
+                    // Expert Palette (Earth Tones)
+                    primary: '#296330',    // Hijau Tembakau
+                    brown: '#5C3D1E',      // Cokelat Tembakau
+                    terracotta: '#C87941', // Terakota/Tembaga (CTA)
+                    cream: '#F5F0E8',      // Krem/Putih Gading (Text)
+                    gold: '#B89A5A',       // Emas/Aksen Mewah
+                    black: '#2C2317',      // Hitam Tanah
+                    
+                    // Base Greens (Legacy, tweaked if needed)
                     green: {
                         50:  '#eef6ee',
                         100: '#d3e7d4',
@@ -28,15 +36,10 @@ export default {
                         400: '#3f8e4a',
                         500: '#1f6b2a',
                         600: '#155121',
-                        700: '#103f1a',  // header/footer base
+                        700: '#103f1a',
                         800: '#0b2c12',
                         900: '#06200b',
                     },
-                    gold:  '#d6a634',
-                    cream: '#f5ecd5',
-                    red:   '#c8312a',  // CTA red
-                    redDark: '#a8231d',
-                    leaf:  '#0e3a17',
                 },
             },
             backgroundImage: {

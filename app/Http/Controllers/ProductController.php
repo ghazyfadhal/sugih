@@ -14,8 +14,8 @@ class ProductController extends Controller
     {
         return [
             [
-                'name'        => 'Sugih Original',
-                'slug'        => 'sugih-original',
+                'name'        => 'Sugih Coklat',
+                'slug'        => 'sugih-coklat',
                 'collection'  => 'Original Collection',
                 'tagline'     => 'Kretek Asli Nusantara',
                 'description' => 'Rasakan keaslian cita rasa Nusantara dalam setiap isapan. Varian SUGIH Original menghadirkan perpaduan tembakau pilihan dan cengkeh berkualitas, memberikan sensasi hangat, kuat, dan autentik khas kretek tradisional Indonesia. Hadir dengan harga Rp 10.000',

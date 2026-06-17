@@ -50,7 +50,7 @@
                 <div class="order-2 md:order-1" data-aos="fade-right">
                     <p class="text-center text-white/90 text-sm sm:text-base leading-relaxed font-normal">
                         Titik penting dalam perjalanan kami datang ketika produk Sugih mendapat
-                        perhatian langsung dari Bupati Cianjur. Pengakuan ini bukan hanya kebanggaan,
+                        perhatian langsung dari Bupati Cianjur, dr. Mohammad Wahyu Ferdian, Sp.OG. Pengakuan ini bukan hanya kebanggaan,
                         tetapi menjadi dorongan besar untuk terus memperkuat identitas dan nilai lokal
                         yang kami bawa dalam setiap produk.
                     </p>
@@ -98,31 +98,31 @@
 
                 {{-- Member 1 --}}
                 <div class="text-center group" data-testid="member-1" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-48 h-48 mx-auto mb-5 rounded-full overflow-hidden border-4 border-sugih-gold/30
+                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-gold/30
                                 shadow-card-soft bg-sugih-green-700 flex items-center justify-center
                                 transition-transform duration-300 group-hover:scale-105">
                         {{-- Placeholder — akan diganti dengan foto asli --}}
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-sugih-gold/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-sugih-gold/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-1">Deni Rahmat</h3>
-                    <p class="text-sugih-gold text-sm font-semibold">Founder</p>
-                    <p class="text-white/60 text-xs mt-0.5">CV Prioritas Grup</p>
+                    <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1">Deni Rahmat</h3>
+                    <p class="text-sugih-gold text-base sm:text-lg font-semibold">Founder</p>
+                    <p class="text-white/70 text-sm sm:text-base mt-1">CV Prioritas Grup</p>
                 </div>
 
                 {{-- Member 2 --}}
                 <div class="text-center group" data-testid="member-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-48 h-48 mx-auto mb-5 rounded-full overflow-hidden border-4 border-sugih-gold/30
+                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-gold/30
                                 shadow-card-soft bg-sugih-green-700 flex items-center justify-center
                                 transition-transform duration-300 group-hover:scale-105">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-sugih-gold/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-sugih-gold/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-1">Ardjia Adiati Karisma</h3>
-                    <p class="text-sugih-gold text-sm font-semibold">Founder</p>
-                    <p class="text-white/60 text-xs mt-0.5">CV Prioritas Grup</p>
+                    <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1">Ardjia Adiati Karisma</h3>
+                    <p class="text-sugih-gold text-base sm:text-lg font-semibold">Founder</p>
+                    <p class="text-white/70 text-sm sm:text-base mt-1">CV Prioritas Grup</p>
                 </div>
 
             </div>
