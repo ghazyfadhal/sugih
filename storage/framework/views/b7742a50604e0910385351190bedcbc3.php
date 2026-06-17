@@ -68,5 +68,13 @@
             <p>&copy; <?php echo e(date('Y')); ?> CV. Prioritas Group. All rights reserved.</p>
         </div>
     </div>
+
+    
+    <div class="bg-sugih-black py-3 border-t border-sugih-gold/20">
+        <div class="container-page flex items-center justify-center gap-3 text-sugih-cream text-xs sm:text-sm font-semibold tracking-wide text-center">
+            <i class="fas fa-shield-alt text-sugih-gold text-base"></i>
+            <p>Diproduksi di bawah pengawasan ketat. Dilengkapi Pita Cukai Resmi Republik Indonesia.</p>
+        </div>
+    </div>
 </footer>
 <?php /**PATH D:\SUGIH\sugih\resources\views/partials/footer.blade.php ENDPATH**/ ?>

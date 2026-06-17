@@ -78,11 +78,6 @@
                               text-white font-bold text-sm shadow-lg">
                         Lamar Sekarang
                     </a>
-                    <a href="https://wa.me/628123456789?text=<?php echo e(urlencode('Halo, saya ingin bertanya mengenai lowongan ' . $karir['title'])); ?>"
-                       target="_blank" rel="noopener noreferrer"
-                       class="text-sugih-gold hover:text-white font-bold text-sm transition-colors">
-                        Ada pertanyaan?
-                    </a>
                 </div>
             </div>
 

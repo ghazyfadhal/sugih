@@ -29,6 +29,7 @@
 
     @include('partials.warning')
     @include('partials.footer')
+    @include('partials.floating-wa')
 
     @stack('scripts')
 </body>
