@@ -40,7 +40,7 @@
 
     /* Navbar Link Animated Underline */
     .nav-link {
-        @apply relative text-sugih-cream hover:text-sugih-gold transition-colors text-sm font-bold;
+        @apply relative text-sugih-cream hover:text-sugih-gold transition-colors text-base font-bold;
     }
     .nav-link::after {
         content: '';

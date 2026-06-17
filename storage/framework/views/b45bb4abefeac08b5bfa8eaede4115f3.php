@@ -72,22 +72,22 @@
         
         <nav class="flex-1 px-8 pt-6 pb-10 flex flex-col gap-1 overflow-y-auto">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Beranda</a>
             <a href="<?php echo e(route('about')); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Berita</a>
             <a href="<?php echo e(route('karir.index')); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Karir</a>
             <a href="#footer"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors"
+               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors"
                @click="open = false">Kontak</a>
         </nav>
     </div>

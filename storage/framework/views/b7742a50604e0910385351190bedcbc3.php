@@ -3,14 +3,14 @@
 
         
         <div>
-            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Alamat</h4>
-            <p class="text-sm font-semibold leading-relaxed">
+            <h4 class="heading-mark text-xl font-bold text-sugih-gold mb-3">Alamat</h4>
+            <p class="text-base font-semibold leading-relaxed">
                 Munjul, Kec. Cilaku, Kab. Cianjur,<br>
                 Jawa Barat 43285
             </p>
 
             
-            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3 mt-8">Sosial Media</h4>
+            <h4 class="heading-mark text-xl font-bold text-sugih-gold mb-3 mt-8">Sosial Media</h4>
             <div class="flex items-center gap-5">
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                    aria-label="Facebook"
@@ -32,8 +32,8 @@
 
         
         <div>
-            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Kontak Kami</h4>
-            <div class="text-sm font-semibold leading-relaxed space-y-4">
+            <h4 class="heading-mark text-xl font-bold text-sugih-gold mb-3">Kontak Kami</h4>
+            <div class="text-base font-semibold leading-relaxed space-y-4">
                 <div>
                     <span class="block text-white/70">Whatsapp:</span>
                     <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"
@@ -55,7 +55,7 @@
 
         
         <div>
-            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3">Peta Lokasi</h4>
+            <h4 class="heading-mark text-xl font-bold text-sugih-gold mb-3">Peta Lokasi</h4>
             <div class="inline-block bg-white p-2 rounded-lg">
                 <img src="<?php echo e(asset('images/qr-location.png')); ?>"
                      alt="QR Lokasi" class="h-28 w-28 object-contain">
@@ -64,7 +64,7 @@
     </div>
 
     <div class="border-t border-white/10">
-        <div class="container-page py-5 text-sm font-bold text-white/60 flex justify-center text-center">
+        <div class="container-page py-5 text-base font-bold text-white/60 flex justify-center text-center">
             <p>&copy; <?php echo e(date('Y')); ?> CV. Prioritas Group. All rights reserved.</p>
         </div>
     </div>
