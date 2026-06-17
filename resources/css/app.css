@@ -20,17 +20,34 @@
         background: theme('colors.sugih.gold');
         color: theme('colors.sugih.green.900');
     }
+    /* Hide Alpine elements before they are initialized to prevent flashing */
+    [x-cloak] {
+        display: none !important;
+    }
 }
 
 /* ---------------------------------------------------------------- *
- * Components
+ * Components & Micro-interactions
  * ---------------------------------------------------------------- */
 @layer components {
     .btn-primary {
         @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-               bg-sugih-red hover:bg-sugih-redDark transition-colors duration-300
+               bg-sugih-red hover:bg-sugih-redDark transition-all duration-300
                text-white font-semibold tracking-wide shadow-lg shadow-black/30
-               focus:outline-none focus:ring-2 focus:ring-sugih-red/60;
+               focus:outline-none focus:ring-2 focus:ring-sugih-red/60
+               hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(185,28,28,0.6)];
+    }
+
+    /* Navbar Link Animated Underline */
+    .nav-link {
+        @apply relative text-white hover:text-sugih-gold transition-colors text-sm font-bold;
+    }
+    .nav-link::after {
+        content: '';
+        @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-sugih-gold transition-all duration-300 ease-out;
+    }
+    .nav-link:hover::after {
+        @apply w-full;
     }
 
     .heading-display {

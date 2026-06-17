@@ -12,16 +12,17 @@
         <div class="absolute inset-0 -z-10 bg-sugih-green-900"></div>
 
         <div class="container-page">
-            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-14">
+            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
                 Berita
             </h1>
 
             @if(count($articles) > 0)
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    @foreach($articles as $article)
+                    @foreach($articles as $index => $article)
                         <a href="{{ route('articles.show', $article['slug']) }}"
                            class="group block rounded-2xl overflow-hidden bg-sugih-green-800 shadow-card-soft
-                                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                           data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
                             {{-- Image --}}
                             <div class="aspect-[16/10] overflow-hidden">
                                 <img src="{{ asset($article['image']) }}"

@@ -14,6 +14,9 @@
     
     <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <?php echo $__env->yieldPushContent('head'); ?>
 </head>
 <body id="top" class="min-h-screen flex flex-col bg-sugih-green-900">

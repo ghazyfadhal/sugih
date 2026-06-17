@@ -2,7 +2,7 @@
     x-data="{ open: false, scrolled: false }"
     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 30)"
     :class="scrolled ? 'bg-sugih-green-700/95 backdrop-blur-md shadow-lg' : 'bg-sugih-green-700'"
-    class="fixed top-0 inset-x-0 z-50 transition-all duration-300"
+    class="fixed top-0 inset-x-0 z-[60] transition-all duration-300"
 >
     <div class="container-page flex items-center justify-between h-20">
         
@@ -13,25 +13,31 @@
         
         <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
-               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold <?php echo e(request()->routeIs('home') ? 'text-sugih-gold' : 'text-white/90'); ?>">Beranda</a>
-            <a href="<?php echo e(request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami'); ?>"
-               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold text-white/90">Cerita Kami</a>
+               class="nav-link <?php echo e(request()->routeIs('home') ? 'text-sugih-gold' : 'text-white/90'); ?>">Beranda</a>
+            <a href="<?php echo e(route('about')); ?>"
+               class="nav-link <?php echo e(request()->routeIs('about') ? 'text-sugih-gold' : 'text-white/90'); ?>">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
-               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold <?php echo e(request()->routeIs('products.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Produk</a>
+               class="nav-link <?php echo e(request()->routeIs('products.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
-               class="text-base font-bold transition-colors duration-200 hover:text-sugih-gold <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Berita</a>
+               class="nav-link <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Berita</a>
         </nav>
 
         
         <button
             type="button"
             @click="open = !open"
-            class="text-sugih-gold p-2 -mr-2"
+            class="text-sugih-gold p-2 -mr-2 transition-transform duration-300"
+            :class="open ? 'rotate-90' : 'rotate-0'"
             aria-label="Toggle menu"
             data-testid="nav-toggle"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            
+            <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </button>
     </div>
@@ -47,7 +53,7 @@
         x-transition:leave-end="opacity-0"
         @click="open = false"
         x-cloak
-        class="fixed inset-0 bg-black/50 z-40"
+        class="fixed top-20 inset-x-0 bottom-0 bg-black/50 z-40"
     ></div>
 
     
@@ -60,28 +66,17 @@
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
         x-cloak
-        class="fixed top-0 right-0 h-full w-72 sm:w-80 bg-sugih-green-800 shadow-2xl z-50 flex flex-col"
+        class="fixed top-20 right-0 h-[calc(100vh-5rem)] w-72 sm:w-80 bg-sugih-green-800 shadow-2xl z-50 flex flex-col border-t border-white/10"
     >
-        
-        <div class="flex justify-end p-5">
-            <button @click="open = false" class="text-sugih-gold hover:text-white transition-colors" aria-label="Close menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
 
         
-        <nav class="flex-1 px-8 flex flex-col gap-1">
+        <nav class="flex-1 px-8 pt-6 pb-10 flex flex-col gap-1 overflow-y-auto">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Beranda</a>
-            <a href="<?php echo e(request()->routeIs('home') ? '#cerita-kami' : route('home') . '#cerita-kami'); ?>"
-               class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
-               @click="open = false">Cerita Kami</a>
             <a href="<?php echo e(route('about')); ?>"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
-               @click="open = false">Tentang Kami</a>
+               @click="open = false">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
                class="py-4 text-right text-lg font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
                @click="open = false">Produk</a>

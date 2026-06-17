@@ -9,10 +9,24 @@
                 Jawa Barat 43285
             </p>
 
-            <div class="flex items-center gap-4 mt-5 text-sugih-gold">
-                <a href="#" aria-label="Facebook"  class="hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
-                <a href="#" aria-label="Youtube"   class="hover:text-white"><i class="fab fa-youtube fa-lg"></i></a>
-                <a href="#" aria-label="Instagram" class="hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+            
+            <h4 class="heading-mark text-lg font-bold text-sugih-gold mb-3 mt-8">Sosial Media</h4>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                   aria-label="Facebook"
+                   class="text-white/70 hover:text-sugih-gold transition-colors">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                   aria-label="Instagram"
+                   class="text-white/70 hover:text-sugih-gold transition-colors">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCxmiZsp79b6qlUXFKyFHlGQ" target="_blank" rel="noopener noreferrer"
+                   aria-label="Youtube"
+                   class="text-white/70 hover:text-sugih-gold transition-colors">
+                    <i class="fab fa-youtube fa-lg"></i>
+                </a>
             </div>
         </div>
 
@@ -22,14 +36,18 @@
             <div class="text-sm font-semibold leading-relaxed space-y-4">
                 <div>
                     <span class="block text-white/70">Whatsapp:</span>
-                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer" class="hover:text-sugih-gold transition-colors block">
-                        +62 123 456 789
+                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 text-white hover:text-sugih-gold transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-gold mt-1">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+62 123 456 789</span>
                     </a>
                 </div>
-                <div>
+                <div class="pt-2">
                     <span class="block text-white/70">Email:</span>
-                    <a href="mailto:cvprioritasgroup@gmail.com" class="hover:text-sugih-gold transition-colors block">
-                        cvprioritasgroup@gmail.com
+                    <a href="mailto:cvprioritasgroup@gmail.com"
+                       class="inline-flex items-center gap-2 text-white hover:text-sugih-gold transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-gold mt-1">
+                        <i class="fas fa-envelope"></i>
+                        <span>cvprioritasgroup@gmail.com</span>
                     </a>
                 </div>
             </div>
@@ -47,13 +65,8 @@
 
     <div class="border-t border-white/10">
         <div class="container-page py-5 text-sm font-bold text-white/60 flex justify-center text-center">
-            <p>© <?php echo e(date('Y')); ?> CV. Prioritas Group. All rights reserved.</p>
+            <p>&copy; <?php echo e(date('Y')); ?> CV. Prioritas Group. All rights reserved.</p>
         </div>
     </div>
 </footer>
-
-
-<?php $__env->startPush('head'); ?>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<?php $__env->stopPush(); ?>
 <?php /**PATH D:\SUGIH\sugih\resources\views/partials/footer.blade.php ENDPATH**/ ?>

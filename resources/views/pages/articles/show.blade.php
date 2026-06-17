@@ -13,7 +13,7 @@
         {{-- Hero image (full-width) --}}
         <div class="w-full pt-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-                <div class="rounded-2xl overflow-hidden shadow-card-soft">
+                <div class="rounded-2xl overflow-hidden shadow-card-soft" data-aos="fade-up">
                     <img src="{{ asset($article['image']) }}"
                          alt="{{ $article['title'] }}"
                          class="w-full aspect-[16/9] object-cover">
@@ -25,7 +25,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
 
             {{-- Date --}}
-            <div class="mb-4">
+            <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
                 <span class="text-sugih-gold text-sm font-semibold tracking-wide">
                     {{ $article['date'] }}
                 </span>
@@ -33,12 +33,12 @@
             </div>
 
             {{-- Title --}}
-            <h1 class="heading-display text-white text-2xl sm:text-3xl md:text-4xl leading-tight mb-8">
+            <h1 class="heading-display text-white text-2xl sm:text-3xl md:text-4xl leading-tight mb-8" data-aos="fade-up" data-aos-delay="150">
                 {{ $article['title'] }}
             </h1>
 
             {{-- Body --}}
-            <div class="prose-sugih text-white/90 text-base sm:text-lg leading-relaxed space-y-6">
+            <div class="prose-sugih text-white/90 text-base sm:text-lg leading-relaxed space-y-6" data-aos="fade-up" data-aos-delay="200">
                 {!! $article['body'] !!}
             </div>
 

@@ -3,13 +3,26 @@ import './bootstrap';
 import Alpine from 'alpinejs';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+import AOS from 'aos';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
+import 'aos/dist/aos.css';
 
 window.Alpine = Alpine;
 Alpine.start();
+
+// Initialize AOS (Animate On Scroll)
+window.addEventListener('load', () => {
+    AOS.init({
+        once: true, // whether animation should happen only once - while scrolling down
+        duration: 800, // values from 0 to 3000, with step 50ms
+        easing: 'ease-out-cubic', // default easing for AOS animations
+        offset: 20, // offset (in px) from the original trigger point
+    });
+});
 
 /* ---------------- Carousels (Produk & Berita) ---------------- */
 document.addEventListener('DOMContentLoaded', () => {

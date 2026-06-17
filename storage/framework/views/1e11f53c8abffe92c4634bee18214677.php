@@ -16,11 +16,11 @@
 
         <div class="container-page text-center">
             <span class="inline-block bg-sugih-gold/20 text-sugih-gold text-xs font-bold uppercase tracking-widest
-                         px-4 py-1.5 rounded-full mb-4">
+                         px-4 py-1.5 rounded-full mb-4" data-aos="fade-down">
                 <?php echo e($karir['type']); ?> — <?php echo e($karir['location']); ?>
 
             </span>
-            <h1 class="heading-display text-white text-2xl sm:text-3xl md:text-4xl">
+            <h1 class="heading-display text-white text-2xl sm:text-3xl md:text-4xl" data-aos="fade-up">
                 <?php echo e($karir['title']); ?>
 
             </h1>
@@ -36,7 +36,7 @@
 
         <div class="container-page">
             <div class="max-w-3xl mx-auto bg-sugih-green-800/80 backdrop-blur-sm border border-white/10
-                        rounded-2xl p-8 sm:p-10 lg:p-12 shadow-card-soft">
+                        rounded-2xl p-8 sm:p-10 lg:p-12 shadow-card-soft" data-aos="fade-up">
 
                 
                 <h2 class="text-white font-bold text-xl sm:text-2xl mb-8">

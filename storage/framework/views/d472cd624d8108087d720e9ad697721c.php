@@ -13,10 +13,10 @@
         </div>
 
         <div class="container-page text-center">
-            <h1 class="heading-display text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-6">
+            <h1 class="heading-display text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-6" data-aos="fade-up">
                 Karir
             </h1>
-            <p class="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
+            <p class="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Sumber daya manusia adalah kekuatan utama dalam membangun SUGIH. Kami percaya bahwa setiap individu memiliki
                 potensi untuk tumbuh dan berkontribusi melalui keterampilan dan kreativitasnya. Bersama kami, jadilah bagian dari perjalanan
                 dalam mengembangkan cita rasa kretek lokal yang berkelas dan bernilai budaya tinggi.
@@ -34,14 +34,15 @@
         </div>
 
         <div class="container-page">
-            <h2 class="heading-display text-center text-white text-3xl sm:text-4xl md:text-5xl mb-12">
+            <h2 class="heading-display text-center text-white text-3xl sm:text-4xl md:text-5xl mb-12" data-aos="fade-up">
                 Buka Potensimu
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                <?php $__currentLoopData = $allKarir; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php $__currentLoopData = $allKarir; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $job): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="bg-sugih-green-800/80 backdrop-blur-sm border border-white/10 rounded-xl p-6 flex flex-col
-                                hover:border-sugih-gold/40 transition-all duration-300">
+                                hover:border-sugih-gold/40 transition-all duration-300"
+                         data-aos="fade-up" data-aos-delay="<?php echo e(($index % 3) * 100); ?>">
                         <h3 class="text-white font-bold text-base sm:text-lg mb-4 leading-snug">
                             <?php echo e($job['title']); ?>
 

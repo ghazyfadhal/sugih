@@ -16,15 +16,15 @@
         <div class="container-page">
 
             
-            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-4">
+            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
                 Produk Kami
             </h1>
-            <div class="flex justify-center mb-16">
+            <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="100">
                 <div class="w-20 h-1 bg-sugih-red rounded-full"></div>
             </div>
 
             
-            <div class="relative max-w-6xl mx-auto" x-data="productShowcase()" x-cloak>
+            <div class="relative max-w-6xl mx-auto" x-data="productShowcase()" x-cloak data-aos="fade-up" data-aos-delay="200">
 
                 <div class="swiper product-page-swiper">
                     <div class="swiper-wrapper items-center">

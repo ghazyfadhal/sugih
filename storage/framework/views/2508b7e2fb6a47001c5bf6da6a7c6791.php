@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'SUGIH — Semua Ingin Sugih'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -18,24 +20,29 @@
 
         <div class="container-page py-24 animate-fade-up">
             
-            <div class="flex justify-center mb-8">
+            <div class="flex justify-center mb-8" data-aos="fade-down">
                 <img src="<?php echo e(asset('images/logo-sugih.png')); ?>"
                      alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
             </div>
 
-            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl">
+            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl" data-aos="fade-up" data-aos-delay="100">
                 Semua Ingin Sugih
             </h1>
 
-            <p class="mt-8 max-w-2xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal">
+            <p class="mt-8 max-w-2xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
                 Waktumu terbatas jangan habiskan waktu untuk mencari rasa yang lain.<br>
                 Sebab yang mantap sedang kamu buka sekarang dan pencarianmu sudah tuntas.<br>
                 Harum Berkelas dan Berkualitas.
             </p>
 
-            <div class="mt-12">
-                <a href="<?php echo e(route('about')); ?>" class="btn-primary" data-testid="hero-cta">
-                    Lebih lanjut
+            <div class="mt-16 flex justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="#cerita-kami"
+                   class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-gold transition-colors animate-bounce"
+                   aria-label="Scroll ke bawah"
+                   data-testid="hero-scroll-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
                 </a>
             </div>
         </div>
@@ -53,7 +60,7 @@
         </div>
 
         <div class="container-page">
-            <div class="max-w-xl bg-sugih-green-700/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft">
+            <div class="max-w-xl bg-sugih-green-700/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft" data-aos="fade-right">
                 <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap">
                     Cerita Kami
                 </h2>
@@ -93,16 +100,13 @@
         </div>
 
         <div class="container-page">
-            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-6">
+            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-16" data-aos="fade-up">
                 Produk Kami
             </h2>
-            <p class="text-center text-white/60 text-sm sm:text-base mb-16 max-w-2xl mx-auto">
-                Dua koleksi berbeda, satu standar kualitas — diracik dari tembakau pilihan tanah Cianjur.
-            </p>
 
             
             <div class="mb-20" data-testid="original-collection">
-                <div class="flex items-center gap-4 mb-10">
+                <div class="flex items-center gap-4 mb-10" data-aos="fade-up">
                     <div class="h-px flex-1 bg-sugih-gold/30"></div>
                     <h3 class="heading-display text-sugih-gold text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
                         Original Collection
@@ -145,7 +149,7 @@
 
             
             <div data-testid="flavour-collection">
-                <div class="flex items-center gap-4 mb-10">
+                <div class="flex items-center gap-4 mb-10" data-aos="fade-up">
                     <div class="h-px flex-1 bg-sky-300/30"></div>
                     <h3 class="heading-display text-sky-300 text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
                         Flavour Collection
@@ -225,7 +229,7 @@
         </div>
 
         <div class="container-page">
-            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14">
+            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
                 Berita Terkini
             </h2>
 
