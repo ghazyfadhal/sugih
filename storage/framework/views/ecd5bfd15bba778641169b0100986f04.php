@@ -5,7 +5,10 @@
     <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
         
         <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold tracking-widest text-[#E6C981] mb-2">SUGIH <span class="text-black">ADMIN</span></h2>
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="<?php echo e(asset('images/admin-logo.svg')); ?>" alt="SUGIH Admin Logo" class="h-16 w-auto">
+                <span class="text-xl font-light tracking-widest text-gray-500 mt-2">ADMIN</span>
+            </div>
             <p class="text-gray-500 text-sm">Masuk untuk mengelola website</p>
         </div>
 
@@ -30,7 +33,7 @@
             </div>
 
             <div class="pt-2">
-                <button type="submit" class="w-full bg-black text-white rounded-xl py-3 px-4 font-semibold hover:bg-gray-900 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-black">
+                <button type="submit" class="w-full bg-sugih-green-900 text-sugih-gold rounded-xl py-3 px-4 font-semibold hover:bg-sugih-green-800 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-sugih-green-900">
                     Masuk ke Dashboard
                 </button>
             </div>

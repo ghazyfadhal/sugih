@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-gray-800">Daftar Artikel</h2>
         <p class="text-gray-500 text-sm">Kelola berita dan artikel di website SUGIH.</p>
     </div>
-    <a href="<?php echo e(route('admin.articles.create')); ?>" class="bg-black text-white px-5 py-2.5 rounded-xl font-semibold hover:bg-gray-900 transition-colors flex items-center">
+    <a href="<?php echo e(route('admin.articles.create')); ?>" class="bg-sugih-green-900 text-sugih-gold px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-green-800 transition-colors flex items-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
         Tambah Artikel
     </a>
@@ -39,7 +39,7 @@
                 <tr class="hover:bg-gray-50 transition-colors">
                     <td class="px-6 py-4">
                         <?php if($article->image): ?>
-                            <img src="<?php echo e(Storage::url($article->image)); ?>" class="w-24 h-16 object-cover rounded-lg border border-gray-200">
+                            <img src="<?php echo e($article->image_url); ?>" class="w-24 h-16 object-cover rounded-lg border border-gray-200">
                         <?php else: ?>
                             <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-xs">
                                 No Image
