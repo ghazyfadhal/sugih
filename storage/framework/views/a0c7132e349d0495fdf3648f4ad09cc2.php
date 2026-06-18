@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Produk — SUGIH'); ?>
 <?php $__env->startSection('description', 'Jelajahi seluruh varian rokok kretek SUGIH — Original Collection dan Flavour Collection.'); ?>
 
@@ -31,7 +33,7 @@
                         <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="swiper-slide flex justify-center" data-index="<?php echo e($index); ?>">
                                 <div class="product-slide-inner transition-all duration-500 flex justify-center">
-                                    <img src="<?php echo e(asset($product['image'])); ?>"
+                                    <img src="<?php echo e($product->image_url); ?>"
                                          alt="<?php echo e($product['name']); ?>"
                                          class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-2xl
                                                 transition-all duration-500">

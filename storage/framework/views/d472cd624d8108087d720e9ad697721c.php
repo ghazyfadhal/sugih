@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Karir — SUGIH'); ?>
 <?php $__env->startSection('description', 'Bergabunglah bersama tim SUGIH. Temukan peluang karir di CV. Prioritas Group.'); ?>
 
@@ -47,14 +49,10 @@
                             <?php echo e($job['title']); ?>
 
                         </h3>
-                        <ul class="text-white/80 text-sm leading-relaxed space-y-2 flex-1 mb-6">
-                            <?php $__currentLoopData = $job['summary']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $point): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li class="flex gap-2">
-                                    <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                    <span><?php echo e($point); ?></span>
-                                </li>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </ul>
+                        <p class="text-white/80 text-sm leading-relaxed flex-1 mb-6">
+                            <?php echo e(Str::limit($job['description'], 120)); ?>
+
+                        </p>
                         <a href="<?php echo e(route('karir.show', $job['slug'])); ?>"
                            class="inline-block text-center border-2 border-sugih-gold text-sugih-gold font-bold
                                   py-2 px-6 rounded-lg hover:bg-sugih-gold hover:text-sugih-green-900

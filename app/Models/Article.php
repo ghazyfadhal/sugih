@@ -15,13 +15,22 @@ class Article extends Model
         'title',
         'slug',
         'excerpt',
-        'body',
-        'cover_path',
+        'content',
+        'image',
         'author',
-        'published_at',
+        'is_published',
     ];
 
+    public function getImageUrlAttribute()
+    {
+        if (!$this->image) return null;
+        if (\Illuminate\Support\Str::startsWith($this->image, 'images/')) {
+            return asset($this->image);
+        }
+        return \Illuminate\Support\Facades\Storage::url($this->image);
+    }
+
     protected $casts = [
-        'published_at' => 'datetime',
+        'is_published' => 'boolean',
     ];
 }

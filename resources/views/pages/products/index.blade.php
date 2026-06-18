@@ -33,7 +33,7 @@
                         @foreach($products as $index => $product)
                             <div class="swiper-slide flex justify-center" data-index="{{ $index }}">
                                 <div class="product-slide-inner transition-all duration-500 flex justify-center">
-                                    <img src="{{ asset($product['image']) }}"
+                                    <img src="{{ $product->image_url }}"
                                          alt="{{ $product['name'] }}"
                                          class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-2xl
                                                 transition-all duration-500">

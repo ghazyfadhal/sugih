@@ -14,17 +14,23 @@ class Product extends Model
     protected $fillable = [
         'name',
         'slug',
+        'collection',
         'tagline',
         'description',
-        'price',
-        'image_path',
+        'image',
         'is_active',
-        'sort_order',
     ];
 
+    public function getImageUrlAttribute()
+    {
+        if (!$this->image) return null;
+        if (\Illuminate\Support\Str::startsWith($this->image, 'images/')) {
+            return asset($this->image);
+        }
+        return \Illuminate\Support\Facades\Storage::url($this->image);
+    }
+
     protected $casts = [
-        'price'     => 'integer',
         'is_active' => 'boolean',
-        'sort_order'=> 'integer',
     ];
 }

@@ -47,10 +47,10 @@
                 <div class="mb-8">
                     <h3 class="text-white font-bold text-base sm:text-lg mb-4">Deskripsi Pekerjaan:</h3>
                     <ul class="text-white/85 text-sm sm:text-base leading-relaxed space-y-3">
-                        @foreach($karir['description'] as $desc)
+                        @foreach(explode("\n", trim($karir['description'])) as $desc)
                             <li class="flex gap-3">
                                 <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                <span>{{ $desc }}</span>
+                                <span>{{ trim($desc) }}</span>
                             </li>
                         @endforeach
                     </ul>
@@ -60,10 +60,10 @@
                 <div class="mb-10">
                     <h3 class="text-white font-bold text-base sm:text-lg mb-4">Kualifikasi:</h3>
                     <ul class="text-white/85 text-sm sm:text-base leading-relaxed space-y-3">
-                        @foreach($karir['qualifications'] as $qual)
+                        @foreach(explode("\n", trim($karir['requirements'])) as $qual)
                             <li class="flex gap-3">
                                 <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                <span>{{ $qual }}</span>
+                                <span>{{ trim($qual) }}</span>
                             </li>
                         @endforeach
                     </ul>

@@ -74,3 +74,147 @@
 #18 D:/Code/Jokian/sugih/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
 #19 {main}
 "} 
+[2026-06-18 11:55:35] local.ERROR: Class "App\Models\User" not found {"exception":"[object] (Error(code: 0): Class \"App\\Models\\User\" not found at D:/SUGIH/sugih/database/seeders/AdminUserSeeder.php:15)
+[stacktrace]
+#0 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database/Seeders/AdminUserSeeder->run()
+#1 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#2 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#3 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#4 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#5 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(188): Illuminate/Container/Container->call(Array, Array)
+#6 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(197): Illuminate/Database/Seeder->Illuminate/Database/{closure}()
+#7 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate/Database/Seeder->__invoke()
+#8 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate/Database/Console/Seeds/SeedCommand->Illuminate/Database/Console/Seeds/{closure}()
+#9 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate/Database/Eloquent/Model::unguarded(Object(Closure))
+#10 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Seeds/SeedCommand->handle()
+#11 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#12 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#13 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#14 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#15 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate/Container/Container->call(Array)
+#16 D:/SUGIH/sugih/vendor/symfony/console/Command/Command.php(341): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#17 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#18 D:/SUGIH/sugih/vendor/symfony/console/Application.php(1117): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#19 D:/SUGIH/sugih/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Seeds/SeedCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#20 D:/SUGIH/sugih/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#21 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#22 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#23 D:/SUGIH/sugih/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#24 {main}
+"} 
+[2026-06-18 12:09:55] local.ERROR: Cannot use Illuminate\Http\Request as Request because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use Illuminate\\Http\\Request as Request because the name is already in use at D:/SUGIH/sugih/app/Http/Controllers/AdminController.php:7)
+[stacktrace]
+#0 {main}
+"} 
+[2026-06-18 12:32:30] local.ERROR: SQLSTATE[42703]: Undefined column: 7 ERROR:  column "is_published" of relation "articles" does not exist
+LINE 1: ...articles" ("slug", "title", "excerpt", "content", "is_publis...
+                                                             ^ (Connection: pgsql, SQL: insert into "articles" ("slug", "title", "excerpt", "content", "is_published", "updated_at", "created_at") values (cv-prioritas-grup-patuhi-cukai, CV. PRIORITAS GRUP Patuhi Cukai, CV. Prioritas Grup berkomitmen mematuhi seluruh regulasi cukai pemerintah dalam memproduksi rokok kretek SUGIH., <p>CV. Prioritas Grup, produsen rokok kretek SUGIH asal Cianjur, menegaskan komitmennya untuk mematuhi seluruh regulasi cukai yang ditetapkan oleh pemerintah Indonesia. Langkah ini diambil sebagai bentuk tanggung jawab perusahaan terhadap negara dan masyarakat.</p>
+<p>Dalam pernyataan resminya, manajemen CV. Prioritas Grup menyatakan bahwa kepatuhan terhadap regulasi cukai merupakan bagian integral dari nilai-nilai perusahaan. &ldquo;Kami percaya bahwa kepatuhan bukan hanya kewajiban hukum, tetapi juga cerminan dari integritas kami sebagai produsen yang bertanggung jawab,&rdquo; ungkap Deni Rahmat, Founder CV. Prioritas Grup.</p>
+<p>Perusahaan telah memastikan bahwa seluruh produk SUGIH yang beredar di pasaran telah dilengkapi dengan pita cukai resmi sesuai ketentuan yang berlaku. Selain itu, CV. Prioritas Grup juga aktif berkoordinasi dengan Direktorat Jenderal Bea dan Cukai untuk memastikan kepatuhan yang berkelanjutan.</p>
+<p>Komitmen ini sejalan dengan visi SUGIH untuk menjadi merek kretek lokal yang tidak hanya berkualitas, tetapi juga legal dan terpercaya. Dengan mematuhi regulasi cukai, CV. Prioritas Grup berharap dapat memberikan kontribusi positif bagi pendapatan negara sekaligus melindungi konsumen dari produk-produk ilegal.</p>
+<p>&ldquo;Kami mengajak seluruh pelaku industri rokok untuk bersama-sama mematuhi regulasi cukai. Ini bukan hanya soal bisnis, tetapi juga soal tanggung jawab kita bersama,&rdquo; tambah Deni Rahmat.</p>, 1, 2026-06-18 12:32:30, 2026-06-18 12:32:30) returning "id") {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42703): SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"is_published\" of relation \"articles\" does not exist
+LINE 1: ...articles\" (\"slug\", \"title\", \"excerpt\", \"content\", \"is_publis...
+                                                             ^ (Connection: pgsql, SQL: insert into \"articles\" (\"slug\", \"title\", \"excerpt\", \"content\", \"is_published\", \"updated_at\", \"created_at\") values (cv-prioritas-grup-patuhi-cukai, CV. PRIORITAS GRUP Patuhi Cukai, CV. Prioritas Grup berkomitmen mematuhi seluruh regulasi cukai pemerintah dalam memproduksi rokok kretek SUGIH., <p>CV. Prioritas Grup, produsen rokok kretek SUGIH asal Cianjur, menegaskan komitmennya untuk mematuhi seluruh regulasi cukai yang ditetapkan oleh pemerintah Indonesia. Langkah ini diambil sebagai bentuk tanggung jawab perusahaan terhadap negara dan masyarakat.</p>
+<p>Dalam pernyataan resminya, manajemen CV. Prioritas Grup menyatakan bahwa kepatuhan terhadap regulasi cukai merupakan bagian integral dari nilai-nilai perusahaan. &ldquo;Kami percaya bahwa kepatuhan bukan hanya kewajiban hukum, tetapi juga cerminan dari integritas kami sebagai produsen yang bertanggung jawab,&rdquo; ungkap Deni Rahmat, Founder CV. Prioritas Grup.</p>
+<p>Perusahaan telah memastikan bahwa seluruh produk SUGIH yang beredar di pasaran telah dilengkapi dengan pita cukai resmi sesuai ketentuan yang berlaku. Selain itu, CV. Prioritas Grup juga aktif berkoordinasi dengan Direktorat Jenderal Bea dan Cukai untuk memastikan kepatuhan yang berkelanjutan.</p>
+<p>Komitmen ini sejalan dengan visi SUGIH untuk menjadi merek kretek lokal yang tidak hanya berkualitas, tetapi juga legal dan terpercaya. Dengan mematuhi regulasi cukai, CV. Prioritas Grup berharap dapat memberikan kontribusi positif bagi pendapatan negara sekaligus melindungi konsumen dari produk-produk ilegal.</p>
+<p>&ldquo;Kami mengajak seluruh pelaku industri rokok untuk bersama-sama mematuhi regulasi cukai. Ini bukan hanya soal bisnis, tetapi juga soal tanggung jawab kita bersama,&rdquo; tambah Deni Rahmat.</p>, 1, 2026-06-18 12:32:30, 2026-06-18 12:32:30) returning \"id\") at D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php:825)
+[stacktrace]
+#0 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"ar...', Array, Object(Closure))
+#1 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('insert into \"ar...', Array, Object(Closure))
+#2 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(385): Illuminate/Database/Connection->select('insert into \"ar...', Array, false)
+#3 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php(24): Illuminate/Database/Connection->selectFromWriteConnection('insert into \"ar...', Array)
+#4 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3766): Illuminate/Database/Query/Processors/PostgresProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into \"ar...', Array, 'id')
+#5 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#6 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1359): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#7 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1324): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#8 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#9 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#10 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Models/Article))
+#11 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Models/Article), Object(Closure))
+#12 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#13 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#14 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#15 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#16 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#17 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#18 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#19 D:/SUGIH/sugih/database/seeders/DummyDataSeeder.php(70): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#20 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database/Seeders/DummyDataSeeder->run()
+#21 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#22 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#23 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#24 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#25 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(188): Illuminate/Container/Container->call(Array, Array)
+#26 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(197): Illuminate/Database/Seeder->Illuminate/Database/{closure}()
+#27 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate/Database/Seeder->__invoke()
+#28 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate/Database/Console/Seeds/SeedCommand->Illuminate/Database/Console/Seeds/{closure}()
+#29 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate/Database/Eloquent/Model::unguarded(Object(Closure))
+#30 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Seeds/SeedCommand->handle()
+#31 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#32 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#33 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#34 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#35 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate/Container/Container->call(Array)
+#36 D:/SUGIH/sugih/vendor/symfony/console/Command/Command.php(341): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#37 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#38 D:/SUGIH/sugih/vendor/symfony/console/Application.php(1117): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#39 D:/SUGIH/sugih/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Seeds/SeedCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#40 D:/SUGIH/sugih/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#41 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#42 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#43 D:/SUGIH/sugih/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#44 {main}
+
+[previous exception] [object] (PDOException(code: 42703): SQLSTATE[42703]: Undefined column: 7 ERROR:  column \"is_published\" of relation \"articles\" does not exist
+LINE 1: ...articles\" (\"slug\", \"title\", \"excerpt\", \"content\", \"is_publis...
+                                                             ^ at D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php:412)
+[stacktrace]
+#0 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(412): PDOStatement->execute()
+#1 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(812): Illuminate/Database/Connection->Illuminate/Database/{closure}('insert into \"ar...', Array)
+#2 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(779): Illuminate/Database/Connection->runQueryCallback('insert into \"ar...', Array, Object(Closure))
+#3 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(398): Illuminate/Database/Connection->run('insert into \"ar...', Array, Object(Closure))
+#4 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Connection.php(385): Illuminate/Database/Connection->select('insert into \"ar...', Array, false)
+#5 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/PostgresProcessor.php(24): Illuminate/Database/Connection->selectFromWriteConnection('insert into \"ar...', Array)
+#6 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(3766): Illuminate/Database/Query/Processors/PostgresProcessor->processInsertGetId(Object(Illuminate/Database/Query/Builder), 'insert into \"ar...', Array, 'id')
+#7 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(2120): Illuminate/Database/Query/Builder->insertGetId(Array, 'id')
+#8 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1359): Illuminate/Database/Eloquent/Builder->__call('insertGetId', Array)
+#9 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1324): Illuminate/Database/Eloquent/Model->insertAndSetId(Object(Illuminate/Database/Eloquent/Builder), Array)
+#10 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1163): Illuminate/Database/Eloquent/Model->performInsert(Object(Illuminate/Database/Eloquent/Builder))
+#11 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1128): Illuminate/Database/Eloquent/Model->save()
+#12 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Support/helpers.php(399): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}(Object(App/Models/Article))
+#13 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1127): tap(Object(App/Models/Article), Object(Closure))
+#14 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->create(Array)
+#15 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1864): Illuminate/Database/Eloquent/Builder->Illuminate/Database/Eloquent/{closure}()
+#16 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(634): Illuminate/Database/Eloquent/Builder->withSavepointIfNeeded(Object(Closure))
+#17 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(621): Illuminate/Database/Eloquent/Builder->createOrFirst(Array, Array)
+#18 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php(23): Illuminate/Database/Eloquent/Builder->firstOrCreate(Array, Array)
+#19 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2372): Illuminate/Database/Eloquent/Model->forwardCallTo(Object(Illuminate/Database/Eloquent/Builder), 'firstOrCreate', Array)
+#20 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2384): Illuminate/Database/Eloquent/Model->__call('firstOrCreate', Array)
+#21 D:/SUGIH/sugih/database/seeders/DummyDataSeeder.php(70): Illuminate/Database/Eloquent/Model::__callStatic('firstOrCreate', Array)
+#22 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Database/Seeders/DummyDataSeeder->run()
+#23 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#24 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#25 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#26 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#27 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(188): Illuminate/Container/Container->call(Array, Array)
+#28 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Seeder.php(197): Illuminate/Database/Seeder->Illuminate/Database/{closure}()
+#29 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(70): Illuminate/Database/Seeder->__invoke()
+#30 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/GuardsAttributes.php(155): Illuminate/Database/Console/Seeds/SeedCommand->Illuminate/Database/Console/Seeds/{closure}()
+#31 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(69): Illuminate/Database/Eloquent/Model::unguarded(Object(Closure))
+#32 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate/Database/Console/Seeds/SeedCommand->handle()
+#33 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate/Container/BoundMethod::Illuminate/Container/{closure}()
+#34 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate/Container/Util::unwrapIfClosure(Object(Closure))
+#35 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate/Container/BoundMethod::callBoundMethod(Object(Illuminate/Foundation/Application), Array, Object(Closure))
+#36 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate/Container/BoundMethod::call(Object(Illuminate/Foundation/Application), Array, Array, NULL)
+#37 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate/Container/Container->call(Array)
+#38 D:/SUGIH/sugih/vendor/symfony/console/Command/Command.php(341): Illuminate/Console/Command->execute(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#39 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony/Component/Console/Command/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Illuminate/Console/OutputStyle))
+#40 D:/SUGIH/sugih/vendor/symfony/console/Application.php(1117): Illuminate/Console/Command->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#41 D:/SUGIH/sugih/vendor/symfony/console/Application.php(356): Symfony/Component/Console/Application->doRunCommand(Object(Illuminate/Database/Console/Seeds/SeedCommand), Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#42 D:/SUGIH/sugih/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#43 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#44 D:/SUGIH/sugih/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#45 D:/SUGIH/sugih/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#46 {main}
+"} 

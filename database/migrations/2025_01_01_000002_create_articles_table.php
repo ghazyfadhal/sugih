@@ -13,10 +13,10 @@ return new class extends Migration
             $table->string('title', 200);
             $table->string('slug', 220)->unique();
             $table->text('excerpt')->nullable();
-            $table->longText('body')->nullable();
-            $table->string('cover_path')->nullable();
+            $table->longText('content')->nullable();
+            $table->string('image')->nullable();
             $table->string('author', 120)->nullable();
-            $table->timestampTz('published_at')->nullable();
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
     }

@@ -36,3 +36,21 @@ Route::get('/karir/{slug}',    [KarirController::class, 'show'])->name('karir.sh
 Route::get('/kontak',          [ContactController::class, 'index'])->name('contact');
 Route::post('/kontak',         [ContactController::class, 'store'])->name('contact.store');
 
+// Admin Panel Routes
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\AdminArticleController;
+use App\Http\Controllers\AdminCareerController;
+
+Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('login');
+Route::post('/admin/login', [AdminController::class, 'login']);
+
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+    
+    // CRUD
+    Route::resource('products', AdminProductController::class);
+    Route::resource('articles', AdminArticleController::class);
+    Route::resource('careers', AdminCareerController::class);
+});

@@ -12,12 +12,11 @@ return new class extends Migration
             $table->id();
             $table->string('name', 160);
             $table->string('slug', 180)->unique();
+            $table->enum('collection', ['Original Collection', 'Flavour Collection']);
             $table->string('tagline', 120)->nullable();
             $table->text('description')->nullable();
-            $table->unsignedInteger('price')->nullable();
-            $table->string('image_path')->nullable();
+            $table->string('image')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
         });
     }

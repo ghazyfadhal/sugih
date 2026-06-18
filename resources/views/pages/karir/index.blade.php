@@ -48,14 +48,9 @@
                         <h3 class="text-white font-bold text-base sm:text-lg mb-4 leading-snug">
                             {{ $job['title'] }}
                         </h3>
-                        <ul class="text-white/80 text-sm leading-relaxed space-y-2 flex-1 mb-6">
-                            @foreach($job['summary'] as $point)
-                                <li class="flex gap-2">
-                                    <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                    <span>{{ $point }}</span>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <p class="text-white/80 text-sm leading-relaxed flex-1 mb-6">
+                            {{ Str::limit($job['description'], 120) }}
+                        </p>
                         <a href="{{ route('karir.show', $job['slug']) }}"
                            class="inline-block text-center border-2 border-sugih-gold text-sugih-gold font-bold
                                   py-2 px-6 rounded-lg hover:bg-sugih-gold hover:text-sugih-green-900

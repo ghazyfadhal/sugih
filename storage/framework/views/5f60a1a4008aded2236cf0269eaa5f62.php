@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', 'Berita — SUGIH'); ?>
 <?php $__env->startSection('description', 'Berita dan artikel terbaru dari SUGIH — kretek berkualitas dari tanah Cianjur.'); ?>
 
@@ -23,14 +25,14 @@
                            data-aos="fade-up" data-aos-delay="<?php echo e(($index % 3) * 100); ?>">
                             
                             <div class="aspect-[16/10] overflow-hidden">
-                                <img src="<?php echo e(asset($article['image'])); ?>"
+                                <img src="<?php echo e($article->image_url); ?>"
                                      alt="<?php echo e($article['title']); ?>"
                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             </div>
                             
                             <div class="p-6">
                                 <span class="text-sugih-gold text-xs font-semibold tracking-wide uppercase">
-                                    <?php echo e($article['date']); ?>
+                                    <?php echo e($article->created_at->format('d F Y')); ?>
 
                                 </span>
                                 <h3 class="text-white font-bold text-lg mt-2 mb-3 leading-snug group-hover:text-sugih-gold transition-colors">

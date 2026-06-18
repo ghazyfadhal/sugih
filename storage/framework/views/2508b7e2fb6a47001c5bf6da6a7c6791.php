@@ -122,7 +122,7 @@
                                         transition-transform duration-300 hover:-translate-y-1">
                             <div class="flex justify-center">
                                 <img
-                                    src="<?php echo e(asset($product['image'])); ?>"
+                                    src="<?php echo e($product->image_url); ?>"
                                     alt="<?php echo e($product['name']); ?>"
                                     class="h-52 sm:h-64 w-auto object-contain drop-shadow-2xl"
                                 >
@@ -164,7 +164,7 @@
                                                     transition-transform duration-300 hover:-translate-y-1">
                                         <div class="flex justify-center">
                                             <img
-                                                src="<?php echo e(asset($product['image'])); ?>"
+                                                src="<?php echo e($product->image_url); ?>"
                                                 alt="<?php echo e($product['name']); ?>"
                                                 class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl"
                                             >
@@ -233,7 +233,7 @@
                             <div class="swiper-slide">
                                 <a href="<?php echo e(route('articles.show', $article['slug'])); ?>"
                                    class="block relative rounded-3xl overflow-hidden shadow-card-soft group">
-                                    <img src="<?php echo e(asset($article['image'])); ?>"
+                                    <img src="<?php echo e($article->image_url); ?>"
                                          alt="<?php echo e($article['title']); ?>"
                                          class="w-full h-72 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent"></div>

@@ -25,14 +25,14 @@
                            data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
                             {{-- Image --}}
                             <div class="aspect-[16/10] overflow-hidden">
-                                <img src="{{ asset($article['image']) }}"
+                                <img src="{{ $article->image_url }}"
                                      alt="{{ $article['title'] }}"
                                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             </div>
                             {{-- Content --}}
                             <div class="p-6">
                                 <span class="text-sugih-gold text-xs font-semibold tracking-wide uppercase">
-                                    {{ $article['date'] }}
+                                    {{ $article->created_at->format('d F Y') }}
                                 </span>
                                 <h3 class="text-white font-bold text-lg mt-2 mb-3 leading-snug group-hover:text-sugih-gold transition-colors">
                                     {{ $article['title'] }}

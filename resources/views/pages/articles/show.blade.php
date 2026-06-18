@@ -14,7 +14,7 @@
         <div class="w-full pt-20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
                 <div class="rounded-2xl overflow-hidden shadow-card-soft" data-aos="fade-up">
-                    <img src="{{ asset($article['image']) }}"
+                    <img src="{{ $article->image_url }}"
                          alt="{{ $article['title'] }}"
                          class="w-full aspect-[16/9] object-cover">
                 </div>
@@ -27,7 +27,7 @@
             {{-- Date --}}
             <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
                 <span class="text-sugih-gold text-sm font-semibold tracking-wide">
-                    {{ $article['date'] }}
+                    {{ $article->created_at->format('d F Y') }}
                 </span>
                 <div class="w-16 h-1 bg-red-600 mt-3"></div>
             </div>
@@ -39,7 +39,7 @@
 
             {{-- Body --}}
             <div class="prose-sugih text-white/90 text-base sm:text-lg leading-relaxed space-y-6" data-aos="fade-up" data-aos-delay="200">
-                {!! $article['body'] !!}
+                {!! $article['content'] !!}
             </div>
 
             {{-- Back link --}}
