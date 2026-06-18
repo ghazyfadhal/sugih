@@ -12,17 +12,17 @@
             
             <h4 class="heading-mark text-xl font-bold text-sugih-gold mb-3 mt-8">Sosial Media</h4>
             <div class="flex items-center gap-5">
-                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.facebook.com/share/17XFTLBsuN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
                    aria-label="Facebook"
                    class="text-white/70 hover:text-sugih-gold transition-colors">
                     <i class="fab fa-facebook-f fa-lg"></i>
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.instagram.com/sugih_byprioritasgroup/" target="_blank" rel="noopener noreferrer"
                    aria-label="Instagram"
                    class="text-white/70 hover:text-sugih-gold transition-colors">
                     <i class="fab fa-instagram fa-lg"></i>
                 </a>
-                <a href="https://www.youtube.com/channel/UCxmiZsp79b6qlUXFKyFHlGQ" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.youtube.com/@Sugihkretek" target="_blank" rel="noopener noreferrer"
                    aria-label="Youtube"
                    class="text-white/70 hover:text-sugih-gold transition-colors">
                     <i class="fab fa-youtube fa-lg"></i>
