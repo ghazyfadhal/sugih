@@ -38,7 +38,7 @@
                 <tr class="hover:bg-gray-50 transition-colors">
                     <td class="px-6 py-4">
                         @if($article->image)
-                            <img src="{{ Storage::url($article->image) }}" class="w-24 h-16 object-cover rounded-lg border border-gray-200">
+                            <img src="{{ $article->image_url }}" class="w-24 h-16 object-cover rounded-lg border border-gray-200">
                         @else
                             <div class="w-24 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-xs">
                                 No Image

@@ -19,6 +19,7 @@ class DummyDataSeeder extends Seeder
                 'collection'  => 'Original Collection',
                 'tagline'     => 'Kretek Asli Nusantara',
                 'description' => 'Rasakan keaslian cita rasa Nusantara dalam setiap isapan. Varian SUGIH Original menghadirkan perpaduan tembakau pilihan dan cengkeh berkualitas, memberikan sensasi hangat, kuat, dan autentik khas kretek tradisional Indonesia. Hadir dengan harga Rp 10.000',
+                'image'       => 'images/products/sugih-original.png',
                 'is_active'   => true,
             ],
             [
@@ -27,6 +28,7 @@ class DummyDataSeeder extends Seeder
                 'collection'  => 'Flavour Collection',
                 'tagline'     => 'Segar Alami',
                 'description' => 'Aroma teh hijau yang menenangkan berpadu lembut dengan karakter tembakau terbaik. SUGIH Green Tea menawarkan pengalaman merokok yang segar, ringan, dan aromatik. Cocok untuk menemani waktu santai dengan nuansa alami yang menenangkan pikiran.',
+                'image'       => 'images/products/sugih-green-tea.png',
                 'is_active'   => true,
             ],
             [
@@ -35,6 +37,7 @@ class DummyDataSeeder extends Seeder
                 'collection'  => 'Flavour Collection',
                 'tagline'     => 'Eksotis Tropis',
                 'description' => 'Manisnya mangga tropis berpadu harmonis dengan kehangatan tembakau pilihan. SUGIH Mango menghadirkan sensasi eksotis yang menyegarkan, menjadikan setiap momen lebih berwarna dan penuh karakter.',
+                'image'       => 'images/products/sugih-mango.png',
                 'is_active'   => true,
             ],
             [
@@ -43,6 +46,7 @@ class DummyDataSeeder extends Seeder
                 'collection'  => 'Flavour Collection',
                 'tagline'     => 'Misterius & Elegan',
                 'description' => 'Sentuhan aroma berry yang misterius dan elegan. SUGIH Purple menawarkan pengalaman merokok yang unik dengan perpaduan rasa buah dan tembakau premium, menciptakan karakter yang berbeda dan memukau.',
+                'image'       => 'images/products/sugih-purple.png',
                 'is_active'   => true,
             ],
         ];
@@ -62,6 +66,7 @@ class DummyDataSeeder extends Seeder
 <p>Perusahaan telah memastikan bahwa seluruh produk SUGIH yang beredar di pasaran telah dilengkapi dengan pita cukai resmi sesuai ketentuan yang berlaku. Selain itu, CV. Prioritas Grup juga aktif berkoordinasi dengan Direktorat Jenderal Bea dan Cukai untuk memastikan kepatuhan yang berkelanjutan.</p>
 <p>Komitmen ini sejalan dengan visi SUGIH untuk menjadi merek kretek lokal yang tidak hanya berkualitas, tetapi juga legal dan terpercaya. Dengan mematuhi regulasi cukai, CV. Prioritas Grup berharap dapat memberikan kontribusi positif bagi pendapatan negara sekaligus melindungi konsumen dari produk-produk ilegal.</p>
 <p>&ldquo;Kami mengajak seluruh pelaku industri rokok untuk bersama-sama mematuhi regulasi cukai. Ini bukan hanya soal bisnis, tetapi juga soal tanggung jawab kita bersama,&rdquo; tambah Deni Rahmat.</p>',
+                'image'        => 'images/artikel1.png',
                 'is_published' => true,
             ],
         ];

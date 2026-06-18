@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('header', 'Dashboard'); ?>
 
 <?php $__env->startSection('content'); ?>

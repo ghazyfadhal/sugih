@@ -59,7 +59,7 @@
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Produk Saat Ini</label>
                 @if($product->image)
-                    <img src="{{ Storage::url($product->image) }}" class="w-full h-40 object-cover rounded-xl border border-gray-200 mb-4">
+                    <img src="{{ $product->image_url }}" class="w-full h-40 object-cover rounded-xl border border-gray-200 mb-4">
                 @else
                     <div class="w-full h-40 bg-gray-100 rounded-xl border border-gray-200 mb-4 flex items-center justify-center text-gray-400">
                         Tidak ada gambar

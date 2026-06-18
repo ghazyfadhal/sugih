@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('title', $karir['title'] . ' — Karir SUGIH'); ?>
 <?php $__env->startSection('description', 'Lowongan ' . $karir['title'] . ' di CV. Prioritas Group (SUGIH). Lokasi: ' . $karir['location']); ?>
 
@@ -48,10 +50,10 @@
                 <div class="mb-8">
                     <h3 class="text-white font-bold text-base sm:text-lg mb-4">Deskripsi Pekerjaan:</h3>
                     <ul class="text-white/85 text-sm sm:text-base leading-relaxed space-y-3">
-                        <?php $__currentLoopData = $karir['description']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = explode("\n", trim($karir['description'])); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $desc): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li class="flex gap-3">
                                 <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                <span><?php echo e($desc); ?></span>
+                                <span><?php echo e(trim($desc)); ?></span>
                             </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
@@ -61,10 +63,10 @@
                 <div class="mb-10">
                     <h3 class="text-white font-bold text-base sm:text-lg mb-4">Kualifikasi:</h3>
                     <ul class="text-white/85 text-sm sm:text-base leading-relaxed space-y-3">
-                        <?php $__currentLoopData = $karir['qualifications']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $qual): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php $__currentLoopData = explode("\n", trim($karir['requirements'])); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $qual): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <li class="flex gap-3">
                                 <span class="text-sugih-gold mt-1 shrink-0">•</span>
-                                <span><?php echo e($qual); ?></span>
+                                <span><?php echo e(trim($qual)); ?></span>
                             </li>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>

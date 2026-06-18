@@ -38,7 +38,7 @@
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Utama Saat Ini</label>
                 @if($article->image)
-                    <img src="{{ Storage::url($article->image) }}" class="w-full h-48 object-cover rounded-xl border border-gray-200 mb-4">
+                    <img src="{{ $article->image_url }}" class="w-full h-48 object-cover rounded-xl border border-gray-200 mb-4">
                 @else
                     <div class="w-full h-48 bg-gray-100 rounded-xl border border-gray-200 mb-4 flex items-center justify-center text-gray-400">
                         Tidak ada gambar
