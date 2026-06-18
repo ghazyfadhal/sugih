@@ -20,7 +20,7 @@
         
         <!-- Sidebar -->
         <aside class="w-64 bg-sugih-green-900 text-white flex flex-col transition-all duration-300 relative z-20">
-            <div class="h-20 flex items-center justify-center border-b border-white/10">
+            <div class="h-20 shrink-0 flex items-center justify-center border-b border-white/10">
                 <div class="flex items-center gap-2">
                     <img src="<?php echo e(asset('images/admin-logo.svg')); ?>" alt="SUGIH Admin Logo" class="h-8 w-auto">
                     <span class="text-xs font-light tracking-widest text-sugih-gold mt-1">ADMIN</span>
@@ -63,7 +63,7 @@
         <!-- Main Content -->
         <main class="flex-1 flex flex-col relative z-0 overflow-y-auto">
             <!-- Header -->
-            <header class="h-20 bg-white border-b border-gray-200 flex items-center justify-between px-8 z-10 sticky top-0">
+            <header class="h-20 shrink-0 bg-white border-b border-gray-200 flex items-center justify-between px-8 z-10 sticky top-0">
                 <h1 class="text-2xl font-bold text-gray-800 heading-display"><?php echo $__env->yieldContent('header'); ?></h1>
                 <div class="flex items-center space-x-4">
                     <span class="text-sm font-medium text-gray-500">Welcome, <?php echo e(Auth::user()->name); ?></span>
@@ -83,6 +83,84 @@
     <?php else: ?>
         <?php echo $__env->yieldContent('content'); ?>
     <?php endif; ?>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 1. Dirty Form Checker
+            let isDirty = false;
+            const dirtyForms = document.querySelectorAll('form.dirty-check');
+            
+            dirtyForms.forEach(form => {
+                const inputs = form.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('change', () => isDirty = true);
+                    input.addEventListener('input', () => isDirty = true);
+                });
+
+                // Disable dirty check upon intended submission
+                form.addEventListener('submit', () => isDirty = false);
+            });
+
+            window.addEventListener('beforeunload', function (e) {
+                if (isDirty) {
+                    e.preventDefault();
+                    e.returnValue = '';
+                }
+            });
+
+            // 2. Drag & Drop Upload Handlers
+            const dropZones = document.querySelectorAll('.drop-zone');
+            dropZones.forEach(zone => {
+                const input = zone.querySelector('input[type="file"]');
+                const labelText = zone.querySelector('.file-name-text');
+                
+                // Prevent default behavior to allow drop
+                ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+                    zone.addEventListener(eventName, preventDefaults, false);
+                });
+
+                function preventDefaults(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+
+                // Highlight effect
+                ['dragenter', 'dragover'].forEach(eventName => {
+                    zone.addEventListener(eventName, () => {
+                        zone.classList.add('border-sugih-gold', 'bg-gray-100');
+                    }, false);
+                });
+
+                ['dragleave', 'drop'].forEach(eventName => {
+                    zone.addEventListener(eventName, () => {
+                        zone.classList.remove('border-sugih-gold', 'bg-gray-100');
+                    }, false);
+                });
+
+                // Handle drop
+                zone.addEventListener('drop', (e) => {
+                    let dt = e.dataTransfer;
+                    let files = dt.files;
+
+                    if (files.length) {
+                        input.files = files;
+                        if (labelText) {
+                            labelText.textContent = 'File terpilih: ' + files[0].name;
+                        }
+                    }
+                }, false);
+
+                // Handle traditional click & select
+                if (input) {
+                    input.addEventListener('change', function() {
+                        if (this.files && this.files.length > 0 && labelText) {
+                            labelText.textContent = 'File terpilih: ' + this.files[0].name;
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 <?php /**PATH D:\SUGIH\sugih\resources\views/layouts/admin.blade.php ENDPATH**/ ?>

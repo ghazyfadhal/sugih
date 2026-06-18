@@ -5,12 +5,15 @@
 @section('content')
 <div class="mb-6 flex justify-between items-center">
     <div>
-        <a href="{{ route('admin.careers.index') }}" class="text-sm text-gray-500 hover:text-black mb-2 inline-block">&larr; Kembali ke Daftar Lowongan</a>
         <h2 class="text-xl font-bold text-gray-800">Form Edit Lowongan</h2>
+        <p class="text-gray-500 text-sm">Ubah detail lowongan karir di bawah ini.</p>
     </div>
+    <a href="{{ route('admin.careers.index') }}" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl font-semibold hover:bg-gray-200 transition-colors flex items-center">
+        &larr; Kembali
+    </a>
 </div>
 
-<form action="{{ route('admin.careers.update', $career->id) }}" method="POST" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
+<form action="{{ route('admin.careers.update', $career->id) }}" method="POST" class="dirty-check bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
     @csrf
     @method('PUT')
 

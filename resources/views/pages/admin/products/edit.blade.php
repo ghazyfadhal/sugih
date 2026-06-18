@@ -5,12 +5,15 @@
 @section('content')
 <div class="mb-6 flex justify-between items-center">
     <div>
-        <a href="{{ route('admin.products.index') }}" class="text-sm text-gray-500 hover:text-black mb-2 inline-block">&larr; Kembali ke Daftar Produk</a>
         <h2 class="text-xl font-bold text-gray-800">Form Edit Produk</h2>
+        <p class="text-gray-500 text-sm">Ubah detail produk di bawah ini.</p>
     </div>
+    <a href="{{ route('admin.products.index') }}" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl font-semibold hover:bg-gray-200 transition-colors flex items-center">
+        &larr; Kembali
+    </a>
 </div>
 
-<form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
+<form action="{{ route('admin.products.update', $product->id) }}" method="POST" enctype="multipart/form-data" class="dirty-check bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
     @csrf
     @method('PUT')
 
@@ -67,7 +70,20 @@
                 @endif
                 
                 <label for="image" class="block text-sm font-semibold text-gray-700 mb-2">Ganti Gambar Baru (Opsional)</label>
-                <input id="image" name="image" type="file" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#E6C981]/20 file:text-[#8B753A] hover:file:bg-[#E6C981]/30 transition-colors">
+                <div class="drop-zone mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-xl hover:border-sugih-gold transition-colors bg-gray-50 relative">
+                    <div class="space-y-2 text-center">
+                        <svg class="mx-auto h-8 w-8 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="flex flex-col items-center justify-center text-sm text-gray-600 gap-2">
+                            <label for="image" class="relative cursor-pointer bg-sugih-green-900 text-sugih-gold hover:bg-sugih-green-800 px-4 py-2 rounded-lg font-medium focus-within:outline-none transition-colors shadow-sm">
+                                <span>Pilih File</span>
+                                <input id="image" name="image" type="file" accept="image/*" class="sr-only">
+                            </label>
+                            <p class="file-name-text text-gray-600">atau drag & drop gambar ke sini</p>
+                        </div>
+                    </div>
+                </div>
                 @error('image') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
             </div>
 
