@@ -30,6 +30,7 @@
     @include('partials.warning')
     @include('partials.footer')
     @include('partials.floating-wa')
+    @include('partials.age-verification')
 
     @stack('scripts')
 </body>

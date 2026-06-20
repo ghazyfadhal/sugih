@@ -5,12 +5,15 @@
 <?php $__env->startSection('content'); ?>
 <div class="mb-6 flex justify-between items-center">
     <div>
-        <a href="<?php echo e(route('admin.careers.index')); ?>" class="text-sm text-gray-500 hover:text-black mb-2 inline-block">&larr; Kembali ke Daftar Lowongan</a>
         <h2 class="text-xl font-bold text-gray-800">Form Tambah Lowongan</h2>
+        <p class="text-gray-500 text-sm">Buka lowongan karir baru di bawah ini.</p>
     </div>
+    <a href="<?php echo e(route('admin.careers.index')); ?>" class="bg-gray-100 text-gray-700 px-5 py-2.5 rounded-xl font-semibold hover:bg-gray-200 transition-colors flex items-center">
+        &larr; Kembali
+    </a>
 </div>
 
-<form action="<?php echo e(route('admin.careers.store')); ?>" method="POST" class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
+<form action="<?php echo e(route('admin.careers.store')); ?>" method="POST" class="dirty-check bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
     <?php echo csrf_field(); ?>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
