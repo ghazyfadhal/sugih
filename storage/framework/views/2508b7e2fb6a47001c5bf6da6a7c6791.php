@@ -21,7 +21,7 @@
         <div class="container-page py-24 animate-fade-up">
             
             <div class="flex justify-center mb-8" data-aos="fade-down">
-                <img src="<?php echo e(asset('images/logo-sugih.png')); ?>"
+                <img src="<?php echo e(asset('images/logo-3.svg')); ?>"
                      alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
             </div>
 
@@ -29,7 +29,7 @@
                 Semua Ingin Sugih
             </h1>
 
-            <p class="mt-8 max-w-2xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
+            <p class="mt-8 max-w-4xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
                 Waktumu terbatas jangan habiskan waktu untuk mencari rasa yang lain.<br>
                 Sebab yang mantap sedang kamu buka sekarang dan pencarianmu sudah tuntas.<br>
                 Harum Berkelas dan Berkualitas.

@@ -31,6 +31,7 @@
     @include('partials.footer')
     @include('partials.floating-wa')
     @include('partials.age-verification')
+    @include('partials.mitra-modal')
 
     @stack('scripts')
 </body>
