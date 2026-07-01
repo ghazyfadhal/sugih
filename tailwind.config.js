@@ -19,15 +19,22 @@ export default {
             },
             colors: {
                 sugih: {
-                    // Expert Palette (Earth Tones)
-                    primary: '#296330',    // Hijau Tembakau
-                    brown: '#5C3D1E',      // Cokelat Tembakau
-                    terracotta: '#C87941', // Terakota/Tembaga (CTA)
-                    cream: '#F5F0E8',      // Krem/Putih Gading (Text)
-                    gold: '#B89A5A',       // Emas/Aksen Mewah
-                    black: '#2C2317',      // Hitam Tanah
+                    // Light Neo-Vernacular Palette
+                    ivory: '#FAF8F5',      // Body background utama
+                    cream: '#F2EDE4',      // Background alternatif
+                    brown: '#5C3D1E',      // Brand utama
+                    walnut: '#3E2A14',     // Varian gelap
+                    tan: '#C4A882',        // Varian terang (border)
+                    charcoal: '#2C2317',   // Teks utama
+                    gray: '#6B5E52',       // Teks sekunder
+                    muted: '#A89B8C',      // Teks tersier
                     
-                    // Base Greens (Legacy, tweaked if needed)
+                    // Aksen & CTA
+                    terracotta: '#C87941', 
+                    gold: '#B89A5A',       
+                    amber: '#D4A04A',
+                    
+                    // Base Greens (Legacy)
                     green: {
                         50:  '#eef6ee',
                         100: '#d3e7d4',

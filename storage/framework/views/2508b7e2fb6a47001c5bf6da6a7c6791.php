@@ -15,7 +15,9 @@
             <img src="<?php echo e(asset('images/hero-tobacco.jpg')); ?>"
                  alt="Daun tembakau SUGIH"
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
         <div class="container-page py-24 animate-fade-up">
@@ -56,11 +58,11 @@
         <div class="absolute inset-0 -z-10">
             <img src="<?php echo e(asset('images/farmer.jpg')); ?>"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div class="container-page">
-            <div class="max-w-xl bg-sugih-green-700/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft" data-aos="fade-right">
+            <div class="max-w-xl bg-sugih-charcoal/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft border border-white/10" data-aos="fade-right">
                 <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap">
                     Cerita Kami
                 </h2>
@@ -96,7 +98,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
         
         <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/product-bg.jpg')); ?>'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
         </div>
 
         <div class="container-page">
@@ -115,10 +117,10 @@
                 </div>
 
                 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-                    <?php $__currentLoopData = $originalProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $originalProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
+                        <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
                                         grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                        shadow-card-soft border border-sugih-gold/10
+                                        shadow-card-soft border border-sugih-gold/20
                                         transition-transform duration-300 hover:-translate-y-1">
                             <div class="flex justify-center">
                                 <img
@@ -139,7 +141,7 @@
                                 </p>
                             </div>
                         </article>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
                 </div>
             </div>
 
@@ -156,11 +158,11 @@
                 <div class="relative">
                     <div class="swiper product-swiper">
                         <div class="swiper-wrapper">
-                            <?php $__currentLoopData = $flavourProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $flavourProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                                 <div class="swiper-slide">
-                                    <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                                    <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
                                                     grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                                    shadow-card-soft border border-sky-300/10
+                                                    shadow-card-soft border border-sky-300/20
                                                     transition-transform duration-300 hover:-translate-y-1">
                                         <div class="flex justify-center">
                                             <img
@@ -182,7 +184,7 @@
                                         </div>
                                     </article>
                                 </div>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
                         </div>
 
                         
@@ -218,7 +220,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
         
         <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/product-bg.jpg')); ?>'); background-size: cover; background-position: bottom center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div class="container-page">
@@ -229,7 +231,7 @@
             <div class="relative max-w-4xl mx-auto">
                 <div class="swiper article-swiper">
                     <div class="swiper-wrapper">
-                        <?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                             <div class="swiper-slide">
                                 <a href="<?php echo e(route('articles.show', $article['slug'])); ?>"
                                    class="block relative rounded-3xl overflow-hidden shadow-card-soft group">
@@ -246,7 +248,7 @@
                                     </div>
                                 </a>
                             </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
                     </div>
                 </div>
 

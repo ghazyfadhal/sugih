@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-sugih-green-700 text-white" data-testid="footer">
+<footer id="footer" class="bg-sugih-walnut text-sugih-cream" data-testid="footer">
     <div class="container-page py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         
@@ -70,7 +70,7 @@
     </div>
 
     
-    <div class="bg-sugih-black py-3 border-t border-sugih-gold/20">
+    <div class="bg-sugih-charcoal py-3 border-t border-sugih-gold/20">
         <div class="container-page flex items-center justify-center gap-3 text-sugih-cream text-xs sm:text-sm font-semibold tracking-wide text-center">
             <i class="fas fa-shield-alt text-sugih-gold text-base"></i>
             <p>Diproduksi di bawah pengawasan ketat. Dilengkapi Pita Cukai Resmi Republik Indonesia.</p>

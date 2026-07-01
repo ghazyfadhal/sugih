@@ -12,13 +12,13 @@
         scroll-behavior: smooth;
     }
     body {
-        @apply bg-sugih-green-900 text-sugih-cream font-sans antialiased;
+        @apply bg-sugih-ivory text-sugih-charcoal font-sans antialiased;
         font-optical-sizing: auto;
         -webkit-font-smoothing: antialiased;
     }
     ::selection {
         background: theme('colors.sugih.gold');
-        color: theme('colors.sugih.green.900');
+        color: theme('colors.sugih.ivory');
     }
     /* Hide Alpine elements before they are initialized to prevent flashing */
     [x-cloak] {
@@ -40,11 +40,11 @@
 
     /* Navbar Link Animated Underline */
     .nav-link {
-        @apply relative text-sugih-cream hover:text-sugih-gold transition-colors text-base font-bold;
+        @apply relative transition-colors text-base font-bold;
     }
     .nav-link::after {
         content: '';
-        @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-sugih-gold transition-all duration-300 ease-out;
+        @apply absolute left-0 -bottom-1 w-0 h-[2px] bg-sugih-terracotta transition-all duration-300 ease-out;
     }
     .nav-link:hover::after {
         @apply w-full;

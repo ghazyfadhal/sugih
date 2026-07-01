@@ -9,10 +9,10 @@
     {{--  BERITA INDEX — Daftar semua artikel                          --}}
     {{-- ============================================================ --}}
     <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 min-h-screen" data-testid="articles-index">
-        <div class="absolute inset-0 -z-10 bg-sugih-green-900"></div>
+        <div class="absolute inset-0 -z-10 bg-sugih-ivory"></div>
 
         <div class="container-page">
-            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
+            <h1 class="heading-display text-center text-sugih-brown text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
                 Berita
             </h1>
 
@@ -20,7 +20,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     @foreach($articles as $index => $article)
                         <a href="{{ route('articles.show', $article['slug']) }}"
-                           class="group block rounded-2xl overflow-hidden bg-sugih-green-800 shadow-card-soft
+                           class="group block rounded-2xl overflow-hidden bg-white shadow-lg border border-gray-100
                                   hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                            data-aos="fade-up" data-aos-delay="{{ ($index % 3) * 100 }}">
                             {{-- Image --}}
@@ -31,13 +31,13 @@
                             </div>
                             {{-- Content --}}
                             <div class="p-6">
-                                <span class="text-sugih-gold text-xs font-semibold tracking-wide uppercase">
+                                <span class="text-sugih-terracotta text-xs font-semibold tracking-wide uppercase">
                                     {{ $article->created_at->format('d F Y') }}
                                 </span>
-                                <h3 class="text-white font-bold text-lg mt-2 mb-3 leading-snug group-hover:text-sugih-gold transition-colors">
+                                <h3 class="text-sugih-charcoal font-bold text-lg mt-2 mb-3 leading-snug group-hover:text-sugih-terracotta transition-colors">
                                     {{ $article['title'] }}
                                 </h3>
-                                <p class="text-white/70 text-sm leading-relaxed line-clamp-3">
+                                <p class="text-sugih-gray text-sm leading-relaxed line-clamp-3">
                                     {{ $article['excerpt'] }}
                                 </p>
                             </div>
@@ -46,7 +46,7 @@
                 </div>
             @else
                 <div class="text-center py-20">
-                    <p class="text-white/60 text-lg">Belum ada berita untuk ditampilkan.</p>
+                    <p class="text-sugih-gray text-lg">Belum ada berita untuk ditampilkan.</p>
                 </div>
             @endif
         </div>

@@ -15,7 +15,9 @@
             <img src="{{ asset('images/hero-tobacco.jpg') }}"
                  alt="Daun tembakau SUGIH"
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+            {{-- Vignette for Navbar --}}
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
         <div class="container-page py-24 animate-fade-up">
@@ -56,11 +58,11 @@
         <div class="absolute inset-0 -z-10">
             <img src="{{ asset('images/farmer.jpg') }}"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div class="container-page">
-            <div class="max-w-xl bg-sugih-green-700/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft" data-aos="fade-right">
+            <div class="max-w-xl bg-sugih-charcoal/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft border border-white/10" data-aos="fade-right">
                 <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap">
                     Cerita Kami
                 </h2>
@@ -96,7 +98,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
         {{-- Background: top portion of the vertical image --}}
         <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
         </div>
 
         <div class="container-page">
@@ -116,9 +118,9 @@
 
                 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
                     @foreach($originalProducts as $product)
-                        <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                        <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
                                         grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                        shadow-card-soft border border-sugih-gold/10
+                                        shadow-card-soft border border-sugih-gold/20
                                         transition-transform duration-300 hover:-translate-y-1">
                             <div class="flex justify-center">
                                 <img
@@ -157,9 +159,9 @@
                         <div class="swiper-wrapper">
                             @foreach($flavourProducts as $product)
                                 <div class="swiper-slide">
-                                    <article class="bg-sugih-green-800/40 backdrop-blur-sm rounded-3xl p-6 sm:p-10
+                                    <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
                                                     grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                                    shadow-card-soft border border-sky-300/10
+                                                    shadow-card-soft border border-sky-300/20
                                                     transition-transform duration-300 hover:-translate-y-1">
                                         <div class="flex justify-center">
                                             <img
@@ -216,7 +218,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
         {{-- Background: bottom portion of the vertical image --}}
         <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: bottom center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
         <div class="container-page">

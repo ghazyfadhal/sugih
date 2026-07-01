@@ -12,17 +12,19 @@
         {{-- Background --}}
         <div class="absolute inset-0 -z-10"
              style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+            {{-- Vignette for Navbar --}}
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
         <div class="container-page">
 
             {{-- Page title --}}
-            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
+            <h1 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
                 Produk Kami
             </h1>
             <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-20 h-1 bg-sugih-red rounded-full"></div>
+                <div class="w-20 h-1 bg-sugih-terracotta rounded-full"></div>
             </div>
 
             {{-- ── Product Showcase Swiper (Aroma-style) ───────── --}}
@@ -35,7 +37,7 @@
                                 <div class="product-slide-inner transition-all duration-500 flex justify-center">
                                     <img src="{{ $product->image_url }}"
                                          alt="{{ $product['name'] }}"
-                                         class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-2xl
+                                         class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-xl
                                                 transition-all duration-500">
                                 </div>
                             </div>
@@ -70,7 +72,7 @@
                             <h2 class="heading-display text-white text-2xl sm:text-3xl md:text-4xl mb-4">
                                 {{ $product['name'] }}
                             </h2>
-                            <p class="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                            <p class="text-white/85 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
                                 {{ $product['description'] }}
                             </p>
                         </div>

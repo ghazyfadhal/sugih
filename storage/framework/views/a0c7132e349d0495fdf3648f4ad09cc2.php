@@ -12,17 +12,19 @@
         
         <div class="absolute inset-0 -z-10"
              style="background-image: url('<?php echo e(asset('images/product-bg.jpg')); ?>'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
+            
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
         <div class="container-page">
 
             
-            <h1 class="heading-display text-center text-sugih-gold text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
+            <h1 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
                 Produk Kami
             </h1>
             <div class="flex justify-center mb-16" data-aos="fade-up" data-aos-delay="100">
-                <div class="w-20 h-1 bg-sugih-red rounded-full"></div>
+                <div class="w-20 h-1 bg-sugih-terracotta rounded-full"></div>
             </div>
 
             
@@ -30,16 +32,16 @@
 
                 <div class="swiper product-page-swiper">
                     <div class="swiper-wrapper items-center">
-                        <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                             <div class="swiper-slide flex justify-center" data-index="<?php echo e($index); ?>">
                                 <div class="product-slide-inner transition-all duration-500 flex justify-center">
                                     <img src="<?php echo e($product->image_url); ?>"
                                          alt="<?php echo e($product['name']); ?>"
-                                         class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-2xl
+                                         class="h-64 sm:h-72 md:h-80 lg:h-96 w-auto object-contain drop-shadow-xl
                                                 transition-all duration-500">
                                 </div>
                             </div>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
                     </div>
                 </div>
 
@@ -63,7 +65,7 @@
 
                 
                 <div class="mt-10 text-center">
-                    <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                         <div class="product-info-panel transition-all duration-500"
                              data-panel="<?php echo e($index); ?>"
                              style="<?php echo e($index !== 0 ? 'display:none;' : ''); ?>">
@@ -71,12 +73,12 @@
                                 <?php echo e($product['name']); ?>
 
                             </h2>
-                            <p class="text-white/80 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+                            <p class="text-white/85 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
                                 <?php echo e($product['description']); ?>
 
                             </p>
                         </div>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
                 </div>
 
                 

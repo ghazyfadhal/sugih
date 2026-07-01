@@ -1,7 +1,11 @@
+<?php
+    $isLightTop = request()->routeIs('articles.*') || request()->is('kontak*') || request()->is('contact*');
+    $defaultText = $isLightTop ? 'text-sugih-charcoal' : 'text-white/90';
+?>
 <header
     x-data="{ open: false, scrolled: false }"
     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 30);"
-    :class="scrolled ? 'bg-sugih-green-700/95 backdrop-blur-md shadow-lg' : 'bg-sugih-green-700'"
+    :class="scrolled ? 'bg-sugih-ivory/85 backdrop-blur-md shadow-sm' : 'bg-transparent'"
     class="fixed top-0 inset-x-0 z-[60] transition-all duration-300"
 >
     <div class="container-page flex items-center justify-between h-20">
@@ -13,21 +17,25 @@
         
         <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
-               class="nav-link <?php echo e(request()->routeIs('home') ? 'text-sugih-gold' : 'text-white/90'); ?>">Beranda</a>
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-brown <?php echo e(request()->routeIs('home') ? 'text-sugih-terracotta' : 'text-sugih-charcoal'); ?>' : 'hover:text-sugih-gold <?php echo e(request()->routeIs('home') ? 'text-sugih-gold' : $defaultText); ?>'">Beranda</a>
             <a href="<?php echo e(route('about')); ?>"
-               class="nav-link <?php echo e(request()->routeIs('about') ? 'text-sugih-gold' : 'text-white/90'); ?>">Sejarah</a>
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-brown <?php echo e(request()->routeIs('about') ? 'text-sugih-terracotta' : 'text-sugih-charcoal'); ?>' : 'hover:text-sugih-gold <?php echo e(request()->routeIs('about') ? 'text-sugih-gold' : $defaultText); ?>'">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
-               class="nav-link <?php echo e(request()->routeIs('products.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Produk</a>
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-brown <?php echo e(request()->routeIs('products.*') ? 'text-sugih-terracotta' : 'text-sugih-charcoal'); ?>' : 'hover:text-sugih-gold <?php echo e(request()->routeIs('products.*') ? 'text-sugih-gold' : $defaultText); ?>'">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
-               class="nav-link <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-gold' : 'text-white/90'); ?>">Berita</a>
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-brown <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-terracotta' : 'text-sugih-charcoal'); ?>' : 'hover:text-sugih-gold <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-gold' : $defaultText); ?>'">Berita</a>
         </nav>
 
         
         <button
             type="button"
             @click="open = !open"
-            class="text-sugih-gold p-2 -mr-2 transition-transform duration-300"
-            :class="open ? 'rotate-90' : 'rotate-0'"
+            class="p-2 -mr-2 transition-transform duration-300"
+            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-sugih-charcoal' : '<?php echo e($isLightTop ? 'text-sugih-charcoal' : 'text-sugih-gold'); ?>']"
             aria-label="Toggle menu"
             data-testid="nav-toggle"
         >
@@ -66,31 +74,31 @@
         x-transition:leave-start="translate-x-0"
         x-transition:leave-end="translate-x-full"
         x-cloak
-        class="fixed top-20 right-0 h-[calc(100vh-5rem)] w-72 sm:w-80 bg-sugih-green-800 shadow-2xl z-50 flex flex-col border-t border-white/10"
+        class="fixed top-20 right-0 h-[calc(100vh-5rem)] w-72 sm:w-80 bg-sugih-ivory shadow-2xl z-50 flex flex-col border-t border-sugih-tan/20"
     >
 
         
         <nav class="flex-1 px-8 pt-6 pb-10 flex flex-col gap-1 overflow-y-auto">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Beranda</a>
             <a href="<?php echo e(route('about')); ?>"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Berita</a>
             <a href="<?php echo e(route('karir.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Karir</a>
             <a href="#footer"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors border-b border-white/10"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors border-b border-sugih-tan/20"
                @click="open = false">Kontak</a>
             <button type="button"
-               class="py-4 text-right text-xl font-bold text-white hover:text-sugih-gold transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-gold"
+               class="py-4 text-right text-xl font-bold text-sugih-charcoal hover:text-sugih-gold transition-colors underline decoration-sugih-tan/40 underline-offset-4 hover:decoration-sugih-gold"
                @click="open = false; $dispatch('open-mitra-modal')">Gabung Mitra</button>
         </nav>
     </div>
