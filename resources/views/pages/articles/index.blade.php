@@ -6,22 +6,31 @@
 @section('content')
 
     {{-- ============================================================ --}}
-    {{--  BERITA INDEX — Expandable Cards via Alpine.js               --}}
+    {{--  BERITA INDEX — Hero Banner                                  --}}
     {{-- ============================================================ --}}
-    <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 min-h-screen" 
-             data-testid="articles-index" 
-             x-data="{ activeArticle: null }"
-             x-init="$watch('activeArticle', val => { if(val) { window.lenis?.stop(); document.body.style.overflow='hidden'; } else { window.lenis?.start(); document.body.style.overflow=''; } })">
-             
-        <div class="absolute inset-0 -z-10 bg-sugih-charcoal">
+    <section class="relative min-h-[50vh] sm:min-h-[60vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="articles-hero">
+        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/berita.png') }}'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/40"></div>
             {{-- Vignette for Navbar --}}
             <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
         <div class="container-page">
-            <h1 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
+            <h1 class="heading-display text-center text-white text-5xl sm:text-6xl md:text-7xl drop-shadow-lg" data-aos="fade-up">
                 Berita
             </h1>
+        </div>
+    </section>
+
+    {{-- ============================================================ --}}
+    {{--  BERITA INDEX — Expandable Cards via Alpine.js               --}}
+    {{-- ============================================================ --}}
+    <section class="relative py-20 lg:py-28 min-h-screen bg-sugih-charcoal" 
+             data-testid="articles-index" 
+             x-data="{ activeArticle: null }"
+             x-init="$watch('activeArticle', val => { if(val) { window.lenis?.stop(); document.body.style.overflow='hidden'; } else { window.lenis?.start(); document.body.style.overflow=''; } })">
+
+        <div class="container-page">
 
             @if(count($articles) > 0)
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

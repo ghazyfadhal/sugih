@@ -14,6 +14,14 @@ import 'atropos/css';
 
 import Lenis from 'lenis';
 import Atropos from 'atropos';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
+
+gsap.registerPlugin(ScrollTrigger);
+window.gsap = gsap;
+window.ScrollTrigger = ScrollTrigger;
+window.SplitType = SplitType;
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -41,12 +49,13 @@ window.addEventListener('load', () => {
             infinite: false,
         });
 
-        function raf(time) {
-            window.lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+        window.lenis.on('scroll', ScrollTrigger.update);
 
-        requestAnimationFrame(raf);
+        gsap.ticker.add((time) => {
+            window.lenis.raf(time * 1000);
+        });
+
+        gsap.ticker.lagSmoothing(0);
     }
 });
 

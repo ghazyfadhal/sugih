@@ -1,5 +1,3 @@
-
-
 <?php $__env->startSection('title', 'SUGIH — Semua Ingin Sugih'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -11,33 +9,33 @@
         class="relative isolate min-h-screen flex items-center justify-center text-center grain overflow-hidden pt-20"
         data-testid="hero-section"
     >
-        <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 -z-10 bg-black">
             <img src="<?php echo e(asset('images/hero-tobacco.jpg')); ?>"
                  alt="Daun tembakau SUGIH"
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover hero-parallax-bg" style="will-change: transform;">
             <div class="absolute inset-0 bg-black/40"></div>
             
             <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
         </div>
 
-        <div class="container-page py-24 animate-fade-up">
+        <div class="container-page py-24 gs-hero-content">
             
-            <div class="flex justify-center mb-8" data-aos="fade-down">
+            <div class="flex justify-center mb-8 gs-hero-logo" data-aos="fade-down">
                 <img src="<?php echo e(asset('images/logo-3.svg')); ?>"
                      alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
             </div>
 
-            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl gs-hero-title" data-aos="fade-up" data-aos-delay="100">
                 Semua Ingin Sugih
             </h1>
 
-            <p class="mt-8 max-w-4xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
+            <p class="mt-8 max-w-4xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal gs-hero-desc" data-aos="fade-up" data-aos-delay="200">
                 Waktumu terbatas jangan habiskan waktu untuk mencari rasa yang lain.<br>
                 Sebab yang mantap sedang kamu buka sekarang dan pencarianmu sudah tuntas.<br>
                 Harum Berkelas dan Berkualitas.
             </p>
 
-            <div class="mt-16 flex justify-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="mt-16 flex justify-center gs-hero-arrow" data-aos="fade-up" data-aos-delay="300">
                 <a href="#cerita-kami"
                    class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-gold transition-colors animate-bounce"
                    aria-label="Scroll ke bawah"
@@ -54,20 +52,20 @@
     
     
     
-    <section id="cerita-kami" class="relative min-h-[90vh] pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden scroll-mt-20" data-testid="cerita-section">
+    <section id="cerita-kami" class="relative min-h-screen overflow-hidden scroll-mt-20 gs-cerita-pin" data-testid="cerita-section">
         <div class="absolute inset-0 -z-10">
             <img src="<?php echo e(asset('images/farmer.jpg')); ?>"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div class="container-page">
-            <div class="max-w-xl bg-sugih-charcoal/90 backdrop-blur-sm rounded-md p-8 sm:p-10 shadow-card-soft border border-white/10" data-aos="fade-right">
-                <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap">
+        <div class="container-page h-screen flex items-center">
+            <div class="max-w-xl bg-sugih-charcoal/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-card-soft border border-white/10 gs-cerita-card">
+                <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap gs-cerita-heading">
                     Cerita Kami
                 </h2>
 
-                <p class="text-white/90 leading-relaxed text-base">
+                <p class="text-white/90 leading-relaxed text-base md:text-lg lg:leading-loose gs-scrub-text">
                     Lahir di Cianjur pada 2023, Sugih hadir dari filosofi lokal
                     <em>Sugih Mukti</em>, bermakna subur dan kaya, sebagai wujud
                     semangat untuk mengangkat potensi tembakau Cianjur menjadi
@@ -76,7 +74,7 @@
                     sendiri, dikerjakan dengan tangan sendiri.
                 </p>
 
-                <div class="mt-8">
+                <div class="mt-8 gs-cerita-cta" style="opacity: 0;">
                     <a href="<?php echo e(route('about')); ?>" class="btn-primary" data-testid="cerita-cta">
                         Lebih lanjut
                     </a>
@@ -89,146 +87,66 @@
     
     
     
-    
     <?php
-        $originalProducts = collect($products)->where('collection', 'Original Collection')->values();
-        $flavourProducts  = collect($products)->where('collection', 'Flavour Collection')->values();
+        $allProducts = collect($products)->sortBy('sort_order')->values();
     ?>
 
-    <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="products-section">
+    <section class="relative overflow-hidden gs-products-pin" data-testid="products-section">
         
-        <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/product-bg.jpg')); ?>'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-black/30"></div>
-        </div>
+        <div class="absolute inset-0 -z-10 bg-sugih-charcoal"></div>
 
-        <div class="container-page">
-            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-16" data-aos="fade-up">
-                Produk Kami
-            </h2>
-
-            
-            <div class="mb-20" data-testid="original-collection">
-                <div class="flex items-center gap-4 mb-10" data-aos="fade-up">
-                    <div class="h-px flex-1 bg-sugih-gold/30"></div>
-                    <h3 class="heading-display text-sugih-gold text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
-                        Original Collection
-                    </h3>
-                    <div class="h-px flex-1 bg-sugih-gold/30"></div>
-                </div>
-
-                <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $originalProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
-                        <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
-                                        grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center relative
-                                        shadow-card-soft border border-sugih-gold/20 group
-                                        transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_40px_-10px_rgba(184,154,90,0.3)]">
-                            
-                            
-                            <div class="absolute inset-0 bg-sugih-gold/0 group-hover:bg-sugih-gold/5 blur-xl transition-all duration-700 rounded-3xl -z-10"></div>
-
-                            <div class="flex justify-center">
-                                <img
-                                    src="<?php echo e($product->image_url); ?>"
-                                    alt="<?php echo e($product['name']); ?>"
-                                    class="h-52 sm:h-64 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
-                                >
-                            </div>
-
-                            <div class="text-white">
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <h4 class="heading-display text-3xl sm:text-4xl"><?php echo e($product['name']); ?></h4>
-                                </div>
-
-                                <p class="text-white/85 leading-relaxed">
-                                    <?php echo e($product['description']); ?>
-
-                                </p>
-                            </div>
-                        </article>
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
-                </div>
+        <div class="h-screen flex flex-col justify-center gs-products-inner">
+            <div class="container-page">
+                <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-12">
+                    Produk Kami
+                </h2>
             </div>
 
             
-            <div data-testid="flavour-collection">
-                <div class="flex items-center gap-4 mb-10" data-aos="fade-up">
-                    <div class="h-px flex-1 bg-sky-300/30"></div>
-                    <h3 class="heading-display text-sky-300 text-2xl sm:text-3xl tracking-wide whitespace-nowrap">
-                        Flavour Collection
-                    </h3>
-                    <div class="h-px flex-1 bg-sky-300/30"></div>
-                </div>
+            <div class="overflow-hidden">
+                <div class="flex flex-nowrap gap-8 pl-8 sm:pl-16 lg:pl-24 gs-products-track" style="will-change: transform;">
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $allProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
+                        <article class="w-[80vw] sm:w-[420px] md:w-[480px] flex-shrink-0
+                                        bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 relative
+                                        flex flex-col items-center text-center group
+                                        shadow-card-soft border <?php echo e($product['collection'] === 'Original Collection' ? 'border-sugih-gold/20' : 'border-sky-300/20'); ?>
 
-                <div class="relative">
-                    <div class="swiper product-swiper">
-                        <div class="swiper-wrapper">
-                            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $flavourProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
-                                <div class="swiper-slide">
-                                    <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 relative
-                                                    grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center group
-                                                    shadow-card-soft border border-sky-300/20
-                                                    transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_40px_-10px_rgba(125,211,252,0.3)]">
-                                        
-                                        
-                                        <div class="absolute inset-0 bg-sky-300/0 group-hover:bg-sky-300/5 blur-xl transition-all duration-700 rounded-3xl -z-10"></div>
+                                        transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(184,154,90,0.25)]">
+                            
+                            
+                            <span class="text-xs font-semibold tracking-widest uppercase mb-4 <?php echo e($product['collection'] === 'Original Collection' ? 'text-sugih-gold' : 'text-sky-300'); ?>">
+                                <?php echo e($product['collection']); ?>
 
-                                        <div class="flex justify-center">
-                                            <img
-                                                src="<?php echo e($product->image_url); ?>"
-                                                alt="<?php echo e($product['name']); ?>"
-                                                class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
-                                            >
-                                        </div>
+                            </span>
 
-                                        <div class="text-white">
-                                            <div class="flex flex-wrap items-center gap-3 mb-3">
-                                                <h4 class="heading-display text-3xl sm:text-4xl"><?php echo e($product['name']); ?></h4>
-                                            </div>
+                            <div class="flex justify-center mb-6">
+                                <img src="<?php echo e($product->image_url); ?>"
+                                     alt="<?php echo e($product['name']); ?>"
+                                     class="h-48 sm:h-56 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                            </div>
 
-                                            <p class="text-white/85 leading-relaxed">
-                                                <?php echo e($product['description']); ?>
+                            <h4 class="heading-display text-white text-2xl sm:text-3xl mb-3"><?php echo e($product['name']); ?></h4>
+                            <p class="text-white/75 leading-relaxed text-sm sm:text-base line-clamp-3">
+                                <?php echo e($product['tagline'] ?? $product['description']); ?>
 
-                                            </p>
-                                        </div>
-                                    </article>
-                                </div>
-                            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
-                        </div>
+                            </p>
+                        </article>
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
 
-                        
-                        <button type="button"
-                                class="product-swiper-prev carousel-arrow absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10"
-                                aria-label="Sebelumnya" data-testid="product-prev">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/>
-                            </svg>
-                        </button>
-                        <button type="button"
-                                class="product-swiper-next carousel-arrow absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10"
-                                aria-label="Berikutnya" data-testid="product-next">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="product-swiper-pagination flex justify-center mt-6 !static"></div>
+                    
+                    <div class="w-16 sm:w-24 flex-shrink-0"></div>
                 </div>
             </div>
         </div>
     </section>
 
 
-
-
-    
     
     
     
     <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
-        
-        <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/product-bg.jpg')); ?>'); background-size: cover; background-position: bottom center;">
-            <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 -z-10 bg-sugih-charcoal">
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/30 to-transparent"></div>
         </div>
 
         <div class="container-page">
@@ -241,7 +159,7 @@
                     <div class="swiper-wrapper">
                         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                             <div class="swiper-slide">
-                                <a href="<?php echo e(route('articles.show', $article['slug'])); ?>"
+                                <a href="<?php echo e(route('articles.index')); ?>"
                                    class="block relative rounded-3xl overflow-hidden shadow-card-soft group">
                                     <img src="<?php echo e($article->image_url); ?>"
                                          alt="<?php echo e($article['title']); ?>"
@@ -287,5 +205,120 @@
     </section>
 
 <?php $__env->stopSection(); ?>
+
+<?php $__env->startPush('scripts'); ?>
+<script type="module">
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        if (!window.gsap || !window.ScrollTrigger) return;
+        const g = window.gsap;
+        const ST = window.ScrollTrigger;
+
+        // ═══════════════════════════════════════════
+        // 1. HERO — Background Parallax
+        // ═══════════════════════════════════════════
+        g.to('.hero-parallax-bg', {
+            yPercent: 30,
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '[data-testid="hero-section"]',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true
+            }
+        });
+
+        // ═══════════════════════════════════════════
+        // 1b. HERO — Content Fade Out on Scroll
+        // ═══════════════════════════════════════════
+        const heroTl = g.timeline({
+            scrollTrigger: {
+                trigger: '[data-testid="hero-section"]',
+                start: 'top top',
+                end: '60% top',
+                scrub: true
+            }
+        });
+
+        heroTl
+            .to('.gs-hero-arrow', { opacity: 0, y: -30, duration: 0.2 }, 0)
+            .to('.gs-hero-desc',  { opacity: 0, y: -50, duration: 0.4 }, 0.1)
+            .to('.gs-hero-title', { opacity: 0, y: -60, duration: 0.4 }, 0.2)
+            .to('.gs-hero-logo',  { opacity: 0, y: -40, duration: 0.3 }, 0.3);
+
+        // ═══════════════════════════════════════════
+        // 2. CERITA KAMI — Pinned + Orchestrated
+        // ═══════════════════════════════════════════
+        const ceritaTl = g.timeline({
+            scrollTrigger: {
+                trigger: '.gs-cerita-pin',
+                start: 'top top',
+                end: '+=2000',   // 2000px of virtual scroll distance
+                pin: true,
+                scrub: 1,
+                anticipatePin: 1
+            }
+        });
+
+        // 2a. Card slides in from left
+        ceritaTl.fromTo('.gs-cerita-card',
+            { opacity: 0, x: -100 },
+            { opacity: 1, x: 0, duration: 0.15, ease: 'power3.out' },
+            0
+        );
+
+        // 2b. Heading fades in
+        ceritaTl.fromTo('.gs-cerita-heading',
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.1, ease: 'power2.out' },
+            0.05
+        );
+
+        // 2c. Text scrubbing (word by word)
+        if (window.SplitType) {
+            const textToScrub = new window.SplitType('.gs-scrub-text', { types: 'words' });
+            
+            ceritaTl.fromTo(textToScrub.words,
+                { opacity: 0.15 },
+                { opacity: 1, stagger: 0.02, ease: 'none' },
+                0.15
+            );
+
+            // 2d. CTA button fades in after text
+            ceritaTl.to('.gs-cerita-cta',
+                { opacity: 1, duration: 0.1, ease: 'power2.out' },
+                0.85
+            );
+        }
+
+        // ═══════════════════════════════════════════
+        // 3. PRODUK — Horizontal Scroll Pinning
+        // ═══════════════════════════════════════════
+        const productsTrack = document.querySelector('.gs-products-track');
+        
+        if (productsTrack) {
+            function getScrollAmount() {
+                return -(productsTrack.scrollWidth - window.innerWidth + 64);
+            }
+
+            g.to(productsTrack, {
+                x: getScrollAmount,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.gs-products-pin',
+                    start: 'top top',
+                    end: () => `+=${Math.abs(getScrollAmount())}`,
+                    pin: true,
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    anticipatePin: 1
+                }
+            });
+        }
+
+    }, 200);
+});
+</script>
+<?php $__env->stopPush(); ?>
 
 <?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\SUGIH\sugih\resources\views/pages/home/index.blade.php ENDPATH**/ ?>
