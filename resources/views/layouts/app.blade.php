@@ -19,7 +19,7 @@
 
     @stack('head')
 </head>
-<body id="top" class="min-h-screen flex flex-col bg-sugih-green-900">
+<body id="top" class="min-h-screen flex flex-col bg-sugih-mustard-900">
 
     @include('partials.header')
 

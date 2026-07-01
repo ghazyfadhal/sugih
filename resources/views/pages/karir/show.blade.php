@@ -19,7 +19,7 @@
         </div>
 
         <div class="container-page text-center">
-            <span class="inline-block bg-sugih-green text-white text-xs font-bold uppercase tracking-widest
+            <span class="inline-block bg-sugih-mustard text-white text-xs font-bold uppercase tracking-widest
                          px-4 py-1.5 rounded-full mb-4 shadow-sm" data-aos="fade-down">
                 {{ $karir['type'] }} — {{ $karir['location'] }}
             </span>
@@ -33,7 +33,7 @@
     <section class="relative py-16 lg:py-24 bg-sugih-base" data-testid="karir-detail-content">
         {{-- Batik Watermark --}}
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
 
         <div class="container-page relative z-10">
@@ -51,7 +51,7 @@
                     <ul class="text-sugih-secondary text-sm sm:text-base leading-relaxed space-y-3">
                         @foreach(explode("\n", trim($karir['description'])) as $desc)
                             <li class="flex gap-3">
-                                <span class="text-sugih-gold mt-1 shrink-0">•</span>
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
                                 <span>{{ trim($desc) }}</span>
                             </li>
                         @endforeach
@@ -64,7 +64,7 @@
                     <ul class="text-sugih-secondary text-sm sm:text-base leading-relaxed space-y-3">
                         @foreach(explode("\n", trim($karir['requirements'])) as $qual)
                             <li class="flex gap-3">
-                                <span class="text-sugih-gold mt-1 shrink-0">•</span>
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
                                 <span>{{ trim($qual) }}</span>
                             </li>
                         @endforeach

@@ -1,5 +1,5 @@
 {{-- Warning banner (sesuai regulasi cukai Indonesia) --}}
-<aside class="bg-white text-sugih-green-900 border-t border-black/10" data-testid="warning-banner">
+<aside class="bg-white text-sugih-mustard-900 border-t border-black/10" data-testid="warning-banner">
     <div class="container-page py-3 flex items-center gap-4">
         {{-- Cancer warning icon --}}
         <div class="shrink-0 hidden sm:block">
@@ -15,8 +15,8 @@
 
         <div class="shrink-0">
             <span class="inline-flex items-center justify-center
-                         h-10 w-10 rounded-full border-2 border-sugih-green-900
-                         font-bold text-sm text-sugih-green-900">
+                         h-10 w-10 rounded-full border-2 border-sugih-mustard-900
+                         font-bold text-sm text-sugih-mustard-900">
                 21+
             </span>
         </div>

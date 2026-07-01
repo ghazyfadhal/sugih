@@ -8,17 +8,11 @@
     
     
     
-    <section class="relative min-h-[50vh] sm:min-h-[60vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="articles-hero">
+    <section class="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="articles-hero">
         <div class="absolute inset-0 -z-10" style="background-image: url('<?php echo e(asset('images/berita.png')); ?>'); background-size: cover; background-position: center;">
             <div class="absolute inset-0 bg-black/40"></div>
             
             <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
-        </div>
-
-        <div class="container-page">
-            <h1 class="heading-display text-center text-white text-5xl sm:text-6xl md:text-7xl drop-shadow-lg" data-aos="fade-up">
-                Berita
-            </h1>
         </div>
     </section>
 
@@ -32,16 +26,22 @@
 
         
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
 
         <div class="container-page relative z-10">
+            <h1 class="heading-display text-center text-sugih-primary text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
+                Berita
+            </h1>
+            <div class="flex justify-center mb-12" data-aos="fade-up">
+                <div class="w-20 h-1 bg-sugih-terracotta rounded-full"></div>
+            </div>
 
             <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(count($articles) > 0): ?>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                         
-                        <div class="p-3 flex flex-col justify-between items-center bg-sugih-surface shadow-sm rounded-2xl cursor-pointer border border-sugih-subtle hover:border-sugih-gold transition-colors"
+                        <div class="p-3 flex flex-col justify-between items-center bg-sugih-surface shadow-sm rounded-2xl cursor-pointer border border-sugih-subtle hover:border-sugih-green transition-colors"
                              data-aos="fade-up" data-aos-delay="<?php echo e(($index % 3) * 100); ?>"
                              @click="activeArticle = <?php echo e($article->id); ?>">
                             <div class="flex gap-4 flex-col w-full">
@@ -59,7 +59,7 @@
 
                                         </h3>
                                     </div>
-                                    <button aria-label="Open article" class="h-8 w-8 shrink-0 flex items-center justify-center rounded-full bg-sugih-surface text-sugih-primary hover:bg-sugih-gold hover:text-white border border-sugih-subtle hover:border-sugih-gold transition-colors duration-300 focus:outline-none group">
+                                    <button aria-label="Open article" class="h-8 w-8 shrink-0 flex items-center justify-center rounded-full bg-sugih-surface text-sugih-primary hover:bg-sugih-green hover:text-white border border-sugih-subtle hover:border-sugih-green transition-colors duration-300 focus:outline-none group">
                                         <div class="transition-transform duration-400 group-hover:rotate-45">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M5 12h14" />

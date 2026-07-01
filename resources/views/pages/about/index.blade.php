@@ -23,13 +23,16 @@
     <section class="relative py-20 lg:py-28 overflow-hidden bg-sugih-base">
         {{-- Batik Watermark --}}
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
         <div class="container-page relative z-10">
             {{-- Section title --}}
-            <h1 class="heading-display text-center text-sugih-primary text-4xl sm:text-5xl md:text-6xl mb-12" data-aos="fade-up">
+            <h1 class="heading-display text-center text-sugih-primary text-4xl sm:text-5xl md:text-6xl mb-4" data-aos="fade-up">
                 Tentang Sugih
             </h1>
+            <div class="flex justify-center mb-12" data-aos="fade-up">
+                <div class="w-20 h-1 bg-sugih-terracotta rounded-full"></div>
+            </div>
 
             {{-- Intro paragraph with scrubbing --}}
             <p class="text-center text-sugih-secondary text-sm sm:text-base md:text-lg leading-relaxed lg:leading-loose max-w-4xl mx-auto mb-24 font-normal gs-about-intro">
@@ -109,7 +112,7 @@
 
                 {{-- Member 1: Deni Rahmat --}}
                 <div class="text-center group gs-founder" data-testid="member-1">
-                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-green/30
+                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-mustard/30
                                 shadow-card-soft bg-sugih-dark
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
                         <img src="{{ asset('images/deni rahmat.jpeg') }}"
@@ -117,22 +120,22 @@
                              class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1 gs-founder-name">Deni Rahmat</h3>
-                    <p class="text-sugih-green text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
+                    <p class="text-sugih-mustard text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
                     <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Grup</p>
                 </div>
 
                 {{-- Member 2: Ardjia Adiati Karisma --}}
                 <div class="text-center group gs-founder" data-testid="member-2">
-                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-green/30
+                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-mustard/30
                                 shadow-card-soft bg-white flex items-center justify-center
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
                         {{-- Placeholder — akan diganti dengan foto asli --}}
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-sugih-green/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-sugih-mustard/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                         </svg>
                     </div>
                     <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1 gs-founder-name">Ardjia Adiati Karisma</h3>
-                    <p class="text-sugih-green text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
+                    <p class="text-sugih-mustard text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
                     <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Grup</p>
                 </div>
 

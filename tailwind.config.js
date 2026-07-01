@@ -20,35 +20,35 @@ export default {
             colors: {
                 sugih: {
                     // Light Mode
-                    base: '#F6F4EC',
-                    surface: '#EFEBDD',
-                    subtle: '#DCD5C2',     // border
+                    base: '#FFFDF8',
+                    surface: '#F4EFE6',
+                    subtle: '#E5DCC8',     // border
                     
                     // Typography
-                    primary: '#332A1F',    // text
-                    secondary: '#7A7264',  // text muted
+                    primary: '#2A2620',    // text
+                    secondary: '#6B6356',  // text muted
                     
                     // Brand
-                    green: {
-                        DEFAULT: '#8FA06E',
-                        hover: '#7C8D5C'
+                    mustard: {
+                        DEFAULT: '#E8A93B',
+                        hover: '#D6982C'
                     },
-                    gold: {
-                        DEFAULT: '#C79A56',
-                        hover: '#B58847'
+                    green: {
+                        DEFAULT: '#3F5738',
+                        hover: '#31442B'
                     },
                     terracotta: {
-                        DEFAULT: '#B5502C',
-                        hover: '#9C4322'
+                        DEFAULT: '#C65D3B',
+                        hover: '#B15031'
                     },
                     
-                    // Dark Mode (Fresh Tobacco dark)
+                    // Dark Mode
                     dark: {
-                        DEFAULT: '#2B3524',    // bg utama section gelap
-                        surface: '#37432C',    // card di section gelap
-                        text: '#F1EEE2',       // text utama di gelap
-                        muted: '#B4BBA0',      // text sekunder di gelap
-                        border: '#4A5A3B'      // border di gelap
+                        DEFAULT: '#1E281A',    // bg utama section gelap
+                        surface: '#2C3A26',    // card di section gelap
+                        text: '#F8F6F0',       // text utama di gelap
+                        muted: '#A5A39B',      // text sekunder di gelap
+                        border: '#3F5738'      // border di gelap
                     }
                 },
             },

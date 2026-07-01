@@ -37,7 +37,7 @@
 
             <div class="mt-16 flex justify-center gs-hero-arrow" data-aos="fade-up" data-aos-delay="300">
                 <a href="#cerita-kami"
-                   class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-green transition-colors animate-bounce"
+                   class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-mustard transition-colors animate-bounce"
                    aria-label="Scroll ke bawah"
                    data-testid="hero-scroll-arrow">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -94,7 +94,7 @@
     <section class="relative overflow-hidden gs-products-pin bg-sugih-base" data-testid="products-section">
         
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: right center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
 
         <div class="h-screen flex flex-col justify-center relative z-10 gs-products-inner">
@@ -115,7 +115,7 @@
                                         transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(184,154,90,0.25)]">
                             
                             
-                            <span class="text-xs font-semibold tracking-widest uppercase mb-4 <?php echo e($product['collection'] === 'Original Collection' ? 'text-sugih-green' : 'text-sugih-gold'); ?>">
+                            <span class="text-xs font-semibold tracking-widest uppercase mb-4 <?php echo e($product['collection'] === 'Original Collection' ? 'text-sugih-mustard' : 'text-sugih-green'); ?>">
                                 <?php echo e($product['collection']); ?>
 
                             </span>
@@ -148,7 +148,7 @@
     <section class="relative py-24 lg:py-28 overflow-hidden bg-sugih-base" data-testid="articles-section">
         
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
 
         <div class="container-page relative z-10">

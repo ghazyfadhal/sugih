@@ -2,7 +2,7 @@
 <div class="fixed bottom-6 right-6 z-50 flex items-center gap-4 group" x-data="{ showTooltip: true }" x-init="setTimeout(() => showTooltip = false, 5000)">
     
     
-    <div class="relative bg-white text-sugih-green-900 text-sm font-bold py-2 px-4 rounded-full shadow-lg
+    <div class="relative bg-white text-sugih-mustard-900 text-sm font-bold py-2 px-4 rounded-full shadow-lg
                 transition-all duration-300 origin-right
                 group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0"
          :class="showTooltip ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'">

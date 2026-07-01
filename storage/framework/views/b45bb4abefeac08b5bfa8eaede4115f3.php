@@ -18,16 +18,16 @@
         <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-gold <?php echo e(request()->routeIs('home') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-green <?php echo e(request()->routeIs('home') ? 'text-sugih-green' : $defaultText); ?>'">Beranda</a>
+               :class="scrolled ? 'hover:text-sugih-green <?php echo e(request()->routeIs('home') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-mustard <?php echo e(request()->routeIs('home') ? 'text-sugih-mustard' : $defaultText); ?>'">Beranda</a>
             <a href="<?php echo e(route('about')); ?>"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-gold <?php echo e(request()->routeIs('about') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-green <?php echo e(request()->routeIs('about') ? 'text-sugih-green' : $defaultText); ?>'">Sejarah</a>
+               :class="scrolled ? 'hover:text-sugih-green <?php echo e(request()->routeIs('about') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-mustard <?php echo e(request()->routeIs('about') ? 'text-sugih-mustard' : $defaultText); ?>'">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-gold <?php echo e(request()->routeIs('products.*') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-green <?php echo e(request()->routeIs('products.*') ? 'text-sugih-green' : $defaultText); ?>'">Produk</a>
+               :class="scrolled ? 'hover:text-sugih-green <?php echo e(request()->routeIs('products.*') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-mustard <?php echo e(request()->routeIs('products.*') ? 'text-sugih-mustard' : $defaultText); ?>'">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-gold <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-green <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-green' : $defaultText); ?>'">Berita</a>
+               :class="scrolled ? 'hover:text-sugih-green <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-terracotta' : 'text-sugih-primary'); ?>' : 'hover:text-sugih-mustard <?php echo e(request()->routeIs('articles.*') ? 'text-sugih-mustard' : $defaultText); ?>'">Berita</a>
         </nav>
 
         
@@ -35,7 +35,7 @@
             type="button"
             @click="open = !open"
             class="p-2 -mr-2 transition-transform duration-300"
-            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-sugih-primary' : '<?php echo e($isLightTop ? 'text-sugih-primary' : 'text-sugih-green'); ?>']"
+            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-sugih-primary' : '<?php echo e($isLightTop ? 'text-sugih-primary' : 'text-sugih-mustard'); ?>']"
             aria-label="Toggle menu"
             data-testid="nav-toggle"
         >
@@ -80,25 +80,25 @@
         
         <nav class="flex-1 px-8 pt-6 pb-10 flex flex-col gap-1 overflow-y-auto">
             <a href="<?php echo e(request()->routeIs('home') ? '#top' : route('home')); ?>"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Beranda</a>
             <a href="<?php echo e(route('about')); ?>"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Sejarah</a>
             <a href="<?php echo e(route('products.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Produk</a>
             <a href="<?php echo e(route('articles.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Berita</a>
             <a href="<?php echo e(route('karir.index')); ?>"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Karir</a>
             <a href="#footer"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors border-b border-sugih-subtle/20"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
                @click="open = false">Kontak</a>
             <button type="button"
-               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-green transition-colors underline decoration-sugih-subtle/40 underline-offset-4 hover:decoration-sugih-green"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors underline decoration-sugih-subtle/40 underline-offset-4 hover:decoration-sugih-mustard"
                @click="open = false; $dispatch('open-mitra-modal')">Gabung Mitra</button>
         </nav>
     </div>

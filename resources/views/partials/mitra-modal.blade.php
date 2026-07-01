@@ -34,7 +34,7 @@
                 </svg>
             </button>
 
-            <h3 class="heading-display text-3xl sm:text-4xl text-sugih-gold mb-4">Jadilah Bagian dari SUGIH</h3>
+            <h3 class="heading-display text-3xl sm:text-4xl text-sugih-green mb-4">Jadilah Bagian dari SUGIH</h3>
             <p class="text-sugih-secondary text-base mb-8">
                 Tertarik menjadi distributor atau reseller resmi SUGIH di kota Anda? Dapatkan harga khusus pabrik dan jadilah agen pertumbuhan bersama kretek berkualitas dari Cianjur.
             </p>

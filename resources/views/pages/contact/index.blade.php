@@ -6,10 +6,10 @@
     <section class="relative pt-32 pb-20 container-page min-h-screen">
         {{-- Batik Watermark --}}
         <div class="absolute inset-0 pointer-events-none opacity-15" 
-             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+             style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
         <div class="relative z-10">
-        <h1 class="heading-display text-sugih-gold text-5xl mb-6">Hubungi Kami</h1>
+        <h1 class="heading-display text-sugih-green text-5xl mb-6">Hubungi Kami</h1>
 
         @if(session('success'))
             <div class="bg-emerald-500/20 border border-emerald-400 text-emerald-100 px-4 py-3 rounded mb-6">
