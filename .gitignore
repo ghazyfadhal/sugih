@@ -1,0 +1,19 @@
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 5 & newer
+public/hot
+public/build
+storage/*.key
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+.php_cs.cache
+.phpunit.cache
+.DS_Store
+*.log
+
+# Vercel
+.vercel
