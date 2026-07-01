@@ -26,7 +26,6 @@ Route::get('/produk/{slug}',   [ProductController::class, 'show'])->name('produc
 
 // Berita / Artikel
 Route::get('/berita',          [ArticleController::class, 'index'])->name('articles.index');
-Route::get('/berita/{slug}',   [ArticleController::class, 'show'])->name('articles.show');
 
 // Karir
 Route::get('/karir',           [KarirController::class, 'index'])->name('karir.index');
