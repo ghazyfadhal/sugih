@@ -5,7 +5,7 @@ yarn-error.log
 
 # Laravel 5 & newer
 public/hot
-public/build
+#public/build
 storage/*.key
 .phpunit.result.cache
 Homestead.json
