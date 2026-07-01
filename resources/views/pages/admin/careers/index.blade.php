@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-gray-800">Daftar Lowongan</h2>
         <p class="text-gray-500 text-sm">Kelola informasi lowongan pekerjaan di perusahaan SUGIH.</p>
     </div>
-    <a href="{{ route('admin.careers.create') }}" class="bg-sugih-green-900 text-sugih-gold px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-green-800 transition-colors flex items-center">
+    <a href="{{ route('admin.careers.create') }}" class="bg-sugih-green-900 text-sugih-green px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-green-800 transition-colors flex items-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
         Tambah Lowongan
     </a>

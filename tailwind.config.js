@@ -19,34 +19,37 @@ export default {
             },
             colors: {
                 sugih: {
-                    // Light Neo-Vernacular Palette
-                    ivory: '#FAF8F5',      // Body background utama
-                    cream: '#F2EDE4',      // Background alternatif
-                    brown: '#5C3D1E',      // Brand utama
-                    walnut: '#3E2A14',     // Varian gelap
-                    tan: '#C4A882',        // Varian terang (border)
-                    charcoal: '#2C2317',   // Teks utama
-                    gray: '#6B5E52',       // Teks sekunder
-                    muted: '#A89B8C',      // Teks tersier
+                    // Light Mode
+                    base: '#F6F4EC',
+                    surface: '#EFEBDD',
+                    subtle: '#DCD5C2',     // border
                     
-                    // Aksen & CTA
-                    terracotta: '#C87941', 
-                    gold: '#B89A5A',       
-                    amber: '#D4A04A',
+                    // Typography
+                    primary: '#332A1F',    // text
+                    secondary: '#7A7264',  // text muted
                     
-                    // Base Greens (Legacy)
+                    // Brand
                     green: {
-                        50:  '#eef6ee',
-                        100: '#d3e7d4',
-                        200: '#a8cfaa',
-                        300: '#73b079',
-                        400: '#3f8e4a',
-                        500: '#1f6b2a',
-                        600: '#155121',
-                        700: '#103f1a',
-                        800: '#0b2c12',
-                        900: '#06200b',
+                        DEFAULT: '#8FA06E',
+                        hover: '#7C8D5C'
                     },
+                    gold: {
+                        DEFAULT: '#C79A56',
+                        hover: '#B58847'
+                    },
+                    terracotta: {
+                        DEFAULT: '#B5502C',
+                        hover: '#9C4322'
+                    },
+                    
+                    // Dark Mode (Fresh Tobacco dark)
+                    dark: {
+                        DEFAULT: '#2B3524',    // bg utama section gelap
+                        surface: '#37432C',    // card di section gelap
+                        text: '#F1EEE2',       // text utama di gelap
+                        muted: '#B4BBA0',      // text sekunder di gelap
+                        border: '#4A5A3B'      // border di gelap
+                    }
                 },
             },
             backgroundImage: {

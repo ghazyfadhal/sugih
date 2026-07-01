@@ -25,18 +25,23 @@
     
     
     
-    <section class="relative py-20 lg:py-28 min-h-screen bg-sugih-charcoal" 
+    <section class="relative py-20 lg:py-28 min-h-screen bg-sugih-base" 
              data-testid="articles-index" 
              x-data="{ activeArticle: null }"
              x-init="$watch('activeArticle', val => { if(val) { window.lenis?.stop(); document.body.style.overflow='hidden'; } else { window.lenis?.start(); document.body.style.overflow=''; } })">
 
-        <div class="container-page">
+        
+        <div class="absolute inset-0 pointer-events-none opacity-15" 
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+        </div>
+
+        <div class="container-page relative z-10">
 
             <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if(count($articles) > 0): ?>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $articles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $article): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                         
-                        <div class="p-3 flex flex-col justify-between items-center bg-zinc-50 shadow-sm rounded-2xl cursor-pointer border border-gray-200/70 hover:border-gray-300 transition-colors"
+                        <div class="p-3 flex flex-col justify-between items-center bg-sugih-surface shadow-sm rounded-2xl cursor-pointer border border-sugih-subtle hover:border-sugih-gold transition-colors"
                              data-aos="fade-up" data-aos-delay="<?php echo e(($index % 3) * 100); ?>"
                              @click="activeArticle = <?php echo e($article->id); ?>">
                             <div class="flex gap-4 flex-col w-full">
@@ -45,16 +50,16 @@
                                 </div>
                                 <div class="flex justify-between items-center px-1 pb-1">
                                     <div class="flex flex-col pr-4">
-                                        <p class="text-zinc-500 text-sm font-medium mb-1">
+                                        <p class="text-sugih-secondary text-sm font-medium mb-1">
                                             <?php echo e($article->created_at->format('d F Y')); ?>
 
                                         </p>
-                                        <h3 class="text-black font-semibold text-lg leading-snug line-clamp-2">
+                                        <h3 class="text-sugih-primary font-semibold text-lg leading-snug line-clamp-2">
                                             <?php echo e($article->title); ?>
 
                                         </h3>
                                     </div>
-                                    <button aria-label="Open article" class="h-8 w-8 shrink-0 flex items-center justify-center rounded-full bg-zinc-50 text-neutral-700 hover:bg-neutral-100 border border-gray-200/90 hover:border-gray-300 transition-colors duration-300 focus:outline-none group">
+                                    <button aria-label="Open article" class="h-8 w-8 shrink-0 flex items-center justify-center rounded-full bg-sugih-surface text-sugih-primary hover:bg-sugih-gold hover:text-white border border-sugih-subtle hover:border-sugih-gold transition-colors duration-300 focus:outline-none group">
                                         <div class="transition-transform duration-400 group-hover:rotate-45">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M5 12h14" />
@@ -69,7 +74,7 @@
                 </div>
             <?php else: ?>
                 <div class="text-center py-20">
-                    <p class="text-sugih-gray text-lg">Belum ada berita untuk ditampilkan.</p>
+                    <p class="text-sugih-secondary text-lg">Belum ada berita untuk ditampilkan.</p>
                 </div>
             <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
         </div>

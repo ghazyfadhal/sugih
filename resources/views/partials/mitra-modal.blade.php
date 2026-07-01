@@ -15,7 +15,7 @@
              x-transition:leave-start="opacity-100"
              x-transition:leave-end="opacity-0"
              @click="modalMitraOpen = false"
-             class="absolute inset-0 bg-sugih-charcoal/80 backdrop-blur-sm"></div>
+             class="absolute inset-0 bg-sugih-dark/80 backdrop-blur-sm"></div>
 
         {{-- Modal Content --}}
         <div x-show="modalMitraOpen"
@@ -25,17 +25,17 @@
              x-transition:leave="transition ease-in duration-200"
              x-transition:leave-start="opacity-100 scale-100 translate-y-0"
              x-transition:leave-end="opacity-0 scale-95 translate-y-4"
-             class="relative bg-white border border-sugih-tan/20 rounded-2xl p-8 sm:p-12 max-w-xl w-full shadow-2xl text-center">
+             class="relative bg-white border border-sugih-subtle/20 rounded-2xl p-8 sm:p-12 max-w-xl w-full shadow-2xl text-center">
             
             {{-- Close Button --}}
-            <button @click="modalMitraOpen = false" class="absolute top-4 right-4 text-sugih-gray hover:text-sugih-charcoal transition-colors">
+            <button @click="modalMitraOpen = false" class="absolute top-4 right-4 text-sugih-secondary hover:text-sugih-primary transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
 
-            <h3 class="heading-display text-3xl sm:text-4xl text-sugih-brown mb-4">Jadilah Bagian dari SUGIH</h3>
-            <p class="text-sugih-gray text-base mb-8">
+            <h3 class="heading-display text-3xl sm:text-4xl text-sugih-gold mb-4">Jadilah Bagian dari SUGIH</h3>
+            <p class="text-sugih-secondary text-base mb-8">
                 Tertarik menjadi distributor atau reseller resmi SUGIH di kota Anda? Dapatkan harga khusus pabrik dan jadilah agen pertumbuhan bersama kretek berkualitas dari Cianjur.
             </p>
 

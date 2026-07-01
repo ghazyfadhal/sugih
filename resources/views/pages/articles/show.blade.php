@@ -26,7 +26,7 @@
 
             {{-- Date --}}
             <div class="mb-4" data-aos="fade-up" data-aos-delay="100">
-                <span class="text-sugih-gold text-sm font-semibold tracking-wide">
+                <span class="text-sugih-green text-sm font-semibold tracking-wide">
                     {{ $article->created_at->format('d F Y') }}
                 </span>
                 <div class="w-16 h-1 bg-red-600 mt-3"></div>
@@ -45,7 +45,7 @@
             {{-- Back link --}}
             <div class="mt-14 pt-8 border-t border-white/10">
                 <a href="{{ route('articles.index') }}"
-                   class="inline-flex items-center gap-2 text-sugih-gold hover:text-white font-bold transition-colors">
+                   class="inline-flex items-center gap-2 text-sugih-green hover:text-white font-bold transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>

@@ -37,7 +37,7 @@
 
             <div class="mt-16 flex justify-center gs-hero-arrow" data-aos="fade-up" data-aos-delay="300">
                 <a href="#cerita-kami"
-                   class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-gold transition-colors animate-bounce"
+                   class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-green transition-colors animate-bounce"
                    aria-label="Scroll ke bawah"
                    data-testid="hero-scroll-arrow">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 sm:h-12 sm:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -60,7 +60,7 @@
         </div>
 
         <div class="container-page h-screen flex items-center">
-            <div class="max-w-xl bg-sugih-charcoal/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-card-soft border border-white/10 gs-cerita-card">
+            <div class="max-w-xl bg-sugih-dark/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-card-soft border border-white/10 gs-cerita-card">
                 <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap gs-cerita-heading">
                     Cerita Kami
                 </h2>
@@ -91,13 +91,15 @@
         $allProducts = collect($products)->sortBy('sort_order')->values();
     ?>
 
-    <section class="relative overflow-hidden gs-products-pin" data-testid="products-section">
+    <section class="relative overflow-hidden gs-products-pin bg-sugih-base" data-testid="products-section">
         
-        <div class="absolute inset-0 -z-10 bg-sugih-charcoal"></div>
+        <div class="absolute inset-0 pointer-events-none opacity-15" 
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: right center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+        </div>
 
-        <div class="h-screen flex flex-col justify-center gs-products-inner">
+        <div class="h-screen flex flex-col justify-center relative z-10 gs-products-inner">
             <div class="container-page">
-                <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-12">
+                <h2 class="heading-display text-center text-sugih-primary text-4xl sm:text-5xl md:text-6xl mb-12">
                     Produk Kami
                 </h2>
             </div>
@@ -107,14 +109,13 @@
                 <div class="flex flex-nowrap gap-8 pl-8 sm:pl-16 lg:pl-24 gs-products-track" style="will-change: transform;">
                     <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $allProducts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoopIteration(); ?><?php endif; ?>
                         <article class="w-[80vw] sm:w-[420px] md:w-[480px] flex-shrink-0
-                                        bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 relative
+                                        bg-sugih-surface rounded-3xl p-6 sm:p-8 relative
                                         flex flex-col items-center text-center group
-                                        shadow-card-soft border <?php echo e($product['collection'] === 'Original Collection' ? 'border-sugih-gold/20' : 'border-sky-300/20'); ?>
-
+                                        shadow-card-soft border border-sugih-subtle
                                         transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-10px_rgba(184,154,90,0.25)]">
                             
                             
-                            <span class="text-xs font-semibold tracking-widest uppercase mb-4 <?php echo e($product['collection'] === 'Original Collection' ? 'text-sugih-gold' : 'text-sky-300'); ?>">
+                            <span class="text-xs font-semibold tracking-widest uppercase mb-4 <?php echo e($product['collection'] === 'Original Collection' ? 'text-sugih-green' : 'text-sugih-gold'); ?>">
                                 <?php echo e($product['collection']); ?>
 
                             </span>
@@ -122,11 +123,11 @@
                             <div class="flex justify-center mb-6">
                                 <img src="<?php echo e($product->image_url); ?>"
                                      alt="<?php echo e($product['name']); ?>"
-                                     class="h-48 sm:h-56 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                                     class="h-48 sm:h-56 w-auto object-contain drop-shadow-xl group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
 
-                            <h4 class="heading-display text-white text-2xl sm:text-3xl mb-3"><?php echo e($product['name']); ?></h4>
-                            <p class="text-white/75 leading-relaxed text-sm sm:text-base line-clamp-3">
+                            <h4 class="heading-display text-sugih-primary text-2xl sm:text-3xl mb-3"><?php echo e($product['name']); ?></h4>
+                            <p class="text-sugih-secondary leading-relaxed text-sm sm:text-base line-clamp-3">
                                 <?php echo e($product['tagline'] ?? $product['description']); ?>
 
                             </p>
@@ -144,13 +145,14 @@
     
     
     
-    <section class="relative py-24 lg:py-28 overflow-hidden" data-testid="articles-section">
-        <div class="absolute inset-0 -z-10 bg-sugih-charcoal">
-            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/30 to-transparent"></div>
+    <section class="relative py-24 lg:py-28 overflow-hidden bg-sugih-base" data-testid="articles-section">
+        
+        <div class="absolute inset-0 pointer-events-none opacity-15" 
+             style="background-image: url('<?php echo e(asset('images/batik-cianjur-no-bg.png')); ?>'); background-repeat: no-repeat; background-position: left center; background-size: auto 120%; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
         </div>
 
-        <div class="container-page">
-            <h2 class="heading-display text-center text-white text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
+        <div class="container-page relative z-10">
+            <h2 class="heading-display text-center text-sugih-primary text-4xl sm:text-5xl md:text-6xl mb-14" data-aos="fade-up">
                 Berita Terkini
             </h2>
 

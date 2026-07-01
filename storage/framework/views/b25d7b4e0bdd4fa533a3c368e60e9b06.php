@@ -16,7 +16,7 @@
                 <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-8m-4 8l-4-8"></path></svg>
                 Atur Urutan
             </button>
-            <a x-show="!reorderMode" href="<?php echo e(route('admin.products.create')); ?>" class="bg-sugih-green-900 text-sugih-gold px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-green-800 transition-colors flex items-center shadow-sm">
+            <a x-show="!reorderMode" href="<?php echo e(route('admin.products.create')); ?>" class="bg-sugih-green-900 text-sugih-mustard px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-green-800 transition-colors flex items-center shadow-sm">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 Tambah Produk
             </a>

@@ -32,7 +32,7 @@
             </div>
 
             <div class="pt-2">
-                <button type="submit" class="w-full bg-sugih-green-900 text-sugih-gold rounded-xl py-3 px-4 font-semibold hover:bg-sugih-green-800 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-sugih-green-900">
+                <button type="submit" class="w-full bg-sugih-green-900 text-sugih-green rounded-xl py-3 px-4 font-semibold hover:bg-sugih-green-800 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-sugih-green-900">
                     Masuk ke Dashboard
                 </button>
             </div>

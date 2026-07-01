@@ -19,7 +19,7 @@
     <div class="flex h-screen overflow-hidden">
         
         <!-- Sidebar -->
-        <aside class="w-64 bg-white text-sugih-charcoal border-r border-gray-200 flex flex-col transition-all duration-300 relative z-20">
+        <aside class="w-64 bg-white text-sugih-primary border-r border-gray-200 flex flex-col transition-all duration-300 relative z-20">
             <div class="h-20 shrink-0 flex items-center justify-center border-b border-gray-200">
                 <div class="flex items-center gap-2">
                     <img src="<?php echo e(asset('images/admin-logo.svg')); ?>" alt="SUGIH Admin Logo" class="h-8 w-auto filter grayscale">
@@ -28,22 +28,22 @@
             </div>
             
             <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-                <a href="<?php echo e(route('admin.dashboard')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-cream hover:text-sugih-brown transition-colors <?php echo e(request()->routeIs('admin.dashboard') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-gray'); ?>">
+                <a href="<?php echo e(route('admin.dashboard')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-surface hover:text-sugih-green transition-colors <?php echo e(request()->routeIs('admin.dashboard') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-secondary'); ?>">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     Dashboard
                 </a>
                 
-                <a href="<?php echo e(route('admin.products.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-cream hover:text-sugih-brown transition-colors <?php echo e(request()->routeIs('admin.products.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-gray'); ?>">
+                <a href="<?php echo e(route('admin.products.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-surface hover:text-sugih-green transition-colors <?php echo e(request()->routeIs('admin.products.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-secondary'); ?>">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                     Produk
                 </a>
                 
-                <a href="<?php echo e(route('admin.articles.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-cream hover:text-sugih-brown transition-colors <?php echo e(request()->routeIs('admin.articles.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-gray'); ?>">
+                <a href="<?php echo e(route('admin.articles.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-surface hover:text-sugih-green transition-colors <?php echo e(request()->routeIs('admin.articles.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-secondary'); ?>">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15"></path></svg>
                     Artikel
                 </a>
 
-                <a href="<?php echo e(route('admin.careers.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-cream hover:text-sugih-brown transition-colors <?php echo e(request()->routeIs('admin.careers.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-gray'); ?>">
+                <a href="<?php echo e(route('admin.careers.index')); ?>" class="flex items-center px-4 py-3 rounded-xl hover:bg-sugih-surface hover:text-sugih-green transition-colors <?php echo e(request()->routeIs('admin.careers.*') ? 'bg-sugih-terracotta text-white font-bold' : 'text-sugih-secondary'); ?>">
                     <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     Karir
                 </a>
@@ -127,13 +127,13 @@
                 // Highlight effect
                 ['dragenter', 'dragover'].forEach(eventName => {
                     zone.addEventListener(eventName, () => {
-                        zone.classList.add('border-sugih-gold', 'bg-gray-100');
+                        zone.classList.add('border-sugih-mustard', 'bg-gray-100');
                     }, false);
                 });
 
                 ['dragleave', 'drop'].forEach(eventName => {
                     zone.addEventListener(eventName, () => {
-                        zone.classList.remove('border-sugih-gold', 'bg-gray-100');
+                        zone.classList.remove('border-sugih-mustard', 'bg-gray-100');
                     }, false);
                 });
 

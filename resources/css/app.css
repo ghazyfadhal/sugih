@@ -12,13 +12,13 @@
         scroll-behavior: smooth;
     }
     body {
-        @apply bg-sugih-ivory text-sugih-charcoal font-sans antialiased;
+        @apply bg-sugih-base text-sugih-primary font-sans antialiased;
         font-optical-sizing: auto;
         -webkit-font-smoothing: antialiased;
     }
     ::selection {
-        background: theme('colors.sugih.gold');
-        color: theme('colors.sugih.ivory');
+        background: theme('colors.sugih.green.DEFAULT');
+        color: theme('colors.sugih.base');
     }
     /* Hide Alpine elements before they are initialized to prevent flashing */
     [x-cloak] {
@@ -32,7 +32,7 @@
 @layer components {
     .btn-primary {
         @apply inline-flex items-center justify-center px-8 py-3 rounded-full
-               bg-sugih-terracotta hover:bg-sugih-brown transition-all duration-300
+               bg-sugih-terracotta hover:bg-sugih-gold transition-all duration-300
                text-white font-semibold tracking-wide shadow-lg shadow-black/30
                focus:outline-none focus:ring-2 focus:ring-sugih-terracotta/60
                hover:-translate-y-1 hover:shadow-[0_4px_20px_rgba(200,121,65,0.6)];
@@ -65,7 +65,7 @@
     /* Carousel arrow buttons */
     .carousel-arrow {
         @apply h-12 w-12 flex items-center justify-center
-               text-sugih-gold/90 hover:text-sugih-gold
+               text-sugih-green/90 hover:text-sugih-green
                transition-colors duration-200 cursor-pointer select-none;
     }
 }
@@ -79,7 +79,7 @@
     opacity: 1;
 }
 .swiper-pagination-bullet-active {
-    background: theme('colors.sugih.gold');
+    background: theme('colors.sugih.green.DEFAULT');
 }
 
 /* Subtle grain overlay used on hero */
@@ -92,6 +92,8 @@
     pointer-events: none;
     mix-blend-mode: overlay;
 }
+
+
 
 /* ---------------------------------------------------------------- *
  * Product Page Carousel (Aroma-style coverflow)

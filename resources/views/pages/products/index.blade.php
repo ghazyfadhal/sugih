@@ -35,7 +35,7 @@
                              @click="selectedProduct = {{ $product->id }}">
                              
                             {{-- Spotlight / Glow --}}
-                            <div class="absolute inset-0 bg-white/5 blur-3xl rounded-full -z-10 scale-75 group-hover:scale-100 group-hover:bg-sugih-gold/20 transition-all duration-700"></div>
+                            <div class="absolute inset-0 bg-white/5 blur-3xl rounded-full -z-10 scale-75 group-hover:scale-100 group-hover:bg-sugih-green/20 transition-all duration-700"></div>
 
                             {{-- Image Container with Levitation Effect --}}
                             <div class="flex justify-center items-center">
@@ -70,7 +70,7 @@
                         {{-- Left: Image --}}
                         <div class="w-full md:w-1/2 flex justify-center p-4 md:p-8 relative">
                             {{-- Decorative glow --}}
-                            <div class="absolute inset-0 bg-sugih-gold/10 blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
+                            <div class="absolute inset-0 bg-sugih-green/10 blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
                             
                             <div class="flex justify-center items-center animate-[float_4s_ease-in-out_infinite]">
                                 <img src="{{ $product->image_url }}"
