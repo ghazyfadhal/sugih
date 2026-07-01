@@ -11,7 +11,7 @@ class AdminProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::orderBy('sort_order')->paginate(10);
         return view('pages.admin.products.index', compact('products'));
     }
 
@@ -28,7 +28,7 @@ class AdminProductController extends Controller
             'tagline' => 'nullable|max:120',
             'description' => 'nullable',
             'is_active' => 'nullable',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:30720' // Maksimal 30MB
         ]);
 
         $validated['slug'] = Str::slug($validated['name']) . '-' . uniqid();
@@ -38,6 +38,7 @@ class AdminProductController extends Controller
             $validated['image'] = $request->file('image')->store('products', 'public');
         }
 
+        $validated['sort_order'] = Product::max('sort_order') + 1;
         Product::create($validated);
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil ditambahkan.');
@@ -61,7 +62,7 @@ class AdminProductController extends Controller
             'tagline' => 'nullable|max:120',
             'description' => 'nullable',
             'is_active' => 'nullable',
-            'image' => 'nullable|image|max:2048'
+            'image' => 'nullable|image|max:30720' // Maksimal 30MB
         ]);
 
         $validated['is_active'] = $request->has('is_active');
@@ -86,5 +87,16 @@ class AdminProductController extends Controller
         $product->delete();
 
         return redirect()->route('admin.products.index')->with('success', 'Produk berhasil dihapus.');
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $orderData = $request->input('order');
+        if (is_array($orderData)) {
+            foreach ($orderData as $item) {
+                Product::where('id', $item['id'])->update(['sort_order' => $item['sort_order']]);
+            }
+        }
+        return response()->json(['success' => true]);
     }
 }

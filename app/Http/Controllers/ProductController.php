@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index(): View
     {
-        $products = Product::where('is_active', true)->get();
+        $products = Product::where('is_active', true)->orderBy('sort_order')->get();
 
         return view('pages.products.index', [
             'products' => $products,

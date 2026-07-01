@@ -119,14 +119,18 @@
                 <div class="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
                     @foreach($originalProducts as $product)
                         <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
-                                        grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
-                                        shadow-card-soft border border-sugih-gold/20
-                                        transition-transform duration-300 hover:-translate-y-1">
+                                        grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center relative
+                                        shadow-card-soft border border-sugih-gold/20 group
+                                        transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_40px_-10px_rgba(184,154,90,0.3)]">
+                            
+                            {{-- Hover Glow Background --}}
+                            <div class="absolute inset-0 bg-sugih-gold/0 group-hover:bg-sugih-gold/5 blur-xl transition-all duration-700 rounded-3xl -z-10"></div>
+
                             <div class="flex justify-center">
                                 <img
                                     src="{{ $product->image_url }}"
                                     alt="{{ $product['name'] }}"
-                                    class="h-52 sm:h-64 w-auto object-contain drop-shadow-2xl"
+                                    class="h-52 sm:h-64 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
                                 >
                             </div>
 
@@ -159,15 +163,19 @@
                         <div class="swiper-wrapper">
                             @foreach($flavourProducts as $product)
                                 <div class="swiper-slide">
-                                    <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10
-                                                    grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center
+                                    <article class="bg-sugih-charcoal/80 backdrop-blur-sm rounded-3xl p-6 sm:p-10 relative
+                                                    grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-center group
                                                     shadow-card-soft border border-sky-300/20
-                                                    transition-transform duration-300 hover:-translate-y-1">
+                                                    transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_20px_40px_-10px_rgba(125,211,252,0.3)]">
+                                        
+                                        {{-- Hover Glow Background --}}
+                                        <div class="absolute inset-0 bg-sky-300/0 group-hover:bg-sky-300/5 blur-xl transition-all duration-700 rounded-3xl -z-10"></div>
+
                                         <div class="flex justify-center">
                                             <img
                                                 src="{{ $product->image_url }}"
                                                 alt="{{ $product['name'] }}"
-                                                class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl"
+                                                class="h-44 sm:h-56 w-auto object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 ease-out"
                                             >
                                         </div>
 

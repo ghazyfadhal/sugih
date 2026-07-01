@@ -13,7 +13,7 @@
         .heading-display { font-family: 'Outfit', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased" data-admin="true">
     
     @if(Auth::check())
     <div class="flex h-screen overflow-hidden">
@@ -160,5 +160,6 @@
             });
         });
     </script>
+    @stack('scripts')
 </body>
 </html>

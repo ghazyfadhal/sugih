@@ -50,6 +50,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
     
     // CRUD
+    Route::post('products/update-order', [AdminProductController::class, 'updateOrder'])->name('products.updateOrder');
     Route::resource('products', AdminProductController::class);
     Route::resource('articles', AdminArticleController::class);
     Route::resource('careers', AdminCareerController::class);

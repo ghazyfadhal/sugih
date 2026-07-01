@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index(): View
     {
-        $products = Product::where('is_active', true)->get();
+        $products = Product::where('is_active', true)->orderBy('sort_order')->get();
         $articles = Article::where('is_published', true)->latest()->take(3)->get();
 
         return view('pages.home.index', [

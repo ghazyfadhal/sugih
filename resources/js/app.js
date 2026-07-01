@@ -10,6 +10,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import 'aos/dist/aos.css';
+import 'atropos/css';
+
+import Lenis from 'lenis';
+import Atropos from 'atropos';
 
 window.Alpine = Alpine;
 Alpine.start();
@@ -22,6 +26,28 @@ window.addEventListener('load', () => {
         easing: 'ease-out-cubic', // default easing for AOS animations
         offset: 20, // offset (in px) from the original trigger point
     });
+
+    // Initialize Lenis (Smooth Scroll) only if not on admin page
+    if (!document.body.hasAttribute('data-admin')) {
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    }
 });
 
 /* ---------------- Carousels (Produk & Berita) ---------------- */
@@ -96,5 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     }
+    /* ---- Atropos 3D Hover ---- */
+    const atroposElements = document.querySelectorAll('.atropos');
+    atroposElements.forEach((el) => {
+        Atropos({
+            el: el,
+            activeOffset: 40,
+            shadow: true,
+            shadowScale: 0.9, // Shadow tidak terlalu lebar/luar
+            shadowOffset: 20, // Shadow lebih dekat ke produk
+            onEnter() {
+                console.log('Enter');
+            },
+            onLeave() {
+                console.log('Leave');
+            },
+            onRotate(x, y) {
+                console.log('Rotate', x, y);
+            }
+        });
+    });
 });
 
