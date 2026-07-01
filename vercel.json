@@ -6,7 +6,19 @@
             "use": "vercel-php@0.7.1"
         },
         {
-            "src": "public/**",
+            "src": "public/build/assets/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "public/images/**",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "public/favicon.ico",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "public/robots.txt",
             "use": "@vercel/static"
         }
     ],
