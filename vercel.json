@@ -4,7 +4,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "functions": {
-    "api/*.php": {
+    "server/*.php": {
       "runtime": "vercel-php@0.9.0"
     }
   },
@@ -14,8 +14,24 @@
       "dest": "/build/$1"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/storage/(.*)",
+      "dest": "/storage/$1"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/api/index.php"
+      "dest": "/server/index.php"
     }
   ]
 }
