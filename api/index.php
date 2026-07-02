@@ -11,6 +11,12 @@ define('LARAVEL_START', microtime(true));
 // These must be set BEFORE Laravel bootstraps
 // ============================================================
 
+// Suppress deprecation warnings on Vercel PHP 8.4 runtime
+ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+putenv('APP_DEBUG=false'); // Force disable debug mode to hide Whoops/Ignition errors
+
+
 $storagePath = '/tmp/storage';
 $bootstrapCache = '/tmp/bootstrap/cache';
 
