@@ -1,51 +1,17 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "api/index.php",
-            "use": "vercel-php@0.7.1"
-        },
-        {
-            "src": "public/build/assets/**",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "public/images/**",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "public/favicon.ico",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "public/robots.txt",
-            "use": "@vercel/static"
+    "functions": {
+        "api/**/*.php": {
+            "runtime": "vercel-php@0.7.1"
         }
+    },
+    "rewrites": [
+        { "source": "/build/(.*)", "destination": "/public/build/$1" },
+        { "source": "/images/(.*)", "destination": "/public/images/$1" },
+        { "source": "/storage/(.*)", "destination": "/public/storage/$1" },
+        { "source": "/robots.txt", "destination": "/public/robots.txt" },
+        { "source": "/favicon.ico", "destination": "/public/favicon.ico" },
+        { "source": "/(.*)", "destination": "/api/index.php" }
     ],
-    "routes": [
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
-        },
-        {
-            "src": "/images/(.*)",
-            "dest": "/public/images/$1"
-        },
-        {
-            "src": "/storage/(.*)",
-            "dest": "/public/storage/$1"
-        },
-        {
-            "src": "/robots.txt",
-            "dest": "/public/robots.txt"
-        },
-        {
-            "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
-    ]
+    "outputDirectory": "public"
 }
