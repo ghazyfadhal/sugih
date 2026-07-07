@@ -38,10 +38,10 @@
                             <div class="absolute inset-0 bg-white/5 blur-3xl rounded-full -z-10 scale-75 group-hover:scale-100 group-hover:bg-sugih-mustard/20 transition-all duration-700"></div>
 
                             {{-- Image Container with Levitation Effect --}}
-                            <div class="flex justify-center items-center">
+                            <div class="flex justify-center items-center h-[180px] sm:h-[220px] md:h-[260px]">
                                 <img src="{{ $product->image_url }}"
                                      alt="{{ $product['name'] }}"
-                                     class="w-full max-w-[200px] sm:max-w-[240px] md:max-w-[280px] h-auto drop-shadow-2xl group-hover:scale-105 group-hover:-translate-y-4 transition-all duration-700 ease-out">
+                                     class="max-w-full max-h-full object-contain drop-shadow-2xl group-hover:scale-105 group-hover:-translate-y-4 transition-all duration-700 ease-out">
                             </div>
                         </div>
                     @endforeach
@@ -72,10 +72,10 @@
                             {{-- Decorative glow --}}
                             <div class="absolute inset-0 bg-sugih-mustard/10 blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
                             
-                            <div class="flex justify-center items-center animate-[float_4s_ease-in-out_infinite]">
+                            <div class="flex justify-center items-center h-[280px] sm:h-[350px] md:h-[400px] animate-[float_4s_ease-in-out_infinite]">
                                 <img src="{{ $product->image_url }}"
                                      alt="{{ $product['name'] }}"
-                                     class="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto drop-shadow-2xl hover:scale-105 transition-transform duration-700">
+                                     class="max-w-full max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700">
                             </div>
                         </div>
 

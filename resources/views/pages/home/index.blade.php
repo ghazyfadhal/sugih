@@ -22,22 +22,22 @@
 
         <div class="container-page py-24 gs-hero-content">
             {{-- Brand mark — uses the same logo as navbar (smaller size) --}}
-            <div class="flex justify-center mb-8 gs-hero-logo" data-aos="fade-down">
+            <div class="flex justify-center mb-8 gs-hero-logo">
                 <img src="{{ asset('images/logo-3.svg') }}"
                      alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
             </div>
 
-            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl gs-hero-title" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl gs-hero-title">
                 Semua Ingin Sugih
             </h1>
 
-            <p class="mt-8 max-w-4xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal gs-hero-desc" data-aos="fade-up" data-aos-delay="200">
+            <p class="mt-8 max-w-4xl mx-auto text-white/90 text-base sm:text-lg leading-relaxed font-normal gs-hero-desc">
                 Waktumu terbatas jangan habiskan waktu untuk mencari rasa yang lain.<br>
                 Sebab yang mantap sedang kamu buka sekarang dan pencarianmu sudah tuntas.<br>
                 Harum Berkelas dan Berkualitas.
             </p>
 
-            <div class="mt-16 flex justify-center gs-hero-arrow" data-aos="fade-up" data-aos-delay="300">
+            <div class="mt-16 flex justify-center gs-hero-arrow">
                 <a href="#cerita-kami"
                    class="inline-flex items-center justify-center p-3 rounded-full text-white/70 hover:text-sugih-mustard transition-colors animate-bounce"
                    aria-label="Scroll ke bawah"
@@ -228,6 +228,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: true
             }
         });
+
+        // ═══════════════════════════════════════════
+        // 1a. HERO — Entrance Animation (Replaces AOS)
+        // ═══════════════════════════════════════════
+        g.from('.gs-hero-logo', { opacity: 0, y: -20, duration: 1, ease: 'power3.out', delay: 0.2 });
+        g.from('.gs-hero-title', { opacity: 0, y: 30, duration: 1, ease: 'power3.out', delay: 0.4 });
+        g.from('.gs-hero-desc', { opacity: 0, y: 30, duration: 1, ease: 'power3.out', delay: 0.6 });
+        g.from('.gs-hero-arrow', { opacity: 0, y: 30, duration: 1, ease: 'power3.out', delay: 0.8 });
 
         // ═══════════════════════════════════════════
         // 1b. HERO — Content Fade Out on Scroll
