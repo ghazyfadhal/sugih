@@ -23,10 +23,6 @@
       "dest": "/robots.txt"
     },
     {
-      "src": "/favicon.ico",
-      "dest": "/favicon.ico"
-    },
-    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
