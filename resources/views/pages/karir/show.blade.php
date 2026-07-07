@@ -73,7 +73,7 @@
 
                 {{-- Action buttons --}}
                 <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-sugih-subtle">
-                    <a href="mailto:cvprioritasgroup@gmail.com?subject=Lamaran: {{ urlencode($karir['title']) }}"
+                    <a href="mailto:cvprioritasgrup@gmail.com?subject=Lamaran: {{ urlencode($karir['title']) }}"
                        class="btn-primary">
                         Lamar Sekarang
                     </a>

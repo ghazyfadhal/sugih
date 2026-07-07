@@ -16,7 +16,7 @@
     </div>
 
     {{-- The Button --}}
-    <a href="https://wa.me/628123456789?text=Halo%20Admin%20SUGIH,%20saya%20punya%20pertanyaan%20seputar%20produk/kemitraan."
+    <a href="https://wa.me/6287713724637?text=Halo%20Admin%20SUGIH,%20saya%20punya%20pertanyaan%20seputar%20produk/kemitraan."
        target="_blank" rel="noopener noreferrer"
        class="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg 
               hover:bg-green-600 hover:scale-110 transition-all duration-300

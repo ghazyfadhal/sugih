@@ -39,7 +39,7 @@
                 Tertarik menjadi distributor atau reseller resmi SUGIH di kota Anda? Dapatkan harga khusus pabrik dan jadilah agen pertumbuhan bersama kretek berkualitas dari Cianjur.
             </p>
 
-            <a href="https://wa.me/628123456789?text=Halo%20Manajemen%20SUGIH,%20saya%20tertarik%20untuk%20mengetahui%20syarat%20dan%20ketentuan%20menjadi%20Mitra/Reseller.%20Mohon%20informasinya."
+            <a href="https://wa.me/6287713724637?text=Halo%20Manajemen%20SUGIH,%20saya%20tertarik%20untuk%20mengetahui%20syarat%20dan%20ketentuan%20menjadi%20Mitra/Reseller.%20Mohon%20informasinya."
                target="_blank" rel="noopener noreferrer"
                class="btn-primary w-full sm:w-auto">
                 <i class="fab fa-whatsapp mr-2 text-xl"></i> Daftar via WhatsApp

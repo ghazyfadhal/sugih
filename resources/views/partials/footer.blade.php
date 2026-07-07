@@ -36,18 +36,18 @@
             <div class="text-base font-semibold leading-relaxed space-y-4">
                 <div>
                     <span class="block text-white/70">Whatsapp:</span>
-                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/6287713724637" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 text-white hover:text-sugih-mustard transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-mustard mt-1">
                         <i class="fab fa-whatsapp"></i>
-                        <span>+62 123 456 789</span>
+                        <span>+62 877 1372 4637</span>
                     </a>
                 </div>
                 <div class="pt-2">
                     <span class="block text-white/70">Email:</span>
-                    <a href="mailto:cvprioritasgroup@gmail.com"
+                    <a href="mailto:cvprioritasgrup@gmail.com"
                        class="inline-flex items-center gap-2 text-white hover:text-sugih-mustard transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-mustard mt-1">
                         <i class="fas fa-envelope"></i>
-                        <span>cvprioritasgroup@gmail.com</span>
+                        <span>cvprioritasgrup@gmail.com</span>
                     </a>
                 </div>
             </div>
