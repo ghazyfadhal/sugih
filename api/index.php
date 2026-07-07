@@ -67,9 +67,6 @@ try {
     error_log($e->getTraceAsString());
 
     http_response_code(500);
-    // TEMPORARY: Show error details for debugging (will revert after fix)
-    echo '<h1>500 - Application Error</h1>';
-    echo '<pre>' . htmlspecialchars($e->getMessage()) . '</pre>';
-    echo '<pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre>';
+    echo 'Server Error';
 }
 
