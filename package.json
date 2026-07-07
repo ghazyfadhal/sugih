@@ -1,9 +1,11 @@
 {
     "private": true,
-    "type": "module",
+    "engines": {
+        "node": "24.x"
+    },
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build && cp -r public dist && rm -rf node_modules"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.7",

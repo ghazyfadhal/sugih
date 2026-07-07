@@ -11,6 +11,12 @@ define('LARAVEL_START', microtime(true));
 // These must be set BEFORE Laravel bootstraps
 // ============================================================
 
+// Suppress deprecation warnings on Vercel PHP 8.4 runtime
+ini_set('display_errors', '0');
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+putenv('APP_DEBUG=false'); // Force disable debug mode to hide Whoops/Ignition errors
+
+
 $storagePath = '/tmp/storage';
 $bootstrapCache = '/tmp/bootstrap/cache';
 
@@ -37,20 +43,37 @@ putenv("VIEW_COMPILED_PATH={$storagePath}/framework/views");
 // Register the Composer autoloader...
 require __DIR__ . '/../vendor/autoload.php';
 
-// Bootstrap Laravel and handle the request...
-/** @var Application $app */
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+try {
+    // Bootstrap Laravel and handle the request...
+    /** @var Application $app */
+    $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// Override storage and bootstrap cache paths
-$app->useStoragePath($storagePath);
-$app->useBootstrapPath('/tmp/bootstrap');
-$app->usePublicPath(__DIR__ . '/../public');
+    // Override storage and bootstrap cache paths
+    $app->useStoragePath($storagePath);
+    $app->useBootstrapPath('/tmp/bootstrap');
+    $app->usePublicPath(__DIR__ . '/../public');
 
-// Set configuration values for serverless environment
-$app->booted(function ($app) use ($storagePath) {
-    $app['config']->set('view.compiled', $storagePath . '/framework/views');
-    $app['config']->set('cache.stores.file.path', $storagePath . '/framework/cache/data');
-    $app['config']->set('session.files', $storagePath . '/framework/sessions');
-});
+    // Set configuration values for serverless environment
+    $app->booted(function ($app) use ($storagePath) {
+        $app['config']->set('view.compiled', $storagePath . '/framework/views');
+        $app['config']->set('cache.stores.file.path', $storagePath . '/framework/cache/data');
+        $app['config']->set('session.files', $storagePath . '/framework/sessions');
+    });
 
-$app->handleRequest(Request::capture());
+    $app->handleRequest(Request::capture());
+} catch (\Throwable $e) {
+    // Log to stderr so it appears in Vercel Function Logs
+    error_log('[SUGIH Fatal] ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine());
+    error_log($e->getTraceAsString());
+
+    http_response_code(500);
+    if (getenv('APP_DEBUG') === 'true') {
+        echo '<h1>500 - Application Error</h1>';
+        echo '<pre>' . htmlspecialchars($e->getMessage()) . '</pre>';
+        echo '<pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre>';
+    } else {
+        echo '<h1>500 - Internal Server Error</h1>';
+        echo '<p>Something went wrong. Please try again later.</p>';
+    }
+}
+
