@@ -67,13 +67,9 @@ try {
     error_log($e->getTraceAsString());
 
     http_response_code(500);
-    if (getenv('APP_DEBUG') === 'true') {
-        echo '<h1>500 - Application Error</h1>';
-        echo '<pre>' . htmlspecialchars($e->getMessage()) . '</pre>';
-        echo '<pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre>';
-    } else {
-        echo '<h1>500 - Internal Server Error</h1>';
-        echo '<p>Something went wrong. Please try again later.</p>';
-    }
+    // TEMPORARY: Show error details for debugging (will revert after fix)
+    echo '<h1>500 - Application Error</h1>';
+    echo '<pre>' . htmlspecialchars($e->getMessage()) . '</pre>';
+    echo '<pre>' . htmlspecialchars($e->getTraceAsString()) . '</pre>';
 }
 

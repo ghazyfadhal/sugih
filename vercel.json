@@ -23,6 +23,10 @@
       "dest": "/robots.txt"
     },
     {
+      "src": "/api/test",
+      "dest": "/api/test.php"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
