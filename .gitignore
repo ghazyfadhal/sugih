@@ -15,5 +15,13 @@ Homestead.yaml
 .DS_Store
 *.log
 
+# Laravel cache & runtime (JANGAN di-commit!)
+/bootstrap/cache/*.php
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/cache/*
+/storage/logs/*
+
 # Vercel
 .vercel
+
