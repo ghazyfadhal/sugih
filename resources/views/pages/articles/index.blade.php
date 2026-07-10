@@ -9,11 +9,11 @@
     {{--  BERITA INDEX — Hero Banner                                  --}}
     {{-- ============================================================ --}}
     <section class="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="articles-hero">
-        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/berita.png') }}'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black/40"></div>
-            {{-- Vignette for Navbar --}}
-            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
-        </div>
+        <x-hero-slideshow />
+        
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        {{-- Vignette for Navbar --}}
+        <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
     </section>
 
     {{-- ============================================================ --}}

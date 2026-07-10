@@ -35,7 +35,13 @@ class AdminProductController extends Controller
         $validated['is_active'] = $request->has('is_active');
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('products', 'public');
+            $file = $request->file('image');
+            $contents = file_get_contents($file->getRealPath());
+            $filename = uniqid('product-') . '.' . $file->getClientOriginalExtension();
+            $path = 'products/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)->upload($path, $contents, $file->getMimeType());
+            $validated['image'] = $path;
         }
 
         $validated['sort_order'] = Product::max('sort_order') + 1;
@@ -68,10 +74,17 @@ class AdminProductController extends Controller
         $validated['is_active'] = $request->has('is_active');
 
         if ($request->hasFile('image')) {
-            if ($product->image) {
-                Storage::disk('public')->delete($product->image);
+            if ($product->image && !\Illuminate\Support\Str::startsWith($product->image, 'images/')) {
+                app(\App\Services\SupabaseStorageService::class)->delete($product->image);
             }
-            $validated['image'] = $request->file('image')->store('products', 'public');
+            
+            $file = $request->file('image');
+            $contents = file_get_contents($file->getRealPath());
+            $filename = uniqid('product-') . '.' . $file->getClientOriginalExtension();
+            $path = 'products/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)->upload($path, $contents, $file->getMimeType());
+            $validated['image'] = $path;
         }
 
         $product->update($validated);
@@ -81,8 +94,8 @@ class AdminProductController extends Controller
 
     public function destroy(Product $product)
     {
-        if ($product->image) {
-            Storage::disk('public')->delete($product->image);
+        if ($product->image && !\Illuminate\Support\Str::startsWith($product->image, 'images/')) {
+            app(\App\Services\SupabaseStorageService::class)->delete($product->image);
         }
         $product->delete();
 

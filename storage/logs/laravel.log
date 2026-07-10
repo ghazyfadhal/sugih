@@ -1476,3 +1476,15 @@ LINE 1: ...articles\" (\"slug\", \"title\", \"excerpt\", \"content\", \"is_publi
 #19 D:/SUGIH/sugih/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
 #20 {main}
 "} 
+[2026-07-10 20:51:54] local.ERROR: [Supabase] Request failed {"method":"DELETE","path":"storage/v1/object/sugih-public/products/product-6a50f8cc94018.png","message":"Client error: `DELETE https://bpjuufrdzlcxnientfui.supabase.co/storage/v1/object/sugih-public/products/product-6a50f8cc94018.png` resulted in a `400 Bad Request` response:
+{\"statusCode\":\"400\",\"error\":\"FastifyError\",\"message\":\"Body cannot be empty when content-type is set to 'application/json (truncated...)
+"} 
+[2026-07-10 20:53:07] local.ERROR: [Supabase] Request failed {"method":"DELETE","path":"storage/v1/object/sugih-public/products/product-6a50f8860be99.png","message":"Client error: `DELETE https://bpjuufrdzlcxnientfui.supabase.co/storage/v1/object/sugih-public/products/product-6a50f8860be99.png` resulted in a `400 Bad Request` response:
+{\"statusCode\":\"400\",\"error\":\"FastifyError\",\"message\":\"Body cannot be empty when content-type is set to 'application/json (truncated...)
+"} 
+[2026-07-10 20:53:15] local.ERROR: [Supabase] Request failed {"method":"DELETE","path":"storage/v1/object/sugih-public/products/product-6a50f8c9c03ed.png","message":"Client error: `DELETE https://bpjuufrdzlcxnientfui.supabase.co/storage/v1/object/sugih-public/products/product-6a50f8c9c03ed.png` resulted in a `400 Bad Request` response:
+{\"statusCode\":\"400\",\"error\":\"FastifyError\",\"message\":\"Body cannot be empty when content-type is set to 'application/json (truncated...)
+"} 
+[2026-07-10 20:53:29] local.ERROR: [Supabase] Request failed {"method":"DELETE","path":"storage/v1/object/sugih-public/articles/artikel-6a50f822305c5.jpg","message":"Client error: `DELETE https://bpjuufrdzlcxnientfui.supabase.co/storage/v1/object/sugih-public/articles/artikel-6a50f822305c5.jpg` resulted in a `400 Bad Request` response:
+{\"statusCode\":\"400\",\"error\":\"FastifyError\",\"message\":\"Body cannot be empty when content-type is set to 'application/json (truncated...)
+"} 

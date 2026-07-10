@@ -7,11 +7,11 @@
 
     <section class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 min-h-screen" data-testid="products-page">
         {{-- Background --}}
-        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/product-bg.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="absolute inset-0 bg-black/40"></div>
-            {{-- Vignette for Navbar --}}
-            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
-        </div>
+        <x-hero-slideshow />
+        
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        {{-- Vignette for Navbar --}}
+        <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
 
         <div class="container-page">
 

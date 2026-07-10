@@ -5,7 +5,7 @@
 <header
     x-data="{ open: false, scrolled: false }"
     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 30);"
-    :class="scrolled ? 'bg-black/80 backdrop-blur-lg shadow-sm border-b border-white/10' : 'bg-transparent'"
+    :class="scrolled ? 'bg-black/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'"
     class="fixed top-0 inset-x-0 z-[60] transition-all duration-300"
 >
     <div class="container-page flex items-center justify-between h-20">

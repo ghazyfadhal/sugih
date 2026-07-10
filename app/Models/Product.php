@@ -28,7 +28,7 @@ class Product extends Model
         if (\Illuminate\Support\Str::startsWith($this->image, 'images/')) {
             return asset($this->image);
         }
-        return \Illuminate\Support\Facades\Storage::url($this->image);
+        return app(\App\Services\SupabaseStorageService::class)->publicUrl($this->image);
     }
 
     protected $casts = [

@@ -35,9 +35,12 @@ class AdminArticleController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
+            $contents = file_get_contents($file->getRealPath());
             $filename = uniqid('artikel-') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('images/articles'), $filename);
-            $validated['image'] = 'images/articles/' . $filename;
+            $path = 'articles/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)->upload($path, $contents, $file->getMimeType());
+            $validated['image'] = $path;
         }
 
         Article::create($validated);
@@ -69,13 +72,16 @@ class AdminArticleController extends Controller
 
         if ($request->hasFile('image')) {
             // Delete old image
-            if ($article->image && file_exists(public_path($article->image))) {
-                unlink(public_path($article->image));
+            if ($article->image && !\Illuminate\Support\Str::startsWith($article->image, 'images/')) {
+                app(\App\Services\SupabaseStorageService::class)->delete($article->image);
             }
             $file = $request->file('image');
+            $contents = file_get_contents($file->getRealPath());
             $filename = uniqid('artikel-') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('images/articles'), $filename);
-            $validated['image'] = 'images/articles/' . $filename;
+            $path = 'articles/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)->upload($path, $contents, $file->getMimeType());
+            $validated['image'] = $path;
         }
 
         $article->update($validated);
@@ -85,8 +91,8 @@ class AdminArticleController extends Controller
 
     public function destroy(Article $article)
     {
-        if ($article->image && file_exists(public_path($article->image))) {
-            unlink(public_path($article->image));
+        if ($article->image && !\Illuminate\Support\Str::startsWith($article->image, 'images/')) {
+            app(\App\Services\SupabaseStorageService::class)->delete($article->image);
         }
         $article->delete();
 

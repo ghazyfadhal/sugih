@@ -9,12 +9,11 @@
     {{--  TENTANG SUGIH  —  Hero Banner                               --}}
     {{-- ============================================================ --}}
     <section class="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="about-hero">
-        {{-- Background --}}
-        <div class="absolute inset-0 -z-10" style="background-image: url('{{ asset('images/sejarah2.png') }}'); background-size: cover; background-position: top center;">
-            <div class="absolute inset-0 bg-black/40"></div>
-            {{-- Vignette for Navbar --}}
-            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
-        </div>
+        <x-hero-slideshow />
+        
+        <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
+        {{-- Vignette for Navbar --}}
+        <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
     </section>
 
     {{-- ============================================================ --}}
@@ -115,7 +114,7 @@
                     <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-mustard/30
                                 shadow-card-soft bg-sugih-dark
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
-                        <img src="{{ asset('images/deni rahmat.jpeg') }}"
+                        <img src="{{ asset('images/DeniRahmat.png') }}"
                              alt="Deni Rahmat — Founder CV Prioritas Grup"
                              class="w-full h-full object-cover">
                     </div>
@@ -127,12 +126,11 @@
                 {{-- Member 2: Ardjia Adiati Karisma --}}
                 <div class="text-center group gs-founder" data-testid="member-2">
                     <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-mustard/30
-                                shadow-card-soft bg-white flex items-center justify-center
+                                shadow-card-soft bg-sugih-dark
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
-                        {{-- Placeholder — akan diganti dengan foto asli --}}
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-sugih-mustard/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                        </svg>
+                        <img src="{{ asset('images/ArdjiaAdiatiKarisma.png') }}"
+                             alt="Ardjia Adiati Karisma — Founder CV Prioritas Grup"
+                             class="w-full h-full object-cover">
                     </div>
                     <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1 gs-founder-name">Ardjia Adiati Karisma</h3>
                     <p class="text-sugih-mustard text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
