@@ -5,7 +5,7 @@
 <header
     x-data="{ open: false, scrolled: false }"
     x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 30);"
-    :class="scrolled ? 'bg-sugih-base/60 backdrop-blur-lg shadow-sm' : 'bg-transparent'"
+    :class="scrolled ? 'bg-black/80 backdrop-blur-lg shadow-sm border-b border-white/10' : 'bg-transparent'"
     class="fixed top-0 inset-x-0 z-[60] transition-all duration-300"
 >
     <div class="container-page flex items-center justify-between h-20">
@@ -18,16 +18,16 @@
         <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
             <a href="{{ request()->routeIs('home') ? '#top' : route('home') }}"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-green {{ request()->routeIs('home') ? 'text-sugih-terracotta' : 'text-sugih-primary' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('home') ? 'text-sugih-mustard' : $defaultText }}'">Beranda</a>
+               :class="scrolled ? 'hover:text-sugih-mustard {{ request()->routeIs('home') ? 'text-sugih-mustard' : 'text-white/90' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('home') ? 'text-sugih-mustard' : $defaultText }}'">Beranda</a>
             <a href="{{ route('about') }}"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-green {{ request()->routeIs('about') ? 'text-sugih-terracotta' : 'text-sugih-primary' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('about') ? 'text-sugih-mustard' : $defaultText }}'">Sejarah</a>
+               :class="scrolled ? 'hover:text-sugih-mustard {{ request()->routeIs('about') ? 'text-sugih-mustard' : 'text-white/90' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('about') ? 'text-sugih-mustard' : $defaultText }}'">Sejarah</a>
             <a href="{{ route('products.index') }}"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-green {{ request()->routeIs('products.*') ? 'text-sugih-terracotta' : 'text-sugih-primary' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('products.*') ? 'text-sugih-mustard' : $defaultText }}'">Produk</a>
+               :class="scrolled ? 'hover:text-sugih-mustard {{ request()->routeIs('products.*') ? 'text-sugih-mustard' : 'text-white/90' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('products.*') ? 'text-sugih-mustard' : $defaultText }}'">Produk</a>
             <a href="{{ route('articles.index') }}"
                class="nav-link"
-               :class="scrolled ? 'hover:text-sugih-green {{ request()->routeIs('articles.*') ? 'text-sugih-terracotta' : 'text-sugih-primary' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('articles.*') ? 'text-sugih-mustard' : $defaultText }}'">Berita</a>
+               :class="scrolled ? 'hover:text-sugih-mustard {{ request()->routeIs('articles.*') ? 'text-sugih-mustard' : 'text-white/90' }}' : 'hover:text-sugih-mustard {{ request()->routeIs('articles.*') ? 'text-sugih-mustard' : $defaultText }}'">Berita</a>
         </nav>
 
         {{-- Hamburger --}}
@@ -35,7 +35,7 @@
             type="button"
             @click="open = !open"
             class="p-2 -mr-2 transition-transform duration-300"
-            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-sugih-primary' : '{{ $isLightTop ? 'text-sugih-primary' : 'text-sugih-mustard' }}']"
+            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-white/90' : '{{ $isLightTop ? 'text-sugih-primary' : 'text-sugih-mustard' }}']"
             aria-label="Toggle menu"
             data-testid="nav-toggle"
         >
