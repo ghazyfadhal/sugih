@@ -34,7 +34,10 @@ class AdminArticleController extends Controller
         $validated['is_published'] = $request->has('is_published');
 
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('articles', 'public');
+            $file = $request->file('image');
+            $filename = uniqid('artikel-') . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('images/articles'), $filename);
+            $validated['image'] = 'images/articles/' . $filename;
         }
 
         Article::create($validated);
@@ -65,10 +68,14 @@ class AdminArticleController extends Controller
         $validated['is_published'] = $request->has('is_published');
 
         if ($request->hasFile('image')) {
-            if ($article->image) {
-                Storage::disk('public')->delete($article->image);
+            // Delete old image
+            if ($article->image && file_exists(public_path($article->image))) {
+                unlink(public_path($article->image));
             }
-            $validated['image'] = $request->file('image')->store('articles', 'public');
+            $file = $request->file('image');
+            $filename = uniqid('artikel-') . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('images/articles'), $filename);
+            $validated['image'] = 'images/articles/' . $filename;
         }
 
         $article->update($validated);
@@ -78,8 +85,8 @@ class AdminArticleController extends Controller
 
     public function destroy(Article $article)
     {
-        if ($article->image) {
-            Storage::disk('public')->delete($article->image);
+        if ($article->image && file_exists(public_path($article->image))) {
+            unlink(public_path($article->image));
         }
         $article->delete();
 

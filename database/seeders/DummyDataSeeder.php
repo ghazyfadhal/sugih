@@ -66,7 +66,43 @@ class DummyDataSeeder extends Seeder
 <p>Perusahaan telah memastikan bahwa seluruh produk SUGIH yang beredar di pasaran telah dilengkapi dengan pita cukai resmi sesuai ketentuan yang berlaku. Selain itu, CV. Prioritas Grup juga aktif berkoordinasi dengan Direktorat Jenderal Bea dan Cukai untuk memastikan kepatuhan yang berkelanjutan.</p>
 <p>Komitmen ini sejalan dengan visi SUGIH untuk menjadi merek kretek lokal yang tidak hanya berkualitas, tetapi juga legal dan terpercaya. Dengan mematuhi regulasi cukai, CV. Prioritas Grup berharap dapat memberikan kontribusi positif bagi pendapatan negara sekaligus melindungi konsumen dari produk-produk ilegal.</p>
 <p>&ldquo;Kami mengajak seluruh pelaku industri rokok untuk bersama-sama mematuhi regulasi cukai. Ini bukan hanya soal bisnis, tetapi juga soal tanggung jawab kita bersama,&rdquo; tambah Deni Rahmat.</p>',
-                'image'        => 'images/artikel1.png',
+                'image'        => 'images/articles/artikel1.png',
+                'is_published' => true,
+            ],
+            [
+                'title'   => 'Acara Memperingati 17 Agustus 2025',
+                'slug'    => 'acara-memperingati-17-agustus-2025',
+                'excerpt' => 'CV. Prioritas Grup turut serta memperingati Hari Kemerdekaan Republik Indonesia ke-80 dengan serangkaian kegiatan meriah.',
+                'content' => '<p>Dalam rangka memperingati Hari Ulang Tahun Kemerdekaan Republik Indonesia ke-80 pada tanggal 17 Agustus 2025, CV. Prioritas Grup menyelenggarakan serangkaian kegiatan peringatan yang diikuti oleh seluruh karyawan dan masyarakat sekitar pabrik di Cianjur, Jawa Barat.</p>
+<p>Acara dimulai dengan upacara bendera yang digelar di halaman pabrik pada pagi hari. Seluruh jajaran manajemen dan karyawan hadir dengan mengenakan pakaian merah putih, menunjukkan semangat nasionalisme yang tinggi. Upacara berjalan dengan khidmat dan penuh kebanggaan.</p>
+<p>Setelah upacara, kegiatan dilanjutkan dengan berbagai lomba tradisional yang melibatkan karyawan beserta keluarganya. Lomba makan kerupuk, balap karung, dan tarik tambang menjadi ajang kebersamaan yang mempererat silaturahmi antar karyawan. Antusiasme peserta sangat tinggi dan suasana penuh keceriaan.</p>
+<p>Selain lomba, CV. Prioritas Grup juga mengadakan kegiatan bakti sosial berupa pembagian sembako kepada warga sekitar pabrik. Kegiatan ini merupakan wujud kepedulian perusahaan terhadap lingkungan sosial di sekitarnya.</p>
+<p>&ldquo;Peringatan kemerdekaan ini bukan hanya sekadar seremonial, tetapi juga momen untuk menguatkan rasa kebersamaan dan tanggung jawab sosial kami sebagai bagian dari masyarakat Indonesia,&rdquo; ujar perwakilan manajemen CV. Prioritas Grup.</p>',
+                'image'        => 'images/articles/artikel2.jpg',
+                'is_published' => true,
+            ],
+            [
+                'title'   => 'Ulang Tahun SUGIH',
+                'slug'    => 'ulang-tahun-sugih',
+                'excerpt' => 'SUGIH merayakan hari jadinya dengan penuh syukur dan komitmen untuk terus berkarya di industri kretek tanah air.',
+                'content' => '<p>Merek kretek SUGIH resmi merayakan hari jadinya dalam sebuah acara sederhana namun penuh makna yang digelar di area produksi CV. Prioritas Grup, Cianjur. Perayaan ini dihadiri oleh seluruh karyawan, mitra distribusi, dan beberapa tokoh masyarakat setempat.</p>
+<p>Dalam sambutannya, Deni Rahmat selaku Founder menyampaikan rasa syukur atas perjalanan SUGIH yang telah melewati berbagai tantangan industri. Ia menekankan bahwa pencapaian ini tidak lepas dari kerja keras seluruh tim dan dukungan konsumen setia.</p>
+<p>Acara perayaan dimeriahkan dengan pemotongan tumpeng sebagai simbol rasa syukur, dilanjutkan dengan makan bersama seluruh karyawan. Momen kebersamaan ini semakin mempererat hubungan antara manajemen dan pekerja di lingkungan pabrik.</p>
+<p>Dalam kesempatan tersebut, manajemen juga mengumumkan rencana pengembangan varian produk baru sebagai bagian dari strategi pertumbuhan ke depan. SUGIH berkomitmen untuk terus berinovasi tanpa meninggalkan ciri khas kretek tradisional yang menjadi identitasnya.</p>
+<p>&ldquo;Ulang tahun ini adalah tonggak baru bagi kami. Kami akan terus berupaya menghadirkan produk kretek berkualitas yang membanggakan dan memberikan manfaat bagi seluruh pemangku kepentingan,&rdquo; tutup Deni Rahmat.</p>',
+                'image'        => 'images/articles/artikel3.jpg',
+                'is_published' => true,
+            ],
+            [
+                'title'   => 'SUGIH Hadir di Pameran Industri Kretek Nusantara',
+                'slug'    => 'sugih-hadir-di-pameran-industri-kretek',
+                'excerpt' => 'SUGIH turut berpartisipasi dalam pameran industri kretek nusantara sebagai ajang memperkenalkan produk unggulan.',
+                'content' => '<p>CV. Prioritas Grup melalui merek andalannya SUGIH turut berpartisipasi dalam Pameran Industri Kretek Nusantara yang diselenggarakan di Jakarta. Pameran ini diikuti oleh berbagai produsen rokok kretek dari seluruh Indonesia dan menjadi ajang untuk saling bertukar informasi serta memperkenalkan produk unggulan masing-masing.</p>
+<p>Dalam pameran tersebut, SUGIH memamerkan seluruh lini produknya, mulai dari Original Collection hingga Flavour Collection. Booth SUGIH didesain dengan konsep modern namun tetap mengusung nuansa tradisional khas Cianjur, menarik perhatian banyak pengunjung.</p>
+<p>Para pengunjung booth SUGIH mendapatkan kesempatan untuk mencicipi berbagai varian produk dan berdiskusi langsung dengan tim pemasaran mengenai keunggulan masing-masing varian. Respon positif dari pengunjung menjadi motivasi tambahan bagi tim SUGIH.</p>
+<p>Partisipasi dalam pameran ini juga membuka peluang kerja sama baru dengan distributor dari berbagai daerah. Beberapa calon mitra reseller menyatakan ketertarikannya untuk membawa produk SUGIH ke wilayah mereka masing-masing.</p>
+<p>&ldquo;Pameran ini menjadi momentum strategis bagi kami untuk memperluas jangkauan pasar dan memperkenalkan SUGIH ke khalayak yang lebih luas. Kami optimis SUGIH dapat menjadi salah satu merek kretek terdepan di Indonesia,&rdquo; ujar tim pemasaran CV. Prioritas Grup.</p>',
+                'image'        => 'images/articles/artikel4.jpg',
                 'is_published' => true,
             ],
         ];
