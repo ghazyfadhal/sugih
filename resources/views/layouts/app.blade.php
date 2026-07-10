@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('description', 'SUGIH — kretek berkualitas dari tanah Cianjur. Diproduksi oleh CV. Prioritas Group.')">
 
     {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('images/favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('images/admin-logo.svg') }}" type="image/svg+xml">
 
     {{-- Vite assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])

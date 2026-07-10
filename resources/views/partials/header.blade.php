@@ -11,7 +11,7 @@
     <div class="container-page flex items-center justify-between h-20">
         {{-- Brand --}}
         <a href="{{ route('home') }}" class="flex items-center gap-3" data-testid="brand-logo">
-            <img src="{{ asset('images/logo-3.svg') }}" alt="SUGIH" class="h-10 w-auto">
+            <img src="{{ asset('images/admin-logo.svg') }}" alt="SUGIH" class="h-14 w-auto">
         </a>
 
         {{-- Desktop nav --}}

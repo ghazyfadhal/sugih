@@ -23,8 +23,8 @@
         <div class="container-page py-24 gs-hero-content">
             {{-- Brand mark — uses the same logo as navbar (smaller size) --}}
             <div class="flex justify-center mb-8 gs-hero-logo">
-                <img src="{{ asset('images/logo-3.svg') }}"
-                     alt="SUGIH" class="h-12 sm:h-16 w-auto drop-shadow-2xl">
+                <img src="{{ asset('images/logo-2.svg') }}"
+                     alt="SUGIH" class="h-20 sm:h-28 w-auto drop-shadow-2xl">
             </div>
 
             <h1 class="heading-display text-white text-5xl sm:text-6xl md:text-7xl gs-hero-title">
