@@ -51,6 +51,8 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // CRUD
     Route::post('products/update-order', [AdminProductController::class, 'updateOrder'])->name('products.updateOrder');
     Route::resource('products', AdminProductController::class);
+    Route::post('products/{product}/bubbles', [AdminProductController::class, 'storeBubble'])->name('products.bubbles.store');
+    Route::delete('products/{product}/bubbles/{bubble}', [AdminProductController::class, 'destroyBubble'])->name('products.bubbles.destroy');
     Route::resource('articles', AdminArticleController::class);
     Route::resource('careers', AdminCareerController::class);
 });

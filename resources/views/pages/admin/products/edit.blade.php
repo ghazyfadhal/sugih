@@ -102,4 +102,65 @@
     </div>
 
 </form>
+
+{{-- ── Asset Animasi (Floating Bubbles) ───────── --}}
+<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl mt-8">
+    <h3 class="text-lg font-bold text-gray-800 mb-1">Asset Animasi (Floating Bubbles)</h3>
+    <p class="text-gray-500 text-sm mb-6">Upload gambar PNG transparan (potongan buah, daun, biji kopi, dll.) yang akan melayang di background detail produk. Maksimal 3 asset.</p>
+
+    {{-- Current bubbles --}}
+    @if($product->bubbles->count())
+        <div class="grid grid-cols-3 gap-4 mb-6">
+            @foreach($product->bubbles as $bubble)
+                <div class="relative group rounded-xl border border-gray-200 bg-gray-50 p-3 flex flex-col items-center">
+                    <img src="{{ $bubble->image_url }}" alt="Bubble asset" class="w-20 h-20 object-contain mb-2">
+                    <form action="{{ route('admin.products.bubbles.destroy', [$product->id, $bubble->id]) }}" method="POST"
+                          onsubmit="return confirm('Hapus asset animasi ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-xs text-red-500 hover:text-red-700 font-semibold transition-colors">
+                            Hapus
+                        </button>
+                    </form>
+                </div>
+            @endforeach
+        </div>
+    @else
+        <div class="text-center text-gray-400 text-sm py-6 mb-6 border border-dashed border-gray-300 rounded-xl">
+            Belum ada asset animasi untuk produk ini.
+        </div>
+    @endif
+
+    {{-- Upload form --}}
+    @if($product->bubbles->count() < 3)
+        <form action="{{ route('admin.products.bubbles.store', $product->id) }}" method="POST" enctype="multipart/form-data"
+              class="flex items-end gap-4">
+            @csrf
+            <div class="flex-1">
+                <label for="bubble_image" class="block text-sm font-semibold text-gray-700 mb-2">Upload Asset Baru</label>
+                <div class="drop-zone flex justify-center px-4 pt-4 pb-4 border-2 border-gray-300 border-dashed rounded-xl hover:border-sugih-mustard transition-colors bg-gray-50 relative">
+                    <div class="space-y-1 text-center">
+                        <svg class="mx-auto h-8 w-8 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                            <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="flex flex-col items-center text-sm text-gray-600 gap-1">
+                            <label for="bubble_image" class="relative cursor-pointer bg-sugih-mustard-900 text-sugih-mustard hover:bg-sugih-mustard-800 px-3 py-1.5 rounded-lg font-medium transition-colors shadow-sm">
+                                <span>Pilih File (Bisa lebih dari 1)</span>
+                                <input id="bubble_image" name="images[]" type="file" accept=".png,.webp" multiple class="sr-only">
+                            </label>
+                            <p class="file-name-text text-gray-500 text-xs">PNG / WebP transparan, maks 2MB</p>
+                        </div>
+                    </div>
+                </div>
+                @error('images') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                @error('images.*') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+            </div>
+            <button type="submit" class="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-900 transition-colors whitespace-nowrap">
+                Upload
+            </button>
+        </form>
+    @else
+        <p class="text-sm text-amber-600 font-medium">✓ Batas maksimal 3 asset animasi telah tercapai.</p>
+    @endif
+</div>
 @endsection

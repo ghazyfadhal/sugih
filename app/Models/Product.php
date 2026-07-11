@@ -31,6 +31,11 @@ class Product extends Model
         return app(\App\Services\SupabaseStorageService::class)->publicUrl($this->image);
     }
 
+    public function bubbles()
+    {
+        return $this->hasMany(ProductBubble::class)->orderBy('sort_order');
+    }
+
     protected $casts = [
         'is_active' => 'boolean',
     ];
