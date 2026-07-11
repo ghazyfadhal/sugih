@@ -11,13 +11,11 @@
         class="relative isolate min-h-screen flex items-center justify-center text-center grain overflow-hidden pt-20"
         data-testid="hero-section"
     >
-        <div class="absolute inset-0 -z-10 bg-black">
-            <img src="{{ asset('images/hero-tobacco.jpg') }}"
-                 alt="Daun tembakau SUGIH"
-                 class="w-full h-full object-cover hero-parallax-bg" style="will-change: transform;">
-            <div class="absolute inset-0 bg-black/40"></div>
+        <div class="absolute inset-0 -z-10 bg-black hero-parallax-bg" style="will-change: transform;">
+            <x-hero-slideshow />
+            <div class="absolute inset-0 bg-black/40 pointer-events-none"></div>
             {{-- Vignette for Navbar --}}
-            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
         </div>
 
         <div class="container-page py-24 gs-hero-content">
@@ -56,12 +54,12 @@
     {{-- ============================================================ --}}
     <section id="cerita-kami" class="relative min-h-screen overflow-hidden scroll-mt-20 gs-cerita-pin" data-testid="cerita-section">
         <div class="absolute inset-0 -z-10">
-            <img src="{{ asset('images/farmer.jpg') }}"
+            <img src="{{ config('supabase.url') }}/storage/v1/object/public/{{ config('supabase.storage.bucket', 'sugih-public') }}/pexels-tranthangnhat-27792454.webp"
                  alt="Petani tembakau Cianjur" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div class="container-page h-screen flex items-center">
+        <div class="container-page h-screen flex items-center justify-end">
             <div class="max-w-xl bg-sugih-dark/90 backdrop-blur-sm rounded-3xl p-8 sm:p-10 shadow-card-soft border border-white/10 gs-cerita-card">
                 <h2 class="heading-display text-white text-4xl sm:text-5xl mb-6 whitespace-nowrap gs-cerita-heading">
                     Cerita Kami
@@ -265,9 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // 2a. Card slides in from left
+        // 2a. Card slides in from right
         ceritaTl.fromTo('.gs-cerita-card',
-            { opacity: 0, x: -100 },
+            { opacity: 0, x: 100 },
             { opacity: 1, x: 0, duration: 0.15, ease: 'power3.out' },
             0
         );

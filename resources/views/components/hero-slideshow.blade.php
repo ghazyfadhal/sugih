@@ -67,8 +67,8 @@
                 }
 
                 if (data && data.length > 0) {
-                    // Filter: hanya ambil file valid (bukan placeholder folder kosong dari Supabase)
-                    const imageFiles = data.filter(file => file.name && file.name !== '.emptyFolderPlaceholder' && file.id);
+                    // Filter: hanya ambil file valid (bukan placeholder folder kosong dari Supabase) dan kecualikan gambar Cerita Kami
+                    const imageFiles = data.filter(file => file.name && file.name !== '.emptyFolderPlaceholder' && file.id && !file.name.includes('pexels-tranthangnhat-27792454'));
                     
                     let supabaseImages = imageFiles.map(file => {
                         const filePath = folderPath ? `${folderPath}/${file.name}` : file.name;
