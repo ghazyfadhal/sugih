@@ -9,10 +9,10 @@
 
     <!-- Gambar pertama/default sebagai fallback -->
     @if($fallbackImage)
-        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="{{ $fallbackImage }}" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 z-10">
+        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="{{ $fallbackImage }}" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 z-10" loading="eager" fetchpriority="high" alt="Slideshow Image">
     @else
         <!-- Placeholder jika tidak ada fallback -->
-        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 z-10">
+        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 z-10" loading="eager" fetchpriority="high" alt="Slideshow Placeholder">
     @endif
 </div>
 
