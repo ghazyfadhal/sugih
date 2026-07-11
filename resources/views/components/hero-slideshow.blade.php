@@ -4,12 +4,15 @@
 ])
 
 <div id="hero-slider-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full -z-10 bg-black">
+    <!-- Skeleton Loading Background -->
+    <div id="hero-loader-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full bg-zinc-900 animate-pulse transition-opacity duration-1000 z-0"></div>
+
     <!-- Gambar pertama/default sebagai fallback -->
     @if($fallbackImage)
-        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="{{ $fallbackImage }}" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000">
+        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="{{ $fallbackImage }}" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 z-10">
     @else
         <!-- Placeholder jika tidak ada fallback -->
-        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0">
+        <img id="hero-initial-img-{{ Str::slug($folder) }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 opacity-0 z-10">
     @endif
 </div>
 
@@ -38,10 +41,12 @@
 
         const sliderId = 'hero-slider-{{ Str::slug($folder) }}';
         const initialImgId = 'hero-initial-img-{{ Str::slug($folder) }}';
+        const loaderId = 'hero-loader-{{ Str::slug($folder) }}';
         const folderPath = '{{ $folder }}';
         
         const heroSlider = document.getElementById(sliderId);
         const initialImg = document.getElementById(initialImgId);
+        const heroLoader = document.getElementById(loaderId);
         
         let images = [];
         if (initialImg && initialImg.src && !initialImg.src.startsWith('data:image')) {
@@ -90,15 +95,31 @@
                     if (supabaseImages.length > 0) {
                         // Acak (Shuffle) urutan gambar agar dinamis
                         images = supabaseImages.sort(() => Math.random() - 0.5);
-                        initialImg.src = images[0];
-                        initialImg.classList.remove('opacity-0');
+                        
+                        // Preload gambar pertama di belakang layar agar tidak ada 'kedip'
+                        const imgPreload = new Image();
+                        imgPreload.src = images[0];
+                        imgPreload.onload = () => {
+                            initialImg.src = images[0];
+                            initialImg.classList.remove('opacity-0');
+                            
+                            // Fade out efek loading setelah gambar siap
+                            if (heroLoader) {
+                                heroLoader.classList.add('opacity-0');
+                                setTimeout(() => heroLoader.remove(), 1000);
+                            }
+                            
+                            // Memulai slideshow setelah gambar pertama beres
+                            startSlider();
+                        };
+                        return; // startSlider ditangani di dalam onload
                     }
                 }
             } catch (err) {
                 console.error('Exception saat memuat gambar slideshow:', err);
             }
             
-            // Memulai slideshow
+            // Memulai slideshow (jika gagal memuat gambar baru, gunakan fallback)
             startSlider();
         }
 
