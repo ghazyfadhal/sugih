@@ -8,7 +8,26 @@
     {{-- ============================================================ --}}
     {{--  WRAPPER FOR STATE                                           --}}
     {{-- ============================================================ --}}
-    <div x-data="{ selectedProduct: null }" x-cloak class="relative">
+    <div x-data="{ 
+            selectedProduct: null,
+            productIds: {{ $products->pluck('id') }},
+            nextProduct() {
+                let idx = this.productIds.indexOf(this.selectedProduct);
+                if (idx === -1) return;
+                let nextIdx = (idx + 1) % this.productIds.length;
+                this.selectedProduct = this.productIds[nextIdx];
+            },
+            prevProduct() {
+                let idx = this.productIds.indexOf(this.selectedProduct);
+                if (idx === -1) return;
+                let prevIdx = (idx - 1 + this.productIds.length) % this.productIds.length;
+                this.selectedProduct = this.productIds[prevIdx];
+            }
+         }"
+         @keydown.escape.window="selectedProduct = null"
+         @keydown.right.window="if(selectedProduct !== null) nextProduct()"
+         @keydown.left.window="if(selectedProduct !== null) prevProduct()"
+         x-cloak class="relative">
 
 
         {{-- ============================================================ --}}
@@ -89,6 +108,25 @@
                     @endforeach
                 </div>
 
+                {{-- Navigation Arrows --}}
+                <button type="button" x-show="selectedProduct !== null" @click.stop="prevProduct()" x-cloak
+                        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                        class="absolute left-0 sm:-left-6 md:-left-12 lg:-left-20 top-1/2 -translate-y-1/2 z-50 p-3 text-sugih-primary/60 hover:text-sugih-primary bg-white/50 hover:bg-white/80 rounded-full backdrop-blur-md transition-all hover:scale-110 shadow-sm border border-gray-100 hidden sm:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <button type="button" x-show="selectedProduct !== null" @click.stop="nextProduct()" x-cloak
+                        x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                        class="absolute right-0 sm:-right-6 md:-right-12 lg:-right-20 top-1/2 -translate-y-1/2 z-50 p-3 text-sugih-primary/60 hover:text-sugih-primary bg-white/50 hover:bg-white/80 rounded-full backdrop-blur-md transition-all hover:scale-110 shadow-sm border border-gray-100 hidden sm:block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
                 {{-- Detail View: Image on Left, Text on Right --}}
                 @foreach($products as $product)
                     <div class="absolute inset-0 flex flex-col md:flex-row items-center w-full h-full"
@@ -112,12 +150,21 @@
                         {{-- Left: Image --}}
                         <div class="w-full md:w-1/2 flex justify-center p-4 md:p-8 relative z-10">
                             {{-- Decorative glow --}}
-                            <div class="absolute inset-0 bg-sugih-mustard/20 blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
+                            @php
+                                $glowColor = 'bg-sugih-mustard/30'; // Default (Original)
+                                $pName = strtolower($product['name']);
+                                if (Str::contains($pName, 'green tea')) $glowColor = 'bg-green-500/50';
+                                elseif (Str::contains($pName, 'mango')) $glowColor = 'bg-orange-500/50';
+                                elseif (Str::contains($pName, 'purple')) $glowColor = 'bg-purple-600/50';
+                                elseif (Str::contains($pName, 'coffee')) $glowColor = 'bg-amber-900/60';
+                                elseif (Str::contains($pName, 'apple') || Str::contains($pName, 'apel')) $glowColor = 'bg-lime-500/50';
+                                elseif (Str::contains($pName, 'strawberry') || Str::contains($pName, 'stroberi')) $glowColor = 'bg-red-600/50';
+                                
+                                $needsScaling = Str::contains($pName, ['coffee', 'apple', 'apel', 'strawberry', 'stroberi']); 
+                            @endphp
+                            <div class="absolute inset-0 {{ $glowColor }} blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
                             
                             <div class="flex justify-center items-center h-[280px] sm:h-[350px] md:h-[400px] animate-[float_4s_ease-in-out_infinite]">
-                                @php 
-                                    $needsScaling = Str::contains(strtolower($product['name']), ['coffee', 'apple', 'strawberry']); 
-                                @endphp
                                 <img src="{{ $product->image_url }}"
                                      alt="{{ $product['name'] }}"
                                      class="object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-105 {{ $needsScaling ? 'h-[70%] max-h-[70%]' : 'max-w-full max-h-full' }}">

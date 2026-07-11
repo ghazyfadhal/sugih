@@ -249,11 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        heroTl
-            .to('.gs-hero-arrow', { opacity: 0, y: -30, duration: 0.2 }, 0)
-            .to('.gs-hero-desc',  { opacity: 0, y: -50, duration: 0.4 }, 0.1)
-            .to('.gs-hero-title', { opacity: 0, y: -60, duration: 0.4 }, 0.2)
-            .to('.gs-hero-logo',  { opacity: 0, y: -40, duration: 0.3 }, 0.3);
+        heroTl.to('.gs-hero-content', { opacity: 0, y: -50, duration: 1 });
 
         // ═══════════════════════════════════════════
         // 2. CERITA KAMI — Pinned + Orchestrated
