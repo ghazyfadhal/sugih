@@ -3,9 +3,9 @@
     'fallbackImage' => ''
 ])
 
-<div id="hero-slider-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full -z-10 bg-black">
+<div id="hero-slider-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full -z-10 bg-gray-100">
     <!-- Skeleton Loading Background -->
-    <div id="hero-loader-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full bg-zinc-900 animate-pulse transition-opacity duration-1000 z-0"></div>
+    <div id="hero-loader-{{ Str::slug($folder) }}" class="absolute inset-0 w-full h-full bg-gray-200 animate-pulse transition-opacity duration-1000 z-0"></div>
 
     <!-- Gambar pertama/default sebagai fallback -->
     @if($fallbackImage)
