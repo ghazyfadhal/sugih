@@ -32,14 +32,14 @@
             </div>
 
             <div class="pt-2">
-                <button type="submit" class="w-full bg-sugih-mustard-900 text-sugih-mustard rounded-xl py-3 px-4 font-semibold hover:bg-sugih-mustard-800 transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-sugih-mustard-900">
+                <button type="submit" class="w-full bg-sugih-terracotta text-white rounded-xl py-3.5 px-4 font-bold text-center hover:bg-[#8B2318] shadow-md transition-all duration-300 active:scale-[0.98]">
                     Masuk ke Dashboard
                 </button>
             </div>
         </form>
 
-        <div class="mt-8 text-center">
-            <a href="{{ route('home') }}" class="text-sm text-gray-500 hover:text-black transition-colors">
+        <div class="mt-6 text-center">
+            <a href="{{ route('home') }}" class="inline-block w-full border-2 border-gray-300 text-gray-700 rounded-xl py-3 px-4 font-bold hover:bg-gray-100 hover:text-black hover:border-gray-400 transition-all duration-300 active:scale-[0.98]">
                 &larr; Kembali ke Website
             </a>
         </div>

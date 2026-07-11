@@ -49,10 +49,14 @@
                 </a>
             </nav>
 
-            <div class="p-4 border-t border-gray-200">
+            <div class="p-4 border-t border-gray-200 space-y-2">
+                <a href="{{ route('home') }}" target="_blank" class="w-full flex items-center px-4 py-3 rounded-xl hover:bg-gray-100 text-gray-600 transition-colors">
+                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    Buka Website
+                </a>
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
-                    <button type="submit" class="w-full flex items-center px-4 py-3 rounded-xl hover:bg-red-900/50 text-red-400 transition-colors">
+                    <button type="submit" class="w-full flex items-center px-4 py-3 rounded-xl hover:bg-red-50 hover:text-red-600 text-red-500 transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                         Logout
                     </button>

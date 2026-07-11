@@ -115,9 +115,12 @@
                             <div class="absolute inset-0 bg-sugih-mustard/20 blur-3xl rounded-full -z-10 scale-75 animate-pulse"></div>
                             
                             <div class="flex justify-center items-center h-[280px] sm:h-[350px] md:h-[400px] animate-[float_4s_ease-in-out_infinite]">
+                                @php 
+                                    $needsScaling = Str::contains(strtolower($product['name']), ['coffee', 'apple', 'strawberry']); 
+                                @endphp
                                 <img src="{{ $product->image_url }}"
                                      alt="{{ $product['name'] }}"
-                                     class="max-w-full max-h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-700">
+                                     class="object-contain drop-shadow-2xl transition-transform duration-700 hover:scale-105 {{ $needsScaling ? 'h-[70%] max-h-[70%]' : 'max-w-full max-h-full' }}">
                             </div>
                         </div>
 
