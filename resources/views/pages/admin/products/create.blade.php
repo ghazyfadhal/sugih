@@ -72,7 +72,7 @@
                             </label>
                             <p class="file-name-text text-gray-600">atau drag & drop gambar ke sini</p>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">PNG, JPG, WEBP hingga 2MB</p>
+                        <p class="text-xs text-gray-500 mt-2">PNG, JPG, WEBP — Gambar akan otomatis di-resize ke <strong>235×273 px</strong></p>
                     </div>
                 </div>
                 @error('image') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
@@ -94,3 +94,138 @@
 
 </form>
 @endsection
+
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const TARGET_W = 235;
+    const TARGET_H = 273;
+    const imageInput = document.getElementById('image');
+    const form = imageInput ? imageInput.closest('form') : null;
+
+    if (!form || !imageInput) return;
+
+    // Preview & info saat file dipilih
+    imageInput.addEventListener('change', function() {
+        if (!this.files || !this.files[0]) return;
+        const file = this.files[0];
+        const img = new Image();
+        img.onload = function() {
+            const labelText = imageInput.closest('.drop-zone')?.querySelector('.file-name-text');
+            if (labelText) {
+                labelText.innerHTML = `<span class="font-semibold">${file.name}</span> (${img.width}×${img.height}) → akan di-resize ke <span class="text-green-600 font-bold">${TARGET_W}×${TARGET_H} px</span>`;
+            }
+        };
+        img.src = URL.createObjectURL(file);
+    });
+
+    // Intercept form submit
+    form.addEventListener('submit', async function(e) {
+        if (!imageInput.files || !imageInput.files[0]) return; // Tidak ada file baru, biarkan submit normal
+
+        e.preventDefault();
+
+        const file = imageInput.files[0];
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = '⏳ Menyeragamkan gambar...';
+
+        try {
+            const resizedBlob = await resizeImage(file, TARGET_W, TARGET_H);
+
+            // Buat FormData baru dan ganti file image dengan yang sudah di-resize
+            const formData = new FormData(form);
+            formData.delete('image');
+
+            // Pertahankan ekstensi asli atau gunakan png
+            const ext = file.name.split('.').pop().toLowerCase();
+            const mimeMap = { 'jpg': 'image/jpeg', 'jpeg': 'image/jpeg', 'png': 'image/png', 'webp': 'image/webp' };
+            const newFileName = file.name.replace(/\.[^.]+$/, '') + '.' + (ext === 'jpg' || ext === 'jpeg' ? 'png' : ext);
+            formData.set('image', new File([resizedBlob], newFileName, { type: 'image/png' }));
+
+            // Submit via fetch
+            const response = await fetch(form.action, {
+                method: form.method || 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            });
+
+            if (response.redirected) {
+                window.location.href = response.url;
+            } else if (response.ok) {
+                // Fallback: refresh halaman
+                window.location.reload();
+            } else {
+                const text = await response.text();
+                console.error('Upload error:', text);
+                alert('Gagal menyimpan produk. Silakan coba lagi.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        } catch (err) {
+            console.error('Resize error:', err);
+            alert('Gagal memproses gambar. Silakan coba lagi.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
+    });
+
+    function resizeImage(file, targetW, targetH) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = function() {
+                // Calculate final dimension maintaining aspect ratio with contain fit
+                const scale = Math.min(targetW / img.width, targetH / img.height);
+                const drawW = img.width * scale;
+                const drawH = img.height * scale;
+                
+                // Step-down scaling (halving repeatedly) to preserve HD quality like LANCZOS
+                let currentW = img.width;
+                let currentH = img.height;
+                let sourceCtx = document.createElement('canvas').getContext('2d');
+                sourceCtx.canvas.width = currentW;
+                sourceCtx.canvas.height = currentH;
+                sourceCtx.drawImage(img, 0, 0);
+                
+                while (currentW * 0.5 > drawW) {
+                    currentW = Math.floor(currentW * 0.5);
+                    currentH = Math.floor(currentH * 0.5);
+                    let stepCtx = document.createElement('canvas').getContext('2d');
+                    stepCtx.canvas.width = currentW;
+                    stepCtx.canvas.height = currentH;
+                    stepCtx.imageSmoothingEnabled = true;
+                    stepCtx.imageSmoothingQuality = 'high';
+                    stepCtx.drawImage(sourceCtx.canvas, 0, 0, currentW, currentH);
+                    sourceCtx = stepCtx;
+                }
+                
+                // Final draw to target canvas
+                const canvas = document.createElement('canvas');
+                canvas.width = targetW;
+                canvas.height = targetH;
+                const ctx = canvas.getContext('2d');
+                
+                // Fill with transparent background
+                ctx.clearRect(0, 0, targetW, targetH);
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+                
+                const offsetX = (targetW - drawW) / 2;
+                const offsetY = (targetH - drawH) / 2;
+                ctx.drawImage(sourceCtx.canvas, 0, 0, currentW, currentH, offsetX, offsetY, drawW, drawH);
+                
+                canvas.toBlob(function(blob) {
+                    if (blob) resolve(blob);
+                    else reject(new Error('Canvas toBlob gagal'));
+                }, 'image/png', 1);
+            };
+            img.onerror = reject;
+            img.src = URL.createObjectURL(file);
+        });
+    }
+});
+</script>
+@endpush
