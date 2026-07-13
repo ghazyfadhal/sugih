@@ -14,6 +14,7 @@ class Career extends Model
     protected $fillable = [
         'title',
         'slug',
+        'cover_image',
         'department',
         'location',
         'type',
@@ -21,6 +22,15 @@ class Career extends Model
         'requirements',
         'is_active',
     ];
+
+    public function getCoverImageUrlAttribute()
+    {
+        if (!$this->cover_image) return null;
+        if (\Illuminate\Support\Str::startsWith($this->cover_image, 'images/')) {
+            return asset($this->cover_image);
+        }
+        return app(\App\Services\SupabaseStorageService::class)->publicUrl($this->cover_image);
+    }
 
     protected $casts = [
         'is_active' => 'boolean',

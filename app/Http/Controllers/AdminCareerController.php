@@ -28,11 +28,23 @@ class AdminCareerController extends Controller
             'type' => 'required|in:Full-time,Part-time,Contract,Internship',
             'description' => 'required',
             'requirements' => 'required',
-            'is_active' => 'nullable'
+            'is_active' => 'nullable',
+            'cover_image' => 'nullable|image|max:2048'
         ]);
 
         $validated['slug'] = Str::slug($validated['title']) . '-' . uniqid();
         $validated['is_active'] = $request->has('is_active');
+
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'careers/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)
+                ->upload($path, file_get_contents($file->getRealPath()), $file->getMimeType());
+            
+            $validated['cover_image'] = $path;
+        }
 
         Career::create($validated);
 
@@ -58,10 +70,31 @@ class AdminCareerController extends Controller
             'type' => 'required|in:Full-time,Part-time,Contract,Internship',
             'description' => 'required',
             'requirements' => 'required',
-            'is_active' => 'nullable'
+            'is_active' => 'nullable',
+            'cover_image' => 'nullable|image|max:2048'
         ]);
 
         $validated['is_active'] = $request->has('is_active');
+
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $path = 'careers/' . $filename;
+            
+            app(\App\Services\SupabaseStorageService::class)
+                ->upload($path, file_get_contents($file->getRealPath()), $file->getMimeType());
+            
+            $validated['cover_image'] = $path;
+            
+            // Opsional: Hapus file lama di Supabase jika ada, tapi karena ini skeleton, kita biarkan saja atau tambahkan logika hapus jika diperlukan.
+            if ($career->cover_image && !str_starts_with($career->cover_image, 'images/')) {
+                try {
+                    app(\App\Services\SupabaseStorageService::class)->delete($career->cover_image);
+                } catch (\Exception $e) {
+                    // Abaikan error hapus
+                }
+            }
+        }
 
         $career->update($validated);
 

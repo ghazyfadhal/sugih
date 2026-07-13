@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="DdrSKzh0FxMQvWPVB2CFKYl40IQFd3hqqRSwSRIC">
+
+    <title>Operator Sigaret Kretek Tangan (Pelinting) — Karir SUGIH — Semua Ingin Sugih</title>
+    <meta name="description" content="Lowongan Operator Sigaret Kretek Tangan (Pelinting) di CV. Prioritas Group (SUGIH). Lokasi: Cianjur, Jawa Barat">
+
+    
+    <link rel="icon" href="http://127.0.0.1:8000/images/admin-logo.svg" type="image/svg+xml">
+
+    
+    <script type="module" src="http://[::1]:5173/@vite/client"></script><link rel="stylesheet" href="http://[::1]:5173/resources/css/app.css" /><script type="module" src="http://[::1]:5173/resources/js/app.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    </head>
+<body id="top" class="min-h-screen flex flex-col bg-sugih-mustard-900">
+
+    <header
+    x-data="{ open: false, scrolled: false }"
+    x-init="window.addEventListener('scroll', () => scrolled = window.scrollY > 30);"
+    :class="scrolled ? 'bg-black/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'"
+    class="fixed top-0 inset-x-0 z-[60] transition-all duration-300"
+>
+    <div class="container-page flex items-center justify-between h-20">
+        
+        <a href="http://127.0.0.1:8000" class="flex items-center gap-3" data-testid="brand-logo">
+            <img src="http://127.0.0.1:8000/images/admin-logo.svg" alt="SUGIH" class="h-14 w-auto">
+        </a>
+
+        
+        <nav class="hidden lg:flex items-center gap-12" data-testid="nav-desktop">
+            <a href="http://127.0.0.1:8000"
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-mustard text-white/90' : 'hover:text-sugih-mustard text-white/90'">Beranda</a>
+            <a href="http://127.0.0.1:8000/sejarah"
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-mustard text-white/90' : 'hover:text-sugih-mustard text-white/90'">Sejarah</a>
+            <a href="http://127.0.0.1:8000/produk"
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-mustard text-white/90' : 'hover:text-sugih-mustard text-white/90'">Produk</a>
+            <a href="http://127.0.0.1:8000/berita"
+               class="nav-link"
+               :class="scrolled ? 'hover:text-sugih-mustard text-white/90' : 'hover:text-sugih-mustard text-white/90'">Berita</a>
+        </nav>
+
+        
+        <button
+            type="button"
+            @click="open = !open"
+            class="p-2 -mr-2 transition-transform duration-300"
+            :class="[open ? 'rotate-90' : 'rotate-0', scrolled ? 'text-white/90' : 'text-sugih-mustard']"
+            aria-label="Toggle menu"
+            data-testid="nav-toggle"
+        >
+            
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+            
+            <svg x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+
+    
+    <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        @click="open = false"
+        x-cloak
+        class="fixed top-20 inset-x-0 bottom-0 bg-black/50 z-40"
+    ></div>
+
+    
+    <div
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-x-full"
+        x-transition:enter-end="translate-x-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="translate-x-0"
+        x-transition:leave-end="translate-x-full"
+        x-cloak
+        class="fixed top-20 right-0 h-[calc(100vh-5rem)] w-72 sm:w-80 bg-sugih-base shadow-2xl z-50 flex flex-col border-t border-sugih-subtle/20"
+    >
+
+        
+        <nav class="flex-1 px-8 pt-6 pb-10 flex flex-col gap-1 overflow-y-auto">
+            <a href="http://127.0.0.1:8000"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Beranda</a>
+            <a href="http://127.0.0.1:8000/sejarah"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Sejarah</a>
+            <a href="http://127.0.0.1:8000/produk"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Produk</a>
+            <a href="http://127.0.0.1:8000/berita"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Berita</a>
+            <a href="http://127.0.0.1:8000/karir"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Karir</a>
+            <a href="#footer"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors border-b border-sugih-subtle/20"
+               @click="open = false">Kontak</a>
+            <button type="button"
+               class="py-4 text-right text-xl font-bold text-sugih-primary hover:text-sugih-mustard transition-colors underline decoration-sugih-subtle/40 underline-offset-4 hover:decoration-sugih-mustard"
+               @click="open = false; $dispatch('open-mitra-modal')">Gabung Mitra</button>
+        </nav>
+    </div>
+</header>
+
+    <main class="flex-1">
+        
+    
+    
+    
+
+    
+    <section class="relative min-h-[50vh] flex items-center justify-center pt-20 overflow-hidden" data-testid="karir-detail-hero">
+        <div class="absolute inset-0 -z-10"
+             style="background-image: url('https://bpjuufrdzlcxnientfui.supabase.co/storage/v1/object/public/sugih-public/careers/1783932897_pexels-javaistan-8861736.jpg'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black/60"></div>
+            
+            <div class="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-black/80 to-transparent"></div>
+        </div>
+
+        <div class="container-page text-center">
+            <span class="inline-block bg-sugih-mustard text-white text-xs font-bold uppercase tracking-widest
+                         px-4 py-1.5 rounded-full mb-4 shadow-sm" data-aos="fade-down">
+                Full-time — Cianjur, Jawa Barat
+            </span>
+            <h1 class="heading-display text-white text-3xl sm:text-4xl md:text-5xl drop-shadow-lg" data-aos="fade-up">
+                Operator Sigaret Kretek Tangan (Pelinting)
+            </h1>
+        </div>
+    </section>
+
+    
+    <section class="relative py-16 lg:py-24 bg-sugih-base" data-testid="karir-detail-content">
+        
+        <div class="absolute inset-0 pointer-events-none opacity-15" 
+             style="background-image: url('http://127.0.0.1:8000/images/batik-cianjur-no-bg.png'); background-repeat: no-repeat; background-position: center; background-size: cover; filter: contrast(120%) drop-shadow(0 0 1px rgba(0,0,0,0.2));">
+        </div>
+
+        <div class="container-page relative z-10">
+            <div class="max-w-3xl mx-auto bg-sugih-surface border border-sugih-subtle
+                        rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm" data-aos="fade-up">
+
+                
+                <h2 class="text-sugih-primary font-bold text-xl sm:text-2xl mb-8">
+                    Operator Sigaret Kretek Tangan (Pelinting)
+                </h2>
+
+                
+                <div class="mb-8">
+                    <h3 class="text-sugih-primary font-bold text-base sm:text-lg mb-4">Deskripsi Pekerjaan:</h3>
+                    <ul class="text-sugih-secondary text-sm sm:text-base leading-relaxed space-y-3">
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Melakukan proses pelintingan rokok Sigaret Kretek Tangan (SKT) sesuai standar perusahaan.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Memastikan setiap batang rokok yang dihasilkan memenuhi standar kualitas produksi.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Menjaga kebersihan dan kerapihan area kerja.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Merawat dan menjaga peralatan produksi agar tetap dalam kondisi baik.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Mencapai target produksi harian yang telah ditentukan.</span>
+                            </li>
+                                            </ul>
+                </div>
+
+                
+                <div class="mb-10">
+                    <h3 class="text-sugih-primary font-bold text-base sm:text-lg mb-4">Kualifikasi:</h3>
+                    <ul class="text-sugih-secondary text-sm sm:text-base leading-relaxed space-y-3">
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Wanita.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Usia max 45 Tahun.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Pendidikan minimal SD/SMP.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Memiliki pengalaman sebagai pelinting rokok SKT diutamakan.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Teliti, cekatan, dan mampu bekerja dalam tim.</span>
+                            </li>
+                                                    <li class="flex gap-3">
+                                <span class="text-sugih-green mt-1 shrink-0">•</span>
+                                <span>Penempatan Cianjur.</span>
+                            </li>
+                                            </ul>
+                </div>
+
+                
+                <div class="flex flex-wrap items-center gap-4 pt-6 border-t border-sugih-subtle">
+                    <a href="mailto:cvprioritasgrup@gmail.com?subject=Lamaran: Operator+Sigaret+Kretek+Tangan+%28Pelinting%29"
+                       class="btn-primary">
+                        Lamar Sekarang
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="max-w-3xl mx-auto mt-8">
+                <a href="http://127.0.0.1:8000/karir"
+                   class="inline-flex items-center gap-2 text-sugih-secondary hover:text-sugih-primary font-bold transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Kembali ke Karir
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <aside class="bg-white text-sugih-mustard-900 border-t border-black/10" data-testid="warning-banner">
+    <div class="container-page py-3 flex items-center gap-4">
+        
+        <div class="shrink-0 hidden sm:block">
+            <img src="http://127.0.0.1:8000/images/warning-icon.png"
+                 alt="Peringatan Kesehatan"
+                 class="h-16 w-auto rounded">
+        </div>
+
+        <p class="flex-1 text-center text-sm sm:text-base md:text-lg font-bold uppercase tracking-wide leading-snug px-4">
+            PERINGATAN: KARENA MEROKOK, SAYA TERKENA KANKER TENGGOROKAN.<br class="hidden sm:block">
+            LAYANAN BERHENTI MEROKOK (0800-177-6565)
+        </p>
+
+        <div class="shrink-0">
+            <span class="inline-flex items-center justify-center
+                         h-10 w-10 rounded-full border-2 border-sugih-mustard-900
+                         font-bold text-sm text-sugih-mustard-900">
+                21+
+            </span>
+        </div>
+    </div>
+</aside>
+    <footer id="footer" class="bg-sugih-dark text-sugih-surface" data-testid="footer">
+    <div class="container-page py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        
+        <div>
+            <h4 class="heading-mark text-xl font-bold text-sugih-mustard mb-3">Alamat</h4>
+            <p class="text-base font-semibold leading-relaxed">
+                Munjul, Kec. Cilaku, Kab. Cianjur,<br>
+                Jawa Barat 43285
+            </p>
+
+            
+            <h4 class="heading-mark text-xl font-bold text-sugih-mustard mb-3 mt-8">Sosial Media</h4>
+            <div class="flex items-center gap-5">
+                <a href="https://www.facebook.com/share/17XFTLBsuN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+                   aria-label="Facebook"
+                   class="text-white/70 hover:text-sugih-mustard transition-colors">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+                <a href="https://www.instagram.com/sugih_byprioritasgroup/" target="_blank" rel="noopener noreferrer"
+                   aria-label="Instagram"
+                   class="text-white/70 hover:text-sugih-mustard transition-colors">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+                <a href="https://www.youtube.com/@Sugihkretek" target="_blank" rel="noopener noreferrer"
+                   aria-label="Youtube"
+                   class="text-white/70 hover:text-sugih-mustard transition-colors">
+                    <i class="fab fa-youtube fa-lg"></i>
+                </a>
+            </div>
+        </div>
+
+        
+        <div>
+            <h4 class="heading-mark text-xl font-bold text-sugih-mustard mb-3">Kontak Kami</h4>
+            <div class="text-base font-semibold leading-relaxed space-y-4">
+                <div>
+                    <span class="block text-white/70">Whatsapp:</span>
+                    <a href="https://wa.me/6287713724637" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 text-white hover:text-sugih-mustard transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-mustard mt-1">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>+62 877 1372 4637</span>
+                    </a>
+                </div>
+                <div class="pt-2">
+                    <span class="block text-white/70">Email:</span>
+                    <a href="mailto:cvprioritasgrup@gmail.com"
+                       class="inline-flex items-center gap-2 text-white hover:text-sugih-mustard transition-colors underline decoration-white/40 underline-offset-4 hover:decoration-sugih-mustard mt-1">
+                        <i class="fas fa-envelope"></i>
+                        <span>cvprioritasgrup@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+        <div>
+            <h4 class="heading-mark text-xl font-bold text-sugih-mustard mb-3">Peta Lokasi</h4>
+            <div class="inline-block bg-white p-2 rounded-lg">
+                <img src="http://127.0.0.1:8000/images/qr-location.png"
+                     alt="QR Lokasi" class="h-28 w-28 object-contain">
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-white/10">
+        <div class="container-page py-5 text-base font-bold text-white/60 flex justify-center text-center">
+            <p>&copy; 2026 CV. Prioritas Group. All rights reserved.</p>
+        </div>
+    </div>
+
+    
+    <div class="bg-sugih-dark py-3 border-t border-sugih-mustard/20">
+        <div class="container-page flex items-center justify-center gap-3 text-sugih-surface text-xs sm:text-sm font-semibold tracking-wide text-center">
+            <i class="fas fa-shield-alt text-sugih-mustard text-base"></i>
+            <p>Diproduksi di bawah pengawasan ketat. Dilengkapi Pita Cukai Resmi Republik Indonesia.</p>
+        </div>
+    </div>
+</footer>
+    <div class="fixed bottom-6 right-6 z-50 flex items-center gap-4 group" x-data="{ showTooltip: true }" x-init="setTimeout(() => showTooltip = false, 5000)">
+    
+    
+    <div class="relative bg-white text-sugih-mustard-900 text-sm font-bold py-2 px-4 rounded-full shadow-lg
+                transition-all duration-300 origin-right
+                group-hover:opacity-100 group-hover:scale-100 group-hover:translate-x-0"
+         :class="showTooltip ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-95 translate-x-4 pointer-events-none'">
+        Ada pertanyaan? Chat Kami
+        
+        
+        <div class="absolute top-1/2 -right-2 -translate-y-1/2 border-[6px] border-transparent border-l-white"></div>
+    </div>
+
+    
+    <a href="https://wa.me/6287713724637?text=Halo%20Admin%20SUGIH,%20saya%20punya%20pertanyaan%20seputar%20produk/kemitraan."
+       target="_blank" rel="noopener noreferrer"
+       class="flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg 
+              hover:bg-green-600 hover:scale-110 transition-all duration-300
+              focus:outline-none focus:ring-4 focus:ring-green-500/50"
+       aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+</div>
+    <div x-data="ageVerification()"
+     x-init="checkVerification()"
+     x-show="showModal"
+     x-cloak
+     class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60"
+     style="background-image: url('http://127.0.0.1:8000/images/age-verificarion.png'); background-size: cover; background-position: center; background-blend-mode: multiply;">
+    
+    
+    <div class="bg-[#f0c326] border-[3px] border-[#101010] rounded-2xl p-6 sm:p-10 max-w-lg w-[90%] shadow-[0_10px_40px_rgba(0,0,0,0.8)] text-center text-[#101010]">
+        
+        <h2 class="font-extrabold text-3xl sm:text-4xl mb-6 text-white" 
+            style="-webkit-text-stroke: 1.5px black; text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0px 4px 4px rgba(0,0,0,0.5);">
+            Verifikasi Usia
+        </h2>
+        
+        <p class="text-sm sm:text-base font-semibold mb-6 leading-relaxed">
+            Situs web ini berisi informasi tentang produk yang mengandung tembakau dan hanya ditujukan untuk perokok berusia 21 tahun ke atas yang tinggal di Indonesia.
+        </p>
+
+        <p class="text-base sm:text-lg font-bold mb-8">
+            Apakah anda sudah berumur 21 tahun?
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
+            <button @click="deny()"
+                    class="bg-[#c21414] hover:bg-[#9a1010] text-white font-bold py-2.5 px-10 rounded-xl border-2 border-[#7a0d0d] shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-all hover:scale-105">
+                Tidak
+            </button>
+            <button @click="verify()"
+                    class="bg-[#246e33] hover:bg-[#1c5527] text-white font-bold py-2.5 px-10 rounded-xl border-2 border-[#16421f] shadow-[0_4px_10px_rgba(0,0,0,0.3)] transition-all hover:scale-105">
+                Ya
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('ageVerification', () => ({
+            showModal: false,
+            checkVerification() {
+                const isVerified = localStorage.getItem('age_verified');
+                if (!isVerified) {
+                    this.showModal = true;
+                    // Disable scroll
+                    document.body.style.overflow = 'hidden';
+                }
+            },
+            verify() {
+                localStorage.setItem('age_verified', 'true');
+                this.showModal = false;
+                // Enable scroll
+                document.body.style.overflow = '';
+            },
+            deny() {
+                alert('Untuk mengakses situs anda harus berusia 21+');
+            }
+        }))
+    });
+</script>
+    <div x-data="{ modalMitraOpen: false }" 
+     x-init="$watch('modalMitraOpen', value => document.body.style.overflow = value ? 'hidden' : '')"
+     @open-mitra-modal.window="modalMitraOpen = true">
+
+    <div x-show="modalMitraOpen" x-cloak class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        
+        <div x-show="modalMitraOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0"
+             @click="modalMitraOpen = false"
+             class="absolute inset-0 bg-sugih-dark/80 backdrop-blur-sm"></div>
+
+        
+        <div x-show="modalMitraOpen"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95 translate-y-4"
+             x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+             x-transition:leave-end="opacity-0 scale-95 translate-y-4"
+             class="relative bg-white border border-sugih-subtle/20 rounded-2xl p-8 sm:p-12 max-w-xl w-full shadow-2xl text-center">
+            
+            
+            <button @click="modalMitraOpen = false" class="absolute top-4 right-4 text-sugih-secondary hover:text-sugih-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h3 class="heading-display text-3xl sm:text-4xl text-sugih-green mb-4">Jadilah Bagian dari SUGIH</h3>
+            <p class="text-sugih-secondary text-base mb-8">
+                Tertarik menjadi distributor atau reseller resmi SUGIH di kota Anda? Dapatkan harga khusus pabrik dan jadilah agen pertumbuhan bersama kretek berkualitas dari Cianjur.
+            </p>
+
+            <a href="https://wa.me/6287713724637?text=Halo%20Manajemen%20SUGIH,%20saya%20tertarik%20untuk%20mengetahui%20syarat%20dan%20ketentuan%20menjadi%20Mitra/Reseller.%20Mohon%20informasinya."
+               target="_blank" rel="noopener noreferrer"
+               class="btn-primary w-full sm:w-auto">
+                <i class="fab fa-whatsapp mr-2 text-xl"></i> Daftar via WhatsApp
+            </a>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -13,7 +13,7 @@
     </a>
 </div>
 
-<form action="{{ route('admin.careers.update', $career->id) }}" method="POST" class="dirty-check bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
+<form action="{{ route('admin.careers.update', $career->id) }}" method="POST" enctype="multipart/form-data" class="dirty-check bg-white rounded-2xl shadow-sm border border-gray-100 p-8 max-w-4xl">
     @csrf
     @method('PUT')
 
@@ -67,6 +67,18 @@
 
         <!-- Kolom Kanan -->
         <div class="space-y-6">
+            <div>
+                <label for="cover_image" class="block text-sm font-semibold text-gray-700 mb-2">Gambar Banner Utama</label>
+                @if($career->cover_image_url)
+                    <div class="mb-3">
+                        <img src="{{ $career->cover_image_url }}" alt="Cover saat ini" class="w-full h-32 object-cover rounded-xl border border-gray-200">
+                    </div>
+                @endif
+                <input type="file" id="cover_image" name="cover_image" accept="image/*" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#E6C981] outline-none bg-white">
+                <p class="text-xs text-gray-500 mt-1">Kosongkan jika tidak ingin mengubah gambar.</p>
+                @error('cover_image') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+            </div>
+
             <div>
                 <label for="description" class="block text-sm font-semibold text-gray-700 mb-2">Deskripsi Pekerjaan <span class="text-red-500">*</span></label>
                 <textarea id="description" name="description" rows="6" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#E6C981] focus:border-[#E6C981] outline-none transition-all">{{ old('description', $career->description) }}</textarea>
