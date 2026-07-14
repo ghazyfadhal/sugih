@@ -13,8 +13,11 @@
         .heading-display { font-family: 'Outfit', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased" data-admin="true">
+<body class="bg-gray-50 text-gray-800 antialiased relative" data-admin="true">
     
+    <!-- Batik Watermark Background -->
+    <div class="fixed inset-0 -z-10 pointer-events-none opacity-[0.25]" style="background-image: url('{{ asset('images/batik-cianjur-no-bg.png') }}'); background-repeat: no-repeat; background-size: cover; background-position: center;"></div>
+
     @if(Auth::check())
     <div class="flex h-screen overflow-hidden">
         

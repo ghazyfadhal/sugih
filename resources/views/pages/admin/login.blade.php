@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+<div class="min-h-screen flex items-center justify-center bg-transparent px-4 relative z-10">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative z-20">
         
         <div class="text-center mb-8">
             <div class="flex items-center justify-center gap-3 mb-4">

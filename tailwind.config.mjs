@@ -25,17 +25,17 @@ export default {
                     subtle: '#E5DCC8',     // border
                     
                     // Typography
-                    primary: '#2A2620',    // text
+                    primary: '#2C2317',    // text
                     secondary: '#6B6356',  // text muted
                     
                     // Brand
                     mustard: {
-                        DEFAULT: '#E8A93B',
-                        hover: '#D6982C'
+                        DEFAULT: '#B89A5A',
+                        hover: '#9C8149'
                     },
                     green: {
-                        DEFAULT: '#3F5738',
-                        hover: '#31442B'
+                        DEFAULT: '#1B4320',
+                        hover: '#143318'
                     },
                     terracotta: {
                         DEFAULT: '#C65D3B',

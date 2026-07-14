@@ -1,4 +1,4 @@
-<footer id="footer" class="bg-sugih-dark text-sugih-surface" data-testid="footer">
+<footer id="footer" class="bg-sugih-green text-sugih-surface" data-testid="footer">
     <div class="container-page py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
 
         {{-- Alamat + Sosial Media --}}
@@ -70,7 +70,7 @@
     </div>
 
     {{-- Pita Legalitas Minimalis --}}
-    <div class="bg-sugih-dark py-3 border-t border-sugih-mustard/20">
+    <div class="bg-sugih-green py-3 border-t border-sugih-mustard/20">
         <div class="container-page flex items-center justify-center gap-3 text-sugih-surface text-xs sm:text-sm font-semibold tracking-wide text-center">
             <i class="fas fa-shield-alt text-sugih-mustard text-base"></i>
             <p>Diproduksi di bawah pengawasan ketat. Dilengkapi Pita Cukai Resmi Republik Indonesia.</p>
