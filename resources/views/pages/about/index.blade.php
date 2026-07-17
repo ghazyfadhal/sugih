@@ -115,26 +115,26 @@
                                 shadow-card-soft bg-sugih-dark
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
                         <img src="{{ asset('images/DeniRahmat.png') }}"
-                             alt="Deni Rahmat — Founder CV Prioritas Grup"
-                             class="w-full h-full object-cover">
+                             alt="Deni Rahmat — Founder CV Prioritas Group"
+                             class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 hover:grayscale-0 hover:opacity-100 hover:scale-110">
                     </div>
                     <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1 gs-founder-name">Deni Rahmat</h3>
                     <p class="text-sugih-mustard text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
-                    <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Grup</p>
+                    <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Group</p>
                 </div>
 
                 {{-- Member 2: Ardjia Adiati Karisma --}}
-                <div class="text-center group gs-founder" data-testid="member-2">
-                    <div class="w-56 h-56 sm:w-64 sm:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-sugih-mustard/30
+                <div class="text-center group flex flex-col items-center gs-founder" data-testid="member-2">
+                    <div class="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden mb-6 border-4 border-sugih-mustard/30 
                                 shadow-card-soft bg-sugih-dark
                                 transition-transform duration-300 group-hover:scale-105 gs-founder-photo">
                         <img src="{{ asset('images/ArdjiaAdiatiKarisma.png') }}"
-                             alt="Ardjia Adiati Karisma — Founder CV Prioritas Grup"
-                             class="w-full h-full object-cover">
+                             alt="Ardjia Adiati Karisma — Founder CV Prioritas Group"
+                             class="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 hover:grayscale-0 hover:opacity-100 hover:scale-110">
                     </div>
                     <h3 class="heading-display text-white text-2xl sm:text-3xl mb-1 gs-founder-name">Ardjia Adiati Karisma</h3>
                     <p class="text-sugih-mustard text-base sm:text-lg font-semibold gs-founder-role">Founder</p>
-                    <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Grup</p>
+                    <p class="text-white/60 text-sm sm:text-base mt-1 gs-founder-company">CV Prioritas Group</p>
                 </div>
 
             </div>
