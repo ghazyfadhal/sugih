@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - SUGIH</title>
+    <link rel="icon" href="{{ asset('images/admin-logo.svg') }}" type="image/svg+xml">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,7 @@
         <aside class="w-64 bg-white text-sugih-primary border-r border-gray-200 flex flex-col transition-all duration-300 relative z-20">
             <div class="h-20 shrink-0 flex items-center justify-center border-b border-gray-200">
                 <div class="flex items-center gap-2">
-                    <img src="{{ asset('images/admin-logo.svg') }}" alt="SUGIH Admin Logo" class="h-8 w-auto filter grayscale">
+                    <img src="{{ asset('images/admin-logo.svg') }}" alt="SUGIH Admin Logo" class="h-8 w-auto">
                     <span class="text-xs font-bold tracking-widest text-sugih-terracotta mt-1">ADMIN</span>
                 </div>
             </div>
