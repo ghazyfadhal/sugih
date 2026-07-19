@@ -8,7 +8,7 @@
         <h2 class="text-xl font-bold text-gray-800">Daftar Lowongan</h2>
         <p class="text-gray-500 text-sm">Kelola informasi lowongan pekerjaan di perusahaan SUGIH.</p>
     </div>
-    <a href="{{ route('admin.careers.create') }}" class="bg-sugih-mustard-900 text-sugih-mustard px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-mustard-800 transition-colors flex items-center">
+    <a href="{{ route('admin.careers.create') }}" class="bg-sugih-terracotta text-white shadow-sm px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-terracotta-hover transition-all hover:-translate-y-0.5 flex items-center">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
         Tambah Lowongan
     </a>
@@ -63,7 +63,7 @@
                         <a href="{{ route('admin.careers.edit', $career->id) }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
                             Edit
                         </a>
-                        <form action="{{ route('admin.careers.destroy', $career->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Apakah Anda yakin ingin menghapus lowongan ini?');">
+                        <form action="{{ route('admin.careers.destroy', $career->id) }}" method="POST" class="inline-block delete-form" data-confirm-text="Anda yakin ingin menghapus lowongan ini?">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-red-600 hover:text-red-800 font-medium">Hapus</button>

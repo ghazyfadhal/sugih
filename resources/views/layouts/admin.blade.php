@@ -167,6 +167,43 @@
             });
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // SweetAlert Delete Confirmation
+            const deleteForms = document.querySelectorAll('form.delete-form');
+            deleteForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Optional custom text from data attribute
+                    const customText = this.getAttribute('data-confirm-text') || 'Anda yakin ingin menghapus data ini?';
+                    
+                    Swal.fire({
+                        title: 'Konfirmasi Hapus',
+                        text: customText,
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#dc2626', // red-600
+                        cancelButtonColor: '#e5e7eb', // gray-200
+                        confirmButtonText: 'Ya, Hapus',
+                        cancelButtonText: '<span style="color:#374151">Batal</span>',
+                        reverseButtons: true,
+                        customClass: {
+                            popup: 'rounded-2xl',
+                            title: 'text-2xl font-bold font-outfit text-gray-800',
+                            htmlContainer: 'text-gray-500',
+                            confirmButton: 'px-6 py-2.5 rounded-xl font-semibold',
+                            cancelButton: 'px-6 py-2.5 rounded-xl font-semibold'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            form.submit();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>

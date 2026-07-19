@@ -16,7 +16,7 @@
                 <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-8m-4 8l-4-8"></path></svg>
                 Atur Urutan
             </button>
-            <a x-show="!reorderMode" href="{{ route('admin.products.create') }}" class="bg-sugih-mustard-900 text-sugih-mustard px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-mustard-800 transition-colors flex items-center shadow-sm">
+            <a x-show="!reorderMode" href="{{ route('admin.products.create') }}" class="bg-sugih-terracotta text-white shadow-sm px-5 py-2.5 rounded-xl font-semibold hover:bg-sugih-terracotta-hover transition-all hover:-translate-y-0.5 flex items-center">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 Tambah Produk
             </a>
@@ -101,7 +101,7 @@
                                 <a href="{{ route('admin.products.edit', $product->id) }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium mr-4">
                                     Edit
                                 </a>
-                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Apakah Anda yakin ingin menghapus produk ini?');">
+                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="inline-block delete-form" data-confirm-text="Anda yakin ingin menghapus produk ini?">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="text-red-600 hover:text-red-800 font-medium">Hapus</button>
